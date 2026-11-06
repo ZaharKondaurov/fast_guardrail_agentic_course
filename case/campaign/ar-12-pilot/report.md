@@ -3,7 +3,7 @@
 Из корня репозитория укажите фактический путь к журналу. Пример предполагает, что зависимости Arena установлены в её `.venv`.
 
 ```bash
-journal=case/campaign/ar-12-pilot/search.sqlite3
+journal=case/campaign/ar-12-pilot/.run/search.sqlite3
 PYTHONPATH=arena arena/.venv/bin/python -m evaluator.search --journal "$journal" export |
   jq '
     def summary: {count: length, mean: (if length == 0 then null else add / length end)};

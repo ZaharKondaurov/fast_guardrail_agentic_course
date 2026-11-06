@@ -1,0 +1,8 @@
+{
+  "data_dir": "case/dataset/ar12-pilot-v1/data",
+  "dataset_id": "ar12-pilot-train-v1",
+  "conditions_id": "ar12-pilot-v1",
+  "release_id": "ar-12-pilot-v1",
+  "runner_timeout_seconds": 30,
+  "research_model": "deepseek/deepseek-v4.1-flash-1017"
+}
