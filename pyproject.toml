@@ -1,0 +1,23 @@
+[project]
+name = "fast-guardrail-agentic-course"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = ["datasets==3.6.0"]
+
+[dependency-groups]
+dev = ["pytest>=8,<9"]
+boosting = ["catboost>=1.2,<2", "scikit-learn>=1.6,<2"]
+transformer = [
+    "onnx>=1.17,<2",
+    "onnxruntime>=1.20,<2",
+    "scikit-learn>=1.6,<2",
+    "torch>=2.8,<3",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

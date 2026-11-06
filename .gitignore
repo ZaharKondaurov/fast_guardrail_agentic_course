@@ -1,0 +1,14 @@
+__pycache__/
+.venv/
+.pytest_cache/
+arena/
+# private и public держит оценщик, не коммитить
+*.private.jsonl
+*.public.jsonl
+.ruff_cache/
+.venv/
+case/ways/baseline/boosting/model.joblib
+case/ways/baseline/boosting/catboost.joblib
+case/ways/baseline/boosting/catboost-proba.joblib
+case/ways/baseline/transformer/model.onnx
+case/ways/baseline/transformer/model.json

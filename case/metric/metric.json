@@ -1,0 +1,15 @@
+{
+  "version": "ar12-gated-tpr-v3",
+  "kind": "command",
+  "direction": "maximize",
+  "command": {
+    "argv": ["python", "score.py", "--collect"],
+    "uses_model": false,
+    "timeout_seconds": 30
+  },
+  "aggregation": {
+    "argv": ["python", "score.py", "--aggregate", "1000"],
+    "uses_model": false,
+    "timeout_seconds": 30
+  }
+}
