@@ -24,6 +24,7 @@ if [[ "$action" == setup ]]; then
   if ! docker network inspect "$network" >/dev/null 2>&1; then
     docker network create "$network" >/dev/null
   fi
+  # Сохраняем каталог серии, чтобы при повторном запуске использовать прежнее состояние private.
   if [[ ! -f "$closed_pointer" ]]; then
     closed=${AR12_CLOSED_DIR:-}
     if [[ -z "$closed" ]]; then
@@ -83,6 +84,7 @@ case "$action" in
     docker run --rm --network "$network" --entrypoint /bin/sh ar12-hermes:configured -ec '
       for url do curl -fsS --max-time 5 "$url/healthz"; printf "\n"; done
     ' sh "$train_url" "$public_url" "$private_url"
+    # Проверяем модель из той же сети и под тем же UID, что и Hermes.
     docker run --rm -i --network "$network" --user "$(id -u):$(id -g)" \
       --mount "type=bind,src=$credentials,dst=/run/arena/model-access.json,readonly" \
       --entrypoint /opt/hermes/.venv/bin/python ar12-hermes:configured - <<'PY'

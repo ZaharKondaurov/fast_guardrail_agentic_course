@@ -6,6 +6,7 @@ from pathlib import Path
 
 
 def export_arena(source: Path, output: Path) -> int:
+    """Преобразует размеченный JSONL в формат Arena и проверяет уникальность ID."""
     examples = []
     seen_ids = set()
     with source.open(encoding="utf-8") as stream:
@@ -33,6 +34,7 @@ def export_arena(source: Path, output: Path) -> int:
             except (KeyError, TypeError, ValueError) as error:
                 raise ValueError(f"{source}:{line_number}: {error}") from error
 
+    # Создаём результат после проверки всех строк и защищаем существующий экспорт.
     with output.open("x", encoding="utf-8") as stream:
         for example in examples:
             stream.write(example + "\n")
@@ -40,6 +42,7 @@ def export_arena(source: Path, output: Path) -> int:
 
 
 def main() -> None:
+    """Экспортирует выбранный раздел через CLI, сохраняя исходный файл."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", type=Path, help="Original AR-12 JSONL split")
     parser.add_argument("output", type=Path, help="New Arena JSONL file")

@@ -6,6 +6,9 @@ import threading
 from functools import wraps
 from pathlib import Path
 from typing import Any
+from time import monotonic
+
+from case.agents.usage import ROLE_HEADER, agent_label
 
 CONFIG_BASE_URL = "http://arena-gateway.invalid/v1"
 REQUEST_TIMEOUT = 131460
@@ -13,6 +16,7 @@ RUNNER_TIMEOUT = 604800
 
 
 def gateway_message(message: dict[str, Any]) -> dict[str, Any]:
+    """Оставляет поля сообщения, которые понимает модельный gateway."""
     result = {key: message[key] for key in (
         "role", "content", "tool_calls", "tool_call_id", "reasoning_content"
     ) if key in message}
@@ -26,6 +30,7 @@ def gateway_message(message: dict[str, Any]) -> dict[str, Any]:
 
 
 def gateway_request(request: dict[str, Any], model: str) -> dict[str, Any]:
+    """Нормализует запрос Hermes и закрепляет выбранную для кампании модель."""
     extra = request.get("extra_body")
     if isinstance(extra, dict):
         request = request | extra
@@ -42,14 +47,17 @@ def gateway_request(request: dict[str, Any], model: str) -> dict[str, Any]:
 
 class ModelState:
     def __init__(self) -> None:
+        """Создаёт потокобезопасный флаг ошибки для остановки всех модельных вызовов."""
         self.failed = threading.Event()
 
     def check(self) -> None:
+        """Блокирует дальнейшие запросы после ошибки модельного gateway."""
         if self.failed.is_set():
             raise RuntimeError("model gateway failed; further requests disabled")
 
 
 def prepare_home(home: Path, model: str) -> None:
+    """Создаёт конфигурацию Hermes для заданной модели и длительных задач."""
     home.mkdir(parents=True, exist_ok=True)
     (home / "config.yaml").write_text(
         Path(__file__).with_name("hermes.yaml").read_text(encoding="utf-8").replace(
@@ -70,7 +78,8 @@ def prepare_home(home: Path, model: str) -> None:
     })
 
 
-def install(base_url: str, model: str, timeout: float, api_key: str = "arena") -> ModelState:
+def install(base_url: str, model: str, timeout: float, api_key: str = "arena", *, usage_log=None) -> ModelState:
+    """Подключает транспорт Hermes к заданному gateway и включает учёт вызовов."""
     import httpx
     import openai
     from openai.resources.chat.completions import AsyncCompletions, Completions
@@ -83,34 +92,51 @@ def install(base_url: str, model: str, timeout: float, api_key: str = "arena") -
 
     @wraps(original_init)
     def initialize(self, *args, **kwargs):
+        """Настраивает синхронный SDK-клиент на заданный маршрут без скрытых повторов."""
         kwargs.update(base_url=base_url, api_key=api_key, timeout=timeout, max_retries=0)
         kwargs["http_client"] = httpx.Client(trust_env=False, timeout=timeout)
         original_init(self, *args, **kwargs)
 
     @wraps(original_async_init)
     def initialize_async(self, *args, **kwargs):
+        """Настраивает асинхронный SDK-клиент с теми же параметрами маршрута."""
         kwargs.update(base_url=base_url, api_key=api_key, timeout=timeout, max_retries=0)
         kwargs["http_client"] = httpx.AsyncClient(trust_env=False, timeout=timeout)
         original_async_init(self, *args, **kwargs)
 
     @wraps(original_create)
     def create(self, *args, **kwargs):
+        """Отправляет синхронный запрос и записывает полученный расход или отсутствие учёта."""
         state.check()
+        started = monotonic()
+        response = None
         try:
-            return original_create(self, *args, **gateway_request(kwargs, model))
+            response = original_create(self, *args, **gateway_request(kwargs, model))
+            return response
         except Exception:
             state.failed.set()
             raise RuntimeError("model gateway request failed") from None
+        finally:
+            if usage_log is not None:
+                usage_log.write("model", started, response)
 
     @wraps(original_async_create)
     async def create_async(self, *args, **kwargs):
+        """Отправляет асинхронный запрос и учитывает его в журнале текущей роли."""
         state.check()
+        started = monotonic()
+        response = None
         try:
-            return await original_async_create(self, *args, **gateway_request(kwargs, model))
+            response = await original_async_create(self, *args, **gateway_request(kwargs, model))
+            return response
         except Exception:
             state.failed.set()
             raise RuntimeError("model gateway request failed") from None
+        finally:
+            if usage_log is not None:
+                usage_log.write("model", started, response)
 
+    # Оба клиента SDK используют один маршрут, включая вызовы делегированных задач.
     openai.OpenAI.__init__ = initialize
     openai.AsyncOpenAI.__init__ = initialize_async
     Completions.create = create
@@ -119,6 +145,31 @@ def install(base_url: str, model: str, timeout: float, api_key: str = "arena") -
     import tools.async_delegation as async_delegate
     import tools.delegate_tool as delegate
     from run_agent import AIAgent
+
+    if usage_log is not None:
+        original_run = AIAgent.run_conversation
+
+        @wraps(original_run)
+        def track_turn(self, *args, **kwargs):
+            """Устанавливает роль и задачу на время хода для атрибуции вложенных запросов."""
+            prompt = args[0] if args else kwargs.get("user_input", "")
+            label = getattr(self, "_ar12_usage_label", None)
+            if label is None:
+                match = ROLE_HEADER.match(prompt) if isinstance(prompt, str) else None
+                label = match.groups() if match else ("unattributed", None)
+                self._ar12_usage_label = label
+            # Метка действует только в контексте текущего хода и сбрасывается при выходе.
+            token = agent_label.set(label)
+            started = monotonic()
+            try:
+                return original_run(self, *args, **kwargs)
+            finally:
+                try:
+                    usage_log.write("turn", started)
+                finally:
+                    agent_label.reset(token)
+
+        AIAgent.run_conversation = track_turn
 
     async_delegate._STALE_IDLE_SECONDS = RUNNER_TIMEOUT
     async_delegate._STALE_IN_TOOL_SECONDS = RUNNER_TIMEOUT
@@ -130,6 +181,7 @@ def install(base_url: str, model: str, timeout: float, api_key: str = "arena") -
 
 
 def credentials(path: Path) -> dict[str, Any]:
+    """Загружает файл доступа и проверяет наличие адреса модельного API."""
     data = json.loads(path.read_text())
     if not isinstance(data, dict) or not isinstance(data.get("model_base_url"), str):
         raise ValueError("invalid credentials")

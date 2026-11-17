@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def freeze_finalists(journal, candidate_ids, expected_count, output):
+    """Восстанавливает снимки ровно K кандидатов, фиксирует серию и сохраняет пакет отправки."""
     if expected_count < 1 or len(set(candidate_ids)) != len(candidate_ids):
         raise ValueError("Finalist IDs must be unique and K must be positive")
     if len(candidate_ids) != expected_count:
@@ -35,11 +36,13 @@ def freeze_finalists(journal, candidate_ids, expected_count, output):
         submission = Submission(candidates=candidates)
         bundle = workspace / "finalists.json"
         bundle.write_text(submission.model_dump_json(indent=2) + "\n", encoding="utf-8")
+        # Связываем пакет с журналом до публикации файла для отправки.
         journal.finalize(submission)
         os.link(bundle, output)
 
 
 def private_settings(args):
+    """Проверяет закрытые пути, метрику и лимит, затем собирает настройки сервиса Arena."""
     dataset = args.dataset.resolve()
     state = args.state.resolve()
     if dataset.is_relative_to(ROOT) or state.is_relative_to(ROOT):
@@ -56,6 +59,7 @@ def private_settings(args):
     metric = args.metric.resolve()
     if metric_package_provenance(metric) is None:
         raise ValueError("A frozen metric package is required")
+    # Штатный runner измеряет запуск целиком. Гейтам задержки нужны отдельные замеры.
     if load_metric(metric).version in {"ar12-gated-tpr-v3", "ar12-p99-v1", "ar12-throughput-v1"}:
         raise ValueError("This metric requires a trusted warm inference timer; the stock runner cannot supply it")
 
@@ -92,6 +96,7 @@ def private_settings(args):
 
 
 def main():
+    """Запускает закрытый оценщик либо создаёт пакет финалистов из журнала."""
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
     serve = commands.add_parser("serve")

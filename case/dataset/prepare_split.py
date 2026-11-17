@@ -5,10 +5,16 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from export_arena import export_arena
+if __package__:
+    from .deduplicate import deduplicate_splits, validate_disjoint
+    from .export_arena import export_arena
+else:
+    from deduplicate import deduplicate_splits, validate_disjoint
+    from export_arena import export_arena
 
 
 def prepare_split(source: Path, manifest: Path, output: Path) -> None:
+    """Отделяет фиксированную оценочную подвыборку по ID и выгружает её для Arena."""
     if output.exists():
         raise FileExistsError(output)
     with source.open(encoding="utf-8") as stream:
@@ -22,8 +28,14 @@ def prepare_split(source: Path, manifest: Path, output: Path) -> None:
         raise ValueError("Evaluation IDs must be a proper subset of source IDs")
     training = [row for row in rows if row["id"] not in heldout]
     evaluation = [row for row in rows if row["id"] in heldout]
+    cleaned = deduplicate_splits(
+        {"train": training, "evaluation": evaluation}, ("evaluation", "train"),
+    )
+    validate_disjoint(cleaned)
+    training, evaluation = cleaned["train"], cleaned["evaluation"]
     if any({row["label"] for row in split} != {0, 1} for split in (training, evaluation)):
         raise ValueError("Training and evaluation splits must both contain both classes")
+    # Публикуем разбиение целиком после успешного экспорта формата Arena.
     with TemporaryDirectory(prefix="split-", dir=output.parent) as directory:
         staged = Path(directory) / "data"
         staged.mkdir()
@@ -37,6 +49,7 @@ def prepare_split(source: Path, manifest: Path, output: Path) -> None:
 
 
 def main():
+    """Принимает исходный train и список ID для воспроизводимого разбиения."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", type=Path)
     parser.add_argument("evaluation_ids", type=Path)

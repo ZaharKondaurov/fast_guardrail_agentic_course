@@ -15,6 +15,7 @@ if [[ -z "${OPENROUTER_API_KEY:-}" ]]; then
   exit 1
 fi
 
+# Файл с ключом должен быть доступен только владельцу до завершения контейнера.
 umask 077
 access=$(mktemp "${TMPDIR:-/tmp}/ar12-model-access.XXXXXX.json")
 trap 'rm -f -- "$access"' EXIT

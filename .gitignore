@@ -17,3 +17,4 @@ case/ways/baseline/transformer/model.json
 case/ways/baseline/.results/
 case/dataset/ar12-pilot-v1/data/
 case/campaign/ar-12-pilot/.run/
+case/dataset/ar12-deduplicated-v2/

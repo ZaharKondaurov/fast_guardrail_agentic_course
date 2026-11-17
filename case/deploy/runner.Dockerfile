@@ -1,4 +1,5 @@
 FROM python:3.12-slim
+# Ограничиваем потоки BLAS и OpenMP для сопоставимых CPU-замеров.
 ENV OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1
 WORKDIR /opt/runner
 COPY requirements.txt .

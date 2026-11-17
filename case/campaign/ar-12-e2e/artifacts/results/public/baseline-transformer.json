@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "evaluation_id": "66f53c9ea35f5c52b09752939537d3de6eac26389cf3ed0aea3d3c54a5aa5b0e",
+  "scores": [
+    {
+      "candidate_id": "baseline-transformer",
+      "score": 0.0
+    }
+  ]
+}

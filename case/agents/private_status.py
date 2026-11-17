@@ -6,6 +6,7 @@ from evaluator.client import ClientError, request
 
 
 def private_status(url: str, token_file: Path) -> str | None:
+    """Читает только состояние private и отличает отсутствие серии от сбоя API."""
     try:
         result = request("GET", url, token_file, timeout=60)
     except ClientError as error:
@@ -19,6 +20,7 @@ def private_status(url: str, token_file: Path) -> str | None:
 
 
 def wait_private(status, search, read_status, sleep):
+    """Дожидается завершения принятой серии и проверяет, что журнал был финализирован."""
     if status is None:
         return False
     if search["running"] or not search["finalization"] or (

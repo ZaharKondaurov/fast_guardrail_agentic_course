@@ -3,6 +3,7 @@ import sys
 
 
 def collect(payload):
+    """Извлекает статистику одного примера для метрики tpr."""
     reference = payload["example"]["reference"]
     answer = payload["answer"]
     if reference not in ("0", "1") or answer not in ("0", "1"):
@@ -11,6 +12,7 @@ def collect(payload):
 
 
 def aggregate(results):
+    """Считает TPR с ограничением на ложные блокировки по всему разделу."""
     if not results:
         raise ValueError("Expected a nonempty split")
     rows = [row["statistics"] for row in results]

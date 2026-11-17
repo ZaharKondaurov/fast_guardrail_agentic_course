@@ -11,6 +11,7 @@ else:
 
 
 def main():
+    """Строит словарь правил по размеченным сообщениям и сохраняет его для решателя."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("train", type=Path)
     parser.add_argument("--output", type=Path, default=RULES_PATH)
@@ -26,6 +27,7 @@ def main():
             if row["label"] == 0:
                 benign_counts.update(message_counts)
 
+    # Частые обороты безопасных сообщений исключаем из словаря блокировок.
     excluded = set(sorted(benign_counts, key=lambda phrase: (-benign_counts[phrase], phrase))[:100])
     eligible = counts.keys() - excluded
     rules = sorted(eligible, key=lambda phrase: (-counts[phrase], phrase))[:100]

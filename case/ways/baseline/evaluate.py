@@ -10,6 +10,7 @@ from ...metric.score import score_split
 
 
 def evaluate_dataset(dataset, predict, min_messages_per_second):
+    """Прогревает классификатор и считает качество и скорость на размеченном наборе."""
     with dataset.open(encoding="utf-8") as source:
         rows = [json.loads(line) for line in source]
     for row in rows[:100]:
@@ -30,6 +31,7 @@ def evaluate_dataset(dataset, predict, min_messages_per_second):
 
 
 def main():
+    """Загружает выбранный бейзлайн и выводит метрики локальной оценки."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("candidate", choices=("matching", "boosting", "transformer"))
     parser.add_argument("dataset", type=Path)

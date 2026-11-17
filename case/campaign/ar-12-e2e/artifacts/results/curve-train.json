@@ -1,0 +1,89 @@
+{
+  "comparison": {
+    "split": "train",
+    "dataset_id": "ar12-pilot-train-v1",
+    "subset_id": "7d9656bd5373c35a09685bc9b2752075bc10ccae6e08ac30d99bfd65b9a084e8",
+    "conditions_id": "ar12-e2e-v1"
+  },
+  "direction": "maximize",
+  "baseline": 0.0,
+  "integration": "left_step",
+  "horizon": 6,
+  "actual_proposals": 6,
+  "running": [
+    "public-baseline-boosting-v1"
+  ],
+  "points": [
+    {
+      "proposals": 0,
+      "quality": 0.0,
+      "source": "baseline"
+    },
+    {
+      "proposals": 3,
+      "quality": 0.0,
+      "candidate_id": "baseline-matching",
+      "measurement_id": "train-baseline-matching-v1",
+      "completion_order": 1,
+      "finished_at": "2026-11-16T14:23:44.141330+00:00",
+      "score": 0.0,
+      "state": "succeeded"
+    },
+    {
+      "proposals": 6,
+      "quality": 0.0,
+      "candidate_id": "baseline-boosting",
+      "measurement_id": "train-baseline-boosting-v1",
+      "completion_order": 2,
+      "finished_at": "2026-11-16T14:33:22.904442+00:00",
+      "score": 0.0,
+      "state": "succeeded"
+    },
+    {
+      "proposals": 6,
+      "quality": 0.9296875,
+      "candidate_id": "baseline-transformer",
+      "measurement_id": "train-baseline-transformer-v1",
+      "completion_order": 3,
+      "finished_at": "2026-11-16T14:39:11.721091+00:00",
+      "score": 0.9296875,
+      "state": "succeeded"
+    },
+    {
+      "proposals": 6,
+      "quality": 1.0,
+      "candidate_id": "variant-boost-calibrated",
+      "measurement_id": "train-variant-boost-calibrated-v1",
+      "completion_order": 4,
+      "finished_at": "2026-11-16T14:50:23.160929+00:00",
+      "score": 1.0,
+      "state": "succeeded"
+    },
+    {
+      "proposals": 6,
+      "quality": 1.0,
+      "candidate_id": "variant-ensemble",
+      "measurement_id": "train-variant-ensemble-v1",
+      "completion_order": 5,
+      "finished_at": "2026-11-16T15:01:40.307196+00:00",
+      "score": 1.0,
+      "state": "succeeded"
+    },
+    {
+      "proposals": 6,
+      "quality": 1.0,
+      "candidate_id": "variant-linear",
+      "measurement_id": "train-variant-linear-v1",
+      "completion_order": 6,
+      "finished_at": "2026-11-16T15:06:30.406838+00:00",
+      "score": 1.0,
+      "state": "succeeded"
+    }
+  ],
+  "final_quality": 1.0,
+  "auc": 0.0,
+  "mean_quality": 0.0,
+  "observed_auc": 0.0,
+  "observed_from": 0,
+  "covered_proposals": 6
+}

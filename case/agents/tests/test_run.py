@@ -6,11 +6,13 @@ from case.agents.run import run_role
 
 
 def status(remaining=1, finalized=False):
+    """Создаёт минимальный снимок журнала для проверки переходов оркестратора."""
     return {"remaining_proposals": remaining, "finalization": finalized,
             "running": [], "stopped": False}
 
 
 def test_orchestrator_continues_until_journal_finalized():
+    """Проверяет продолжение поиска до фиксации итогового пакета."""
     agent = Mock()
     agent.run_conversation.return_value = {
         "completed": True, "messages": [{"role": "assistant", "content": "continue"}],
@@ -25,6 +27,7 @@ def test_orchestrator_continues_until_journal_finalized():
 
 
 def test_orchestrator_does_not_claim_private_success_without_submission():
+    """Проверяет, что пустой private-статус не означает завершение серии."""
     agent = Mock()
     agent.run_conversation.return_value = {"completed": True, "messages": ["history"]}
     journal = Mock()
@@ -35,6 +38,7 @@ def test_orchestrator_does_not_claim_private_success_without_submission():
 
 
 def test_failed_turn_closes_agent():
+    """Проверяет освобождение ресурсов агента при ошибке хода."""
     agent = Mock()
     agent.run_conversation.return_value = {"completed": False, "failed": True}
     with pytest.raises(RuntimeError, match="turn failed"):
@@ -43,6 +47,7 @@ def test_failed_turn_closes_agent():
 
 
 def test_completed_private_does_not_start_agent():
+    """Проверяет повторный запуск после завершения private без обращения к модели."""
     factory = Mock()
     journal = Mock()
     journal.status.return_value = status(0, True)
@@ -52,6 +57,7 @@ def test_completed_private_does_not_start_agent():
 
 
 def test_failed_private_does_not_start_agent():
+    """Проверяет остановку при обнаружении завершившейся ошибкой private-серии."""
     factory = Mock()
     journal = Mock()
     journal.status.return_value = status(0, True)
@@ -61,6 +67,7 @@ def test_failed_private_does_not_start_agent():
 
 
 def test_human_stopped_finalized_pilot_is_complete():
+    """Проверяет завершение пилота после операторской остановки и финализации."""
     factory = Mock()
     journal = Mock()
     journal.status.return_value = {**status(2, True), "stopped": True}

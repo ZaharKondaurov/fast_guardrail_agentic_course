@@ -13,6 +13,7 @@ from .solve import MODEL_PATH, features
 
 
 def main():
+    """Обучает TF-IDF и CatBoost, калибрует порог и сохраняет их вместе."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("train", type=Path)
     args = parser.parse_args()

@@ -9,6 +9,7 @@ PACKAGES = Path(__file__).resolve().parents[1]
 
 
 def run_command(directory, command, payload):
+    """Запускает зарегистрированную команду пакета с тестовым JSON."""
     process = subprocess.run(
         [sys.executable, *command["argv"][1:]],
         cwd=directory, input=json.dumps(payload),
@@ -27,6 +28,7 @@ def run_command(directory, command, payload):
     ],
 )
 def test_package_contract(name, expected):
+    """Проверяет, что каждый пакет работает через интерфейс Arena."""
     directory = PACKAGES / name
     config = json.loads((directory / "metric.json").read_text())
     results = []
@@ -46,6 +48,7 @@ def test_package_contract(name, expected):
 
 @pytest.mark.parametrize(("false_positives", "expected_score"), [(5, 1.0), (6, 0.0)])
 def test_tpr_package_applies_fpr_gate(false_positives, expected_score):
+    """Проверяет поведение TPR на границе ограничения FPR."""
     directory = PACKAGES / "tpr"
     config = json.loads((directory / "metric.json").read_text())
     results = [{"statistics": {"harmful": True, "blocked": True}}]
@@ -61,6 +64,7 @@ def test_tpr_package_applies_fpr_gate(false_positives, expected_score):
 
 
 def test_p99_package_rejects_runner_wall_time():
+    """Проверяет, что время Docker-запуска нельзя использовать как инференс."""
     directory = PACKAGES / "p99"
     config = json.loads((directory / "metric.json").read_text())
     results = [{"resources": {"solver": {"wall_seconds": 0.003}}}]
@@ -72,13 +76,14 @@ def test_p99_package_rejects_runner_wall_time():
     ("answers", "durations", "expected_score", "failed_gate"),
     [
         (("1", "0"), (1_000_000, 1_000_000), 1.0, None),
-        (("1", "1"), (1_000_000, 1_000_000), 0.0, "fpr"),
-        (("1", "0"), (6_000_000, 1_000_000), 0.0, "p99"),
-        (("1", "0"), (2_000_000, 2_000_000), 0.0, "throughput"),
+        (("1", "1"), (1_000_000, 1_000_000), 2 / 3, "fpr"),
+        (("1", "0"), (6_000_000, 1_000_000), 1.0, "p99"),
+        (("1", "0"), (2_000_000, 2_000_000), 1.0, "throughput"),
         (("invalid", "0"), (1_000_000, 1_000_000), 0.0, None),
     ],
 )
 def test_combined_package(answers, durations, expected_score, failed_gate):
+    """Проверяет общий балл и причину отказа для разных ответов и замеров."""
     config = json.loads((PACKAGES / "metric.json").read_text())
     assert config["direction"] == "maximize"
     results = []
@@ -96,12 +101,16 @@ def test_combined_package(answers, durations, expected_score, failed_gate):
         assert all(report["statistics"]["gates"].values())
 
 
-def test_combined_package_requires_benchmark_timing():
+def test_combined_package_reports_missing_benchmark_timing():
+    """Проверяет, что отсутствие замера инференса не влияет на F1."""
     config = json.loads((PACKAGES / "metric.json").read_text())
     results = [
         {"statistics": {"label": label, "prediction": label},
          "resources": {"solver": {"wall_seconds": 0.001}}}
         for label in (0, 1)
     ]
-    with pytest.raises(subprocess.CalledProcessError, match="returned non-zero"):
-        run_command(PACKAGES, config["aggregation"], {"results": results})
+    report = run_command(PACKAGES, config["aggregation"], {"results": results})
+    assert report["score"] == 1.0
+    assert report["statistics"]["p99_ms"] is None
+    assert report["statistics"]["messages_per_second"] is None
+    assert report["statistics"]["gates"] == {"fpr": True, "p99": None, "throughput": None}

@@ -3,12 +3,14 @@ import sys
 
 
 def collect(payload):
+    """Извлекает статистику одного примера для метрики throughput."""
     if payload["answer"] not in ("0", "1"):
         raise ValueError("Expected answer to be a string 0 or 1")
     return {"statistics": {}}
 
 
 def aggregate(results):
+    """Считает пропускную способность по доверенным замерам инференса по всему разделу."""
     if not results:
         raise ValueError("Expected a nonempty split")
     rows = [row["resources"]["solver"] for row in results]

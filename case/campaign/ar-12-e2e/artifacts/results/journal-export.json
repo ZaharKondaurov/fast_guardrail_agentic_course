@@ -1,0 +1,449 @@
+{
+  "schema_version": 1,
+  "campaign": {
+    "max_solutions": 6,
+    "stopped_at": null,
+    "stop_reason": null,
+    "finalization": {
+      "batch_digest": "d1078d12b785593517424cea32ee5337b6324c80e78b84714ea8945a0ab20eb0",
+      "finalized_at": "2026-11-16T16:40:46.974919+00:00"
+    },
+    "stopped": false,
+    "proposed": 6,
+    "remaining_proposals": 0,
+    "running": [],
+    "completed_measurements": 11
+  },
+  "candidates": [
+    {
+      "bundle_error": null,
+      "candidate_id": "baseline-matching",
+      "change": "Операторский baseline: словарь 100 частотных n-грамм, исключающих частые безопасные n-граммы; код и rules.json без изменений.",
+      "created_at": "2026-11-16T12:23:37.610385+00:00",
+      "digest": "67fd28b574a598b828cfe51843c4b03af22f335e1e96482b84dc8c962a7aa0db",
+      "digest_version": 2,
+      "hypothesis": "Частотный словарь n-грамм из train даёт высокий recall на инъекциях, но без калибровки порога FPR может превысить 5 %.",
+      "parents": [],
+      "proposal": 1,
+      "resources": {
+        "seconds": 0.0,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "baseline-boosting",
+      "change": "Операторский baseline: word 1-2 и char 3-4 TF-IDF, длины, CatBoost 100 итераций, порог по 5 % FPR на holdout; код и catboost-proba.joblib без изменений.",
+      "created_at": "2026-11-16T12:23:38.195144+00:00",
+      "digest": "3a4e0246df9849325a7ffe3a1646f5e6eab98e692d7ac89d606fa98526715d05",
+      "digest_version": 2,
+      "hypothesis": "TF-IDF word/char признаки и CatBoost разделяют опасные и безопасные сообщения; качество ограничено калибровкой порога под FPR ≤ 5 %.",
+      "parents": [],
+      "proposal": 2,
+      "resources": {
+        "seconds": 0.0,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "baseline-transformer",
+      "change": "Операторский baseline: байтовый трансформер 128 токенов, динамическая INT8-квантизация, cutoff по 5 % FPR на holdout; код и model.onnx без изменений.",
+      "created_at": "2026-11-16T12:23:38.846583+00:00",
+      "digest": "530070420460f2552b3f3d39f45578b2e00e4069744e0d3f0122a30a7581e1ab",
+      "digest_version": 2,
+      "hypothesis": "Байтовый трансформер с ONNX INT8 ловит паттерны, не покрытые n-граммами, при приемлемой скорости CPU.",
+      "parents": [],
+      "proposal": 3,
+      "resources": {
+        "seconds": 0.0,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-boost-calibrated",
+      "change": "Новый вариант: word 1-2 / char_wb 3-5 TF-IDF, 11 числовых признаков, CatBoost 800 итераций; порог выбран на 20 % calib-сплите по симуляции FPR с запасом. Обучение только на 80 % train, 256-набор не использован для обучения/калибровки. Токены и секунды — фактический расход субагента-исследователя.",
+      "created_at": "2026-11-16T14:24:08.907354+00:00",
+      "digest": "9f178ebd342957003c72c5c5502a98ab16b319af364bc519856bcfbba9cedb2b",
+      "digest_version": 2,
+      "hypothesis": "CatBoost на более широких word/char TF-IDF признаках и с порогом, откалиброванным с запасом по FPR, восстанавливает TPR baseline без выхода за 5 % FPR; ожидаемый эффект — положительный score вместо нуля из-за 7 ложных срабатываний.",
+      "parents": [
+        "baseline-boosting"
+      ],
+      "proposal": 4,
+      "resources": {
+        "seconds": 3180.0,
+        "tokens_complete": true,
+        "total_tokens": 2567639
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-ensemble",
+      "change": "Новый вариант: свежие CatBoost (82 859 признаков, 500 итераций) и байтовый трансформер (2 слоя, 8 эпох, ONNX INT8), логистическая смесь логитов, порог на 20 % calib-сплите. 256-набор не использован для обучения/калибровки. Токены и секунды — фактический расход субагента-исследователя.",
+      "created_at": "2026-11-16T14:24:09.533229+00:00",
+      "digest": "8681f8c6e3144ee9046eaa4bdb1b2ae5c1e9b197009b7a84031e39f79ee26d77",
+      "digest_version": 2,
+      "hypothesis": "Ошибки CatBoost и байтового трансформера частично комплементарны; калиброванный логистический ансамбль повышает TPR при FPR ≤ 5 % и снижает риск одиночной модели.",
+      "parents": [
+        "baseline-boosting",
+        "baseline-transformer"
+      ],
+      "proposal": 5,
+      "resources": {
+        "seconds": 2320.0,
+        "tokens_complete": true,
+        "total_tokens": 3817440
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-linear",
+      "change": "Новый вариант: word 1-3 + char_wb 2-5 sublinear TF-IDF, LogisticRegression C=8; порог по 1.25 % FPR на 20 % calib-сплите; инференс на stdlib с проверенным паритетом. 256-набор не использован для обучения/калибровки. Токены и секунды — фактический расход субагента-исследователя.",
+      "created_at": "2026-11-16T14:24:10.123747+00:00",
+      "digest": "6bc682ef4d5e417c0bbda40822ce95df1100004df8caa4d6c6f29563c71aa7ac",
+      "digest_version": 2,
+      "hypothesis": "Линейная L2-логистическая регрессия на более широких word/char TF-IDF признаках даёт иной механизм разделения и позволяет выбрать порог с запасом по FPR, сохраняя TPR.",
+      "parents": [
+        "baseline-boosting"
+      ],
+      "proposal": 6,
+      "resources": {
+        "seconds": 7113.0,
+        "tokens_complete": true,
+        "total_tokens": 6131306
+      },
+      "snapshot_error": null
+    }
+  ],
+  "measurements": [
+    {
+      "candidate_id": "baseline-matching",
+      "comparison": {
+        "conditions_id": "ar12-e2e-v1",
+        "dataset_id": "ar12-pilot-train-v1",
+        "split": "train",
+        "subset_id": "7d9656bd5373c35a09685bc9b2752075bc10ccae6e08ac30d99bfd65b9a084e8"
+      },
+      "completion_order": 1,
+      "digest": "67fd28b574a598b828cfe51843c4b03af22f335e1e96482b84dc8c962a7aa0db",
+      "elapsed_seconds": 7200.198135,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "dacd0ff0f673b096cd785e094d58074afba808825440503cc7383de5ee24ebb8",
+        "record": "/workspace/campaign/results/train-baseline-matching-v1.json"
+      },
+      "finished_at": "2026-11-16T14:23:44.141330+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 24.787538117,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-baseline-matching-v1",
+      "proposal_count_at_finish": 3,
+      "score": 0.0,
+      "solver": {
+        "seconds": 163.51061610598845,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-16T12:23:43.943195+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "baseline-boosting",
+      "comparison": {
+        "conditions_id": "ar12-e2e-v1",
+        "dataset_id": "ar12-pilot-train-v1",
+        "split": "train",
+        "subset_id": "7d9656bd5373c35a09685bc9b2752075bc10ccae6e08ac30d99bfd65b9a084e8"
+      },
+      "completion_order": 2,
+      "digest": "3a4e0246df9849325a7ffe3a1646f5e6eab98e692d7ac89d606fa98526715d05",
+      "elapsed_seconds": 7774.367546,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "ff0078106f5c23d0d1f4869b5a15bd396c0a741ec4433a491044ef8664f29423",
+        "record": "/workspace/campaign/results/train-baseline-boosting-v1.json"
+      },
+      "finished_at": "2026-11-16T14:33:22.904442+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 24.716754057,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-baseline-boosting-v1",
+      "proposal_count_at_finish": 6,
+      "score": 0.0,
+      "solver": {
+        "seconds": 474.8019572500052,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-16T12:23:48.536896+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "baseline-transformer",
+      "comparison": {
+        "conditions_id": "ar12-e2e-v1",
+        "dataset_id": "ar12-pilot-train-v1",
+        "split": "train",
+        "subset_id": "7d9656bd5373c35a09685bc9b2752075bc10ccae6e08ac30d99bfd65b9a084e8"
+      },
+      "completion_order": 3,
+      "digest": "530070420460f2552b3f3d39f45578b2e00e4069744e0d3f0122a30a7581e1ab",
+      "elapsed_seconds": 8122.147081,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "c7446aaa8aa431f086e682c1cfd938b18254ec910d7d52f6c6b83be0e2fd5104",
+        "record": "/workspace/campaign/results/train-baseline-transformer-v1.json"
+      },
+      "finished_at": "2026-11-16T14:39:11.721091+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 24.933938798,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-baseline-transformer-v1",
+      "proposal_count_at_finish": 6,
+      "score": 0.9296875,
+      "solver": {
+        "seconds": 196.38658760199905,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-16T12:23:49.574010+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-boost-calibrated",
+      "comparison": {
+        "conditions_id": "ar12-e2e-v1",
+        "dataset_id": "ar12-pilot-train-v1",
+        "split": "train",
+        "subset_id": "7d9656bd5373c35a09685bc9b2752075bc10ccae6e08ac30d99bfd65b9a084e8"
+      },
+      "completion_order": 4,
+      "digest": "9f178ebd342957003c72c5c5502a98ab16b319af364bc519856bcfbba9cedb2b",
+      "elapsed_seconds": 670.211154,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "b61a38efd94581666cfd15430b13ac7ff9fb9fba75e18725478c00b77ce6197e",
+        "record": "/workspace/campaign/results/train-variant-boost-calibrated-v1.json"
+      },
+      "finished_at": "2026-11-16T14:50:23.160929+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 24.649991356,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-variant-boost-calibrated-v1",
+      "proposal_count_at_finish": 6,
+      "score": 1.0,
+      "solver": {
+        "seconds": 528.3588062430281,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-16T14:39:12.949775+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-ensemble",
+      "comparison": {
+        "conditions_id": "ar12-e2e-v1",
+        "dataset_id": "ar12-pilot-train-v1",
+        "split": "train",
+        "subset_id": "7d9656bd5373c35a09685bc9b2752075bc10ccae6e08ac30d99bfd65b9a084e8"
+      },
+      "completion_order": 5,
+      "digest": "8681f8c6e3144ee9046eaa4bdb1b2ae5c1e9b197009b7a84031e39f79ee26d77",
+      "elapsed_seconds": 676.291732,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "7d30dd198051145f1ad7bb220da5d2489403b0adac0ef988b1ccbab794a4fa4f",
+        "record": "/workspace/campaign/results/train-variant-ensemble-v1.json"
+      },
+      "finished_at": "2026-11-16T15:01:40.307196+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 24.777611325,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-variant-ensemble-v1",
+      "proposal_count_at_finish": 6,
+      "score": 1.0,
+      "solver": {
+        "seconds": 533.447886205995,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-16T14:50:24.015464+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-linear",
+      "comparison": {
+        "conditions_id": "ar12-e2e-v1",
+        "dataset_id": "ar12-pilot-train-v1",
+        "split": "train",
+        "subset_id": "7d9656bd5373c35a09685bc9b2752075bc10ccae6e08ac30d99bfd65b9a084e8"
+      },
+      "completion_order": 6,
+      "digest": "6bc682ef4d5e417c0bbda40822ce95df1100004df8caa4d6c6f29563c71aa7ac",
+      "elapsed_seconds": 289.230054,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "cbcb110bbb5c2873a5af8f9494e44ecf0d25a29a0f5c3cf5924cc6b144f9e6f0",
+        "record": "/workspace/campaign/results/train-variant-linear-v1.json"
+      },
+      "finished_at": "2026-11-16T15:06:30.406838+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 25.404830124,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-variant-linear-v1",
+      "proposal_count_at_finish": 6,
+      "score": 1.0,
+      "solver": {
+        "seconds": 182.75191079902288,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-16T15:01:41.176784+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-linear",
+      "comparison": {
+        "conditions_id": "ar12-e2e-v1",
+        "dataset_id": "ar12-public-e2e-v1",
+        "split": "public",
+        "subset_id": "public-v1"
+      },
+      "completion_order": 7,
+      "digest": "6bc682ef4d5e417c0bbda40822ce95df1100004df8caa4d6c6f29563c71aa7ac",
+      "elapsed_seconds": 1082.409817,
+      "error": null,
+      "evidence": null,
+      "finished_at": "2026-11-16T15:25:31.961670+00:00",
+      "job": "http://172.20.0.1:8767",
+      "judge": null,
+      "measurement_id": "public-variant-linear-v1",
+      "proposal_count_at_finish": 6,
+      "score": 0.0,
+      "solver": null,
+      "started_at": "2026-11-16T15:07:29.551853+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "baseline-transformer",
+      "comparison": {
+        "conditions_id": "ar12-e2e-v1",
+        "dataset_id": "ar12-public-e2e-v1",
+        "split": "public",
+        "subset_id": "public-v1"
+      },
+      "completion_order": 8,
+      "digest": "530070420460f2552b3f3d39f45578b2e00e4069744e0d3f0122a30a7581e1ab",
+      "elapsed_seconds": 1082.218989,
+      "error": null,
+      "evidence": null,
+      "finished_at": "2026-11-16T15:26:15.108188+00:00",
+      "job": "http://172.20.0.1:8767",
+      "judge": null,
+      "measurement_id": "public-baseline-transformer-v1",
+      "proposal_count_at_finish": 6,
+      "score": 0.0,
+      "solver": null,
+      "started_at": "2026-11-16T15:08:12.889199+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-ensemble",
+      "comparison": {
+        "conditions_id": "ar12-e2e-v1",
+        "dataset_id": "ar12-public-e2e-v1",
+        "split": "public",
+        "subset_id": "public-v1"
+      },
+      "completion_order": 10,
+      "digest": "8681f8c6e3144ee9046eaa4bdb1b2ae5c1e9b197009b7a84031e39f79ee26d77",
+      "elapsed_seconds": 2642.793068,
+      "error": null,
+      "evidence": null,
+      "finished_at": "2026-11-16T15:52:15.765557+00:00",
+      "job": "http://172.20.0.1:8767",
+      "judge": null,
+      "measurement_id": "public-variant-ensemble-v1",
+      "proposal_count_at_finish": 6,
+      "score": 0.0,
+      "solver": null,
+      "started_at": "2026-11-16T15:08:12.972489+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-boost-calibrated",
+      "comparison": {
+        "conditions_id": "ar12-e2e-v1",
+        "dataset_id": "ar12-public-e2e-v1",
+        "split": "public",
+        "subset_id": "public-v1"
+      },
+      "completion_order": 9,
+      "digest": "9f178ebd342957003c72c5c5502a98ab16b319af364bc519856bcfbba9cedb2b",
+      "elapsed_seconds": 2642.73135,
+      "error": null,
+      "evidence": null,
+      "finished_at": "2026-11-16T15:52:15.729102+00:00",
+      "job": "http://172.20.0.1:8767",
+      "judge": null,
+      "measurement_id": "public-variant-boost-calibrated-v1",
+      "proposal_count_at_finish": 6,
+      "score": 0.0,
+      "solver": null,
+      "started_at": "2026-11-16T15:08:12.997752+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "baseline-boosting",
+      "comparison": {
+        "conditions_id": "ar12-e2e-v1",
+        "dataset_id": "ar12-public-e2e-v1",
+        "split": "public",
+        "subset_id": "public-v1"
+      },
+      "completion_order": 11,
+      "digest": "3a4e0246df9849325a7ffe3a1646f5e6eab98e692d7ac89d606fa98526715d05",
+      "elapsed_seconds": 2282.491445,
+      "error": null,
+      "evidence": null,
+      "finished_at": "2026-11-16T16:35:32.914665+00:00",
+      "job": "http://172.20.0.1:8767",
+      "judge": null,
+      "measurement_id": "public-baseline-boosting-v1",
+      "proposal_count_at_finish": 6,
+      "score": 0.0,
+      "solver": null,
+      "started_at": "2026-11-16T15:57:30.423220+00:00",
+      "state": "succeeded"
+    }
+  ]
+}

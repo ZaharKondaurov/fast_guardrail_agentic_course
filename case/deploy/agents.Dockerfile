@@ -5,6 +5,7 @@ RUN pip install --no-cache-dir uv==0.8.13
 WORKDIR /opt/hermes
 RUN git init && git fetch --depth 1 https://github.com/NousResearch/hermes-agent.git "${HERMES_REVISION}" && git checkout --detach FETCH_HEAD && test "$(git rev-parse HEAD)" = "${HERMES_REVISION}" && uv sync --frozen --no-dev
 
+# Hermes работает на Python 3.14, Arena и обучение AR-12 используют окружения Python 3.12.
 ENV UV_PYTHON_INSTALL_DIR=/opt/python
 RUN uv python install 3.12
 WORKDIR /opt/arena

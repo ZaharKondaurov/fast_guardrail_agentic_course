@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "evaluation_id": "860b136d573c425af22dcc015617f2b53a3c32fb32cc8650d26ed6c247c3d5ea",
+  "scores": [
+    {
+      "candidate_id": "baseline-boosting",
+      "score": 0.0
+    }
+  ]
+}

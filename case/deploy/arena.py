@@ -30,10 +30,12 @@ BASELINES = {
 
 
 def arena_command(module, *arguments):
+    """Собирает команду Arena с интерпретатором из её окружения."""
     return [ARENA_PYTHON, "-m", f"evaluator.{module}", *arguments]
 
 
 def arena_env():
+    """Готовит окружение дочерних команд без ключа OpenRouter и унаследованных настроек Arena."""
     env = {
         key: value for key, value in os.environ.items()
         if not key.startswith("ARENA_") and key != "OPENROUTER_API_KEY"
@@ -42,10 +44,12 @@ def arena_env():
 
 
 def arena_json(module, *arguments):
+    """Запускает CLI Arena и разбирает его машинный ответ для дальнейшей обработки."""
     return json.loads(subprocess.check_output(arena_command(module, *arguments), env=arena_env()))
 
 
 def save_json(path, value):
+    """Заменяет JSON атомарно, чтобы читатели не увидели частично записанный файл."""
     with TemporaryDirectory(dir=path.parent) as directory:
         staged = Path(directory) / path.name
         staged.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
@@ -53,6 +57,7 @@ def save_json(path, value):
 
 
 def build_runner(run):
+    """Собирает runner с зависимостями из lock-файла и сохраняет ID образа для оценщика."""
     with TemporaryDirectory(prefix="ar12-runner-") as directory:
         context = Path(directory)
         shutil.copyfile(DEPLOY / "runner.Dockerfile", context / "Dockerfile")
@@ -72,6 +77,7 @@ def build_runner(run):
 
 
 def prepare_baselines(run, data):
+    """Обучает три стартовых решения и публикует их пакеты только после успешной сборки всех трёх."""
     run.mkdir(mode=0o700, exist_ok=True)
     destination = run / "candidates"
     if destination.exists():
@@ -88,6 +94,7 @@ def prepare_baselines(run, data):
 
 
 def train_package(parent, source, dataset, destination, log=None):
+    """Обучает кандидат во временной папке и собирает автономный пакет для оценки."""
     methods = Path("case/ways/baseline")
     env = arena_env()
     env.pop("PYTHONPATH")
@@ -110,6 +117,7 @@ def train_package(parent, source, dataset, destination, log=None):
 
 
 def serve(campaign, config, state, dataset, dataset_id, conditions, port, host="127.0.0.1"):
+    """Подготавливает токен и конфигурацию train-сервиса для выбранного набора и runner."""
     state.mkdir(mode=0o700, parents=True, exist_ok=True)
     (state / "slots").mkdir(mode=0o700, exist_ok=True)
     token_file = state / "submit-token"
@@ -143,6 +151,7 @@ def serve(campaign, config, state, dataset, dataset_id, conditions, port, host="
 
 
 def wait_for_service(url, process):
+    """Ожидает готовности HTTP-сервиса и отличает раннее завершение процесса от таймаута."""
     deadline = time.monotonic() + 15
     while time.monotonic() < deadline:
         if process.poll() is not None:
@@ -157,8 +166,10 @@ def wait_for_service(url, process):
 
 
 def evaluate_candidate(name, root, dataset, config, url, wait_seconds):
+    """Отправляет неизменяемый кандидат на train, возобновляет ожидание и импортирует итог в журнал."""
     journal = root / "search.sqlite3"
     measurement = f"{name}-train"
+    # Повтор команды переиспользует завершённый замер с теми же условиями.
     for existing in arena_json("search", "--journal", journal, "export")["measurements"]:
         if existing["measurement_id"] == measurement and existing["state"] != "running":
             if any(existing["comparison"][key] != config[key]
@@ -190,6 +201,7 @@ def evaluate_candidate(name, root, dataset, config, url, wait_seconds):
 
 
 def verify_candidate(name, package, root, journal, dataset, config, url):
+    """Проверяет сквозной замер на синтетических данных и ожидаемый нулевой расход токенов."""
     arena_json("search", "--journal", journal, "propose", "--id", name,
                "--directory", package, "--hypothesis", "Synthetic runner acceptance",
                "--change", "Acceptance only", "--tokens", "0", "--seconds", "0")
@@ -204,11 +216,13 @@ def verify_candidate(name, package, root, journal, dataset, config, url):
 
 
 def proposals(run):
+    """Читает записи кандидатов из общего журнала для проверки бюджета и родословной."""
     return arena_json("search", "--journal", run / "search.sqlite3", "export")["candidates"]
 
 
 def register(run, name, directory, hypothesis, change, tokens=0, seconds=0,
              parent=None, tokens_complete=True):
+    """Регистрирует снимок и ресурсы кандидата один раз, чтобы повтор не расходовал бюджет."""
     if name in {item["candidate_id"] for item in proposals(run)}:
         return
     options = ["--parent", parent] if parent else []
@@ -223,6 +237,7 @@ def register(run, name, directory, hypothesis, change, tokens=0, seconds=0,
 
 def run_variant(run, parent, source, train, dataset, config, url, wait_seconds,
                 hypothesis, change):
+    """Обучает проверенный вариант, регистрирует успех или сбой подготовки и запускает train-замер."""
     name = f"variant-{parent}"
     existing = {item["candidate_id"] for item in proposals(run)}
     if parent not in existing:
@@ -240,6 +255,7 @@ def run_variant(run, parent, source, train, dataset, config, url, wait_seconds,
             raise ValueError("Invalid research usage record")
         destination.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
         started = time.monotonic()
+        # Пакет и сведения о подготовке становятся доступны одновременно после rename.
         with TemporaryDirectory(dir=destination.parent) as directory:
             stage = Path(directory) / "variant"
             stage.mkdir()
@@ -280,6 +296,7 @@ def run_variant(run, parent, source, train, dataset, config, url, wait_seconds,
 
 
 def finish_pilot(run, winner, reason):
+    """Фиксирует выбранный снимок в журнале и сохраняет основание локального выбора."""
     journal = run / "search.sqlite3"
     evidence = arena_json("search", "--journal", journal, "export")
     eligible = [row for row in evidence["measurements"]
@@ -300,6 +317,7 @@ def finish_pilot(run, winner, reason):
 
 
 def accept(campaign, config, run):
+    """Проводит синтетическую приёмку HTTP, Docker и журнала в отдельном каталоге."""
     run.mkdir(mode=0o700, exist_ok=True)
     root = Path(mkdtemp(prefix="acceptance-", dir=run))
     print(f"Acceptance evidence: {root}", flush=True)
@@ -318,6 +336,7 @@ def accept(campaign, config, run):
     packages = {"control": control, **{name: run / "candidates" / name for name in BASELINES}}
     journal = root / "search.sqlite3"
     arena_json("search", "--journal", journal, "init", "--max-solutions", str(len(packages) + 1))
+    # Приёмка использует отдельное состояние и не занимает места в журнале кампании.
     synthetic = {**config, "dataset_id": "synthetic-v1", "conditions_id": "acceptance-v1"}
     with socket.socket() as listener:
         listener.bind(("127.0.0.1", 0))
@@ -370,6 +389,7 @@ def accept(campaign, config, run):
 
 
 def prepare_pilot(campaign, config, run, data, max_solutions):
+    """Готовит данные и runner, проводит приёмку и создаёт пустой журнал с заданным лимитом."""
     if max_solutions < len(BASELINES):
         raise ValueError("The proposal limit must accommodate all three baselines")
     journal = run / "search.sqlite3"
@@ -423,6 +443,7 @@ def prepare_pilot(campaign, config, run, data, max_solutions):
         build_runner(run)
     evidence["runner_image"] = image_file.read_text(encoding="utf-8").strip()
     evidence["docker_acceptance"] = str(accept(campaign, config, run).relative_to(campaign))
+    # Создаём рабочий журнал после успешной приёмки, чтобы поиск мог опираться на готовое окружение.
     if not journal.exists():
         arena_json("search", "--journal", journal, "init", "--max-solutions", str(max_solutions))
     evidence.update(state="ready", journal=str(journal.relative_to(campaign)))
@@ -431,6 +452,7 @@ def prepare_pilot(campaign, config, run, data, max_solutions):
 
 
 def openrouter_request(model, prompt, max_tokens):
+    """Выполняет модельный запрос и возвращает ответ с измеренными токенами и временем."""
     token = os.getenv("OPENROUTER_API_KEY")
     if not token:
         raise ValueError("Set OPENROUTER_API_KEY in the operator environment")
@@ -459,6 +481,7 @@ def openrouter_request(model, prompt, max_tokens):
 
 
 def openrouter_smoke(model, run):
+    """Проверяет модель и учёт токенов одним синтетическим запросом."""
     result = openrouter_request(model, "Reply with the single word READY.", 256)
     result.pop("answer")
     run.mkdir(mode=0o700, exist_ok=True)
@@ -467,6 +490,7 @@ def openrouter_smoke(model, run):
 
 
 def research(run, model, parent):
+    """Запрашивает одно предложение по исходникам родителя и сохраняет ответ и расход по кандидату."""
     if not os.getenv("OPENROUTER_API_KEY"):
         raise ValueError("Set OPENROUTER_API_KEY in the operator environment")
     smoke = json.loads((run / "openrouter-smoke.json").read_text(encoding="utf-8"))
@@ -510,6 +534,7 @@ def research(run, model, parent):
 
 
 def run_baselines(run, dataset, config, url, wait_seconds):
+    """Регистрирует стартовые пакеты и замеряет их на одинаковых условиях train."""
     journal = run / "search.sqlite3"
     for name in BASELINES:
         if arena_json("search", "--journal", journal, "status")["stopped"]:
@@ -524,6 +549,7 @@ def run_baselines(run, dataset, config, url, wait_seconds):
 
 
 def review_inputs(run, parent, source):
+    """Читает материалы ревью и связывает их контрольными суммами с точной версией."""
     name = f"variant-{parent}"
     proposal = (run / "research" / f"{name}.json").read_bytes()
     record = json.loads(proposal)
@@ -538,6 +564,7 @@ def review_inputs(run, parent, source):
 
 
 def review_variant(run, model, parent, source):
+    """Проверяет синтаксис и запрашивает независимый вердикт по итоговым файлам кандидата."""
     campaign = arena_json("search", "--journal", run / "search.sqlite3", "status")
     if campaign["stopped"] or campaign["finalization"]:
         raise ValueError("Review is closed for this campaign")
@@ -607,6 +634,7 @@ quality_risks (массив строк). Выбирай approve только п�
 
 
 def approved_variant_files(run, parent, source):
+    """Возвращает байты кода только при совпадении с одобренной версией."""
     _, files, fingerprints = review_inputs(run, parent, source)
     review_path = run / "reviews" / f"variant-{parent}.json"
     if not review_path.is_file():
@@ -620,6 +648,7 @@ def approved_variant_files(run, parent, source):
 
 
 def reject_variant(run, parent, reason):
+    """Регистрирует отклонённое предложение с основанием отказа и уже понесёнными затратами."""
     name = f"variant-{parent}"
     if not reason.strip():
         raise ValueError("A review reason is required")
@@ -638,6 +667,7 @@ def reject_variant(run, parent, reason):
 
 
 def orchestrate_pilot(run, dataset, config, url, wait_seconds):
+    """Продвигает ручной сценарий пилота от бейзлайнов через ревью до итогового выбора."""
     journal = run / "search.sqlite3"
     evidence = arena_json("search", "--journal", journal, "export")
     status = evidence["campaign"]
@@ -692,6 +722,7 @@ def orchestrate_pilot(run, dataset, config, url, wait_seconds):
 
 
 def main():
+    """Разбирает команды оператора и передаёт управление выбранному этапу кампании."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--campaign", required=True, type=Path)
     commands = parser.add_subparsers(dest="command", required=True)

@@ -17,6 +17,7 @@ from .solve import CONFIG_PATH, MODEL_PATH, SEQUENCE_LENGTH, encode, load_sessio
 
 class ByteTransformer(nn.Module):
     def __init__(self):
+        """Создаёт байтовые эмбеддинги, энкодер и бинарную голову классификатора."""
         super().__init__()
         self.embedding = nn.Embedding(258, 32, padding_idx=0)
         self.position = nn.Parameter(torch.zeros(SEQUENCE_LENGTH, 32))
@@ -24,11 +25,13 @@ class ByteTransformer(nn.Module):
         self.output = nn.Linear(32, 1)
 
     def forward(self, tokens):
+        """Кодирует входные байты и вычисляет логит вредоносного класса."""
         hidden = self.encoder(self.embedding(tokens) + self.position, src_key_padding_mask=tokens == 0)
         return self.output(hidden[:, 0]).squeeze(-1)
 
 
 def main():
+    """Обучает трансформер, экспортирует ONNX INT8 и сохраняет калиброванный порог."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("train", type=Path)
     parser.add_argument("--epochs", type=int, default=4)
@@ -64,6 +67,7 @@ def main():
             exported, quantized, op_types_to_quantize=["MatMul", "Gemm"],
             weight_type=QuantType.QInt8,
         )
+        # Подбираем порог по выходам INT8-модели, которую будет запускать решатель.
         session = load_session(quantized)
         scores = np.concatenate([
             session.run(None, {"tokens": encode(heldout[start:start + 64])})[0]

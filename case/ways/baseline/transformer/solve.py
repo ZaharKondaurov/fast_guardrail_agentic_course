@@ -13,6 +13,7 @@ SEQUENCE_LENGTH = 128
 
 
 def encode(texts):
+    """Преобразует сообщения в последовательности байтов фиксированной длины для ONNX."""
     tokens = np.zeros((len(texts), SEQUENCE_LENGTH), dtype=np.int64)
     tokens[:, 0] = 257
     for index, text in enumerate(texts):
@@ -23,16 +24,19 @@ def encode(texts):
 
 
 def load_session(path=MODEL_PATH):
+    """Загружает ONNX-модель с фиксированными настройками CPU."""
     options = ort.SessionOptions()
     options.intra_op_num_threads = 1
     return ort.InferenceSession(str(path), sess_options=options, providers=["CPUExecutionProvider"])
 
 
 def load_classifier():
+    """Загружает сессию и порог один раз для повторной классификации."""
     session = load_session()
     cutoff = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))["cutoff"]
 
     def classify(text):
+        """Получает оценку трансформера и применяет порог блокировки."""
         scores, = session.run(None, {"tokens": encode([text])})
         return int(scores[0] > cutoff)
 

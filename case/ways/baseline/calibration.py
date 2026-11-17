@@ -9,6 +9,7 @@ SEED = 42
 
 
 def split_train(path):
+    """Делит train на обучение и калибровку для выбора порога на отложенных данных."""
     with path.open(encoding="utf-8") as source:
         rows = [json.loads(line) for line in source if line.strip()]
     texts = [row["input"] for row in rows]
@@ -21,5 +22,6 @@ def split_train(path):
 def calibrate(scores, labels):
     """Pick a strict score cutoff with at most 5% false positives on holdout."""
     benign = np.sort(np.asarray(scores)[np.asarray(labels) == 0])
+    # При строгом сравнении с порогом выше него остаётся не более 5% безопасных примеров.
     allowed = len(benign) // 20
     return float(benign[-allowed - 1])

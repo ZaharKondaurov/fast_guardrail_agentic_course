@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def copy_tree(source, destination):
+    """Копирует разрешённое дерево без служебных каталогов и ссылок на внешние файлы."""
     for path in source.rglob('*'):
         if any(part in {'.git', '.run', '__pycache__', '.venv'} for part in path.relative_to(source).parts):
             continue
@@ -24,6 +25,7 @@ def copy_tree(source, destination):
 
 
 def stage(campaign, train, destination, evaluation=None):
+    """Собирает рабочую копию одной кампании с открытыми данными и проверенными пакетами."""
     campaign = campaign.resolve()
     if destination.exists():
         raise ValueError('Workspace already exists; retain it for resume')
@@ -38,6 +40,7 @@ def stage(campaign, train, destination, evaluation=None):
         for name in ('agents', 'ways/baseline', 'metric'):
             copy_tree(ROOT / 'case' / name, workspace / 'case' / name)
         shutil.copyfile(ROOT / 'case/README.md', workspace / 'case/README.md')
+        # Копируем материалы только выбранной кампании, исключая операторское состояние.
         target = workspace / 'campaign'
         target.mkdir()
         for name in ('campaign.md', 'preparation.md', 'runtime.json'):
@@ -59,6 +62,7 @@ def stage(campaign, train, destination, evaluation=None):
 
 
 def docker_command(args):
+    """Формирует запуск контейнера с явными монтированиями и ограничениями ресурсов."""
     workspace = args.workspace.resolve(strict=True)
     credentials = args.credentials.resolve(strict=True)
     journal = args.journal_dir.resolve(strict=True)
@@ -71,6 +75,7 @@ def docker_command(args):
         raise ValueError('Docker mount paths must not contain commas')
     if bool(args.public_url) != bool(args.public_token):
         raise ValueError('Set --public-url and --public-token together')
+    # Права контейнера задаются монтированиями и отдельной сетью оператора.
     command = [
         'docker', 'run', '--rm', '--init', '--name', args.name,
         '--user', f'{os.getuid()}:{os.getgid()}', '--read-only', '--cap-drop', 'ALL',
@@ -78,6 +83,7 @@ def docker_command(args):
         '--memory', args.memory, '--cpus', args.cpus, '--network', args.network,
         '--tmpfs', '/tmp:rw,nosuid,size=1g,mode=1777',
         '--mount', f'type=bind,src={workspace},dst=/workspace',
+        '--mount', f'type=bind,src={ROOT / "case/agents"},dst=/workspace/case/agents,readonly',
         '--mount', f'type=bind,src={credentials},dst=/run/arena/model-access.json,readonly',
         '--mount', f'type=bind,src={journal},dst=/search',
         '--env', 'PYTHONPATH=/workspace:/workspace/arena:/opt/arena:/opt/hermes',
@@ -110,6 +116,7 @@ def docker_command(args):
 
 
 def main():
+    """Подготавливает рабочую копию или запускает агента с операторскими параметрами."""
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest='command', required=True)
     prepare = commands.add_parser('stage')

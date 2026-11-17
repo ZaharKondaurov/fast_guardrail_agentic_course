@@ -12,6 +12,7 @@ from case.ways.baseline.evaluate import evaluate_dataset
 
 
 def main():
+    """Запускает общую локальную оценку для словарного бейзлайна."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("dataset", type=Path)
     model = parser.add_mutually_exclusive_group()
