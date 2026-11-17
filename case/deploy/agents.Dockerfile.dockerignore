@@ -1,0 +1,7 @@
+**
+!pyproject.toml
+!uv.lock
+!arena/
+arena/*
+!arena/pyproject.toml
+!arena/uv.lock

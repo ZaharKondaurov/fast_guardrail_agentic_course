@@ -4,11 +4,23 @@
 
 ## Итог в одной таблице
 
-| | Train | Public | Private |
+#### Метрики производительности
+
+| Model | p99 (ms) | throughput (messages/s) 
+|---|---|---|
+| Baseline Matching    | 0.08 ms | 102062.33 |
+| Baseline Catboost    | 7.16 ms | 177.49    |
+| Baseline Transformer | 0.18 ms | 6005.88   |
+
+#### Метрики качества
+
+| Model | Train | Public | Private |
 |---|---|---|---|
-| Baseline | | | |
-| Выращенное решение | | | |
-| <классический подход, если реализован> | | | |
+| Baseline Matching    | TPR=87,29%</br> FPR=11,46% | TPR 83,17%</br> FPR 9,58%  | |
+| Baseline Catboost    | TPR=99,43%</br> FPR=3,08%  | TPR 96,04%</br> FPR 10,07% | |
+| Baseline Transformer | TPR 97,42%</br> FPR 4,73%  | TPR 90,38%</br> FPR 6,63%  | |
+
+
 
 Лимит предложенных решений: <N>. Кандидатов в журнале: <M>. AUC кривой: <...>.
 

@@ -60,3 +60,45 @@ PY
 Команда отправляет один синтетический запрос к модели из `runtime.json`. При успехе в `case/campaign/ar-12-pilot/.run/openrouter-smoke.json` сохраняются `model`, `response_id`, положительный `total_tokens` и `seconds`.
 
 После проверок запишите дату, результаты и пути к свидетельствам в `preparation.md` кампании. Smoke использует отдельный синтетический журнал и не расходует места в бюджете поиска.
+
+## Закрытая оценка AR-12
+
+В пилоте AR-12 `private` пуст, поэтому его штатный поиск заканчивается локальным выбором по train. Для кампании с непустым `private` оператор заранее фиксирует `K`, `N`, лимит предложений и release ID. Подготовьте отдельный закрытый каталог оператора и Arena JSONL с полями `id`, `input` и `reference`. Для каждой серии сохраняйте один и тот же каталог состояния. Запускайте оценщик под учётной записью оператора с доступом к Docker и к каноническому журналу. Доступ к каталогу состояния, датасету и Docker socket остаётся в контуре оператора.
+
+Из корня репозитория задайте значения переменных из условий кампании. `private_state` указывает на новый или существующий каталог серии вне репозитория. Для существующего каталога требуются права `0700`.
+
+```bash
+export PYTHONPATH="$PWD/arena"
+arena_python=arena/.venv/bin/python
+
+"$arena_python" -m case.deploy.private serve \
+  --dataset "$private_dataset" --state "$private_state" \
+  --metric "$frozen_metric" --runner-image "$runner_image" \
+  --journal "$journal" --release-id "$release_id" \
+  --max-solutions "$max_solutions" --finalists "$K" --winners "$N"
+```
+
+Сервис слушает `127.0.0.1:8766` и создаёт `$private_state/submit-token`. Перед поиском проверьте готовность через разрешённую сеть или туннель. Выдайте агенту URL и отдельную копию submit-токена.
+
+```bash
+"$arena_python" -m evaluator.client search-readiness \
+  --url "$private_url" --token-file "$submit_token" --require-campaign \
+  --max-solutions "$max_solutions" --finalists "$K" \
+  --output-count "$N" --release-id "$release_id"
+```
+
+После завершения поиска и ревью выберите ровно `K` кандидатов. Передавайте по одному `--candidate` на каждого. Ниже пример для `K=2`.
+
+```bash
+"$arena_python" -m case.deploy.private freeze --journal "$journal" \
+  --finalists "$K" --candidate variant-matching --candidate variant-boosting \
+  --output finalists.json
+"$arena_python" -m evaluator.client submit \
+  --url "$private_url" --token-file "$submit_token" --bundle finalists.json
+"$arena_python" -m evaluator.client status \
+  --url "$private_url" --token-file "$submit_token"
+```
+
+`freeze` восстанавливает неизменяемые снимки из журнала и фиксирует пакет в Arena. Private принимает один пакет на серию. Повторная отправка идентичного пакета возвращает его статус. Итоговый `record.json` с баллами и победителями находится в каталоге состояния оценщика. Клиент получает только служебный статус. Если поиск досрочно остановлен оператором, передайте `--stop-evidence` по [протоколу Arena](../../arena/deploy/README.md).
+
+Штатный runner поддерживает программную метрику качества, например замороженный пакет TPR/FPR из пилота для синтетической приёмки. Для основной метрики `ar12-gated-tpr-v3` нужен доверенный замер прогретого инференса. До подключения такого замера запуск с этой метрикой завершается ошибкой конфигурации.

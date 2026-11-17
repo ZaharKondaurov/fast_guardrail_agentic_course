@@ -6,6 +6,7 @@ arena/
 *.private.jsonl
 *.public.jsonl
 .env
+.run/
 .ruff_cache/
 .venv/
 case/ways/baseline/boosting/model.joblib
@@ -13,5 +14,6 @@ case/ways/baseline/boosting/catboost.joblib
 case/ways/baseline/boosting/catboost-proba.joblib
 case/ways/baseline/transformer/model.onnx
 case/ways/baseline/transformer/model.json
+case/ways/baseline/.results/
 case/dataset/ar12-pilot-v1/data/
 case/campaign/ar-12-pilot/.run/

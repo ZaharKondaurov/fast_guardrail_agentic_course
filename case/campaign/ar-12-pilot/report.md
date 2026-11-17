@@ -15,7 +15,7 @@ PYTHONPATH=arena arena/.venv/bin/python -m evaluator.search --journal "$journal"
         | [
             $journal.measurements[]
             | select(.candidate_id == $candidate.candidate_id
-                     and .comparison.split == "train"
+                     and (.comparison.split == "train" or .comparison.split == "public")
                      and (.state == "succeeded" or .state == "failed"))
             | .elapsed_seconds
           ] as $attempts
