@@ -7,6 +7,7 @@ from functools import wraps
 from pathlib import Path
 from typing import Any
 from time import monotonic
+from uuid import uuid4
 
 from case.agents.usage import ROLE_HEADER, agent_label
 
@@ -41,7 +42,18 @@ def gateway_request(request: dict[str, Any], model: str) -> dict[str, Any]:
     }
     if "messages" in result:
         result["messages"] = [gateway_message(message) for message in result["messages"]]
-    result.update(model=model, stream=False, reasoning_effort="max")
+    # Сохраняем бюджет, выбранный Hermes: без него провайдер использует собственный лимит.
+    for key in ("max_tokens", "max_completion_tokens"):
+        value = request.get(key)
+        if type(value) is int and value > 0:
+            result[key] = value
+    # Hermes временно отключает reasoning после пустого обрезанного ответа.
+    # SDK принимает OpenRouter reasoning через extra_body, а не отдельный аргумент.
+    if isinstance(request.get("reasoning_effort"), str):
+        result["reasoning_effort"] = request["reasoning_effort"]
+    if isinstance(request.get("reasoning"), dict):
+        result["extra_body"] = {"reasoning": request["reasoning"]}
+    result.update(model=model, stream=False)
     return result
 
 
@@ -49,11 +61,24 @@ class ModelState:
     def __init__(self) -> None:
         """Создаёт потокобезопасный флаг ошибки для остановки всех модельных вызовов."""
         self.failed = threading.Event()
+        self.failure = None
 
     def check(self) -> None:
         """Блокирует дальнейшие запросы после ошибки модельного gateway."""
         if self.failed.is_set():
-            raise RuntimeError("model gateway failed; further requests disabled")
+            raise RuntimeError(self.failure or "model gateway failed; further requests disabled")
+
+    def fail(self, error: Exception) -> None:
+        """Сохраняет безопасную диагностику без URL, ключа и содержимого запроса."""
+        status = getattr(error, "status_code", None)
+        message = f"Model request failed ({type(error).__name__}"
+        if type(status) is int:
+            message += f", HTTP {status}"
+        cause = error.__cause__
+        if cause is not None:
+            message += f", cause {type(cause).__name__}"
+        self.failure = message + "); further requests disabled"
+        self.failed.set()
 
 
 def prepare_home(home: Path, model: str) -> None:
@@ -110,15 +135,16 @@ def install(base_url: str, model: str, timeout: float, api_key: str = "arena", *
         state.check()
         started = monotonic()
         response = None
+        wire = gateway_request(kwargs, model)
         try:
-            response = original_create(self, *args, **gateway_request(kwargs, model))
+            response = original_create(self, *args, **wire)
             return response
-        except Exception:
-            state.failed.set()
-            raise RuntimeError("model gateway request failed") from None
+        except Exception as error:
+            state.fail(error)
+            state.check()
         finally:
             if usage_log is not None:
-                usage_log.write("model", started, response)
+                usage_log.write("model", started, response, request=wire)
 
     @wraps(original_async_create)
     async def create_async(self, *args, **kwargs):
@@ -126,15 +152,16 @@ def install(base_url: str, model: str, timeout: float, api_key: str = "arena", *
         state.check()
         started = monotonic()
         response = None
+        wire = gateway_request(kwargs, model)
         try:
-            response = await original_async_create(self, *args, **gateway_request(kwargs, model))
+            response = await original_async_create(self, *args, **wire)
             return response
-        except Exception:
-            state.failed.set()
-            raise RuntimeError("model gateway request failed") from None
+        except Exception as error:
+            state.fail(error)
+            state.check()
         finally:
             if usage_log is not None:
-                usage_log.write("model", started, response)
+                usage_log.write("model", started, response, request=wire)
 
     # Оба клиента SDK используют один маршрут, включая вызовы делегированных задач.
     openai.OpenAI.__init__ = initialize
@@ -161,11 +188,17 @@ def install(base_url: str, model: str, timeout: float, api_key: str = "arena", *
             # Метка действует только в контексте текущего хода и сбрасывается при выходе.
             token = agent_label.set(label)
             started = monotonic()
+            turn_id = uuid4().hex
+            status = "failed"
             try:
-                return original_run(self, *args, **kwargs)
+                usage_log.write("turn_start", started, turn_id=turn_id, status="running")
+                result = original_run(self, *args, **kwargs)
+                if result.get("completed") and not result.get("failed"):
+                    status = "complete"
+                return result
             finally:
                 try:
-                    usage_log.write("turn", started)
+                    usage_log.write("turn", started, turn_id=turn_id, status=status)
                 finally:
                     agent_label.reset(token)
 

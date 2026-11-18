@@ -2,20 +2,46 @@
 set -euo pipefail
 
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.."
-campaign="$PWD/case/campaign/ar-12-e2e"
+campaign=$(realpath -e -- "${AR12_CAMPAIGN:-case/campaign/ar-12-e2e}")
 run="$campaign/.run"
 arena_python="$PWD/arena/.venv/bin/python"
 export PYTHONPATH="$PWD/arena"
 network=ar12-research
 closed_pointer="$run/closed-dir"
 
+runtime_values=$(.venv/bin/python - "$campaign/runtime.json" <<'PYCONFIG'
+import json
+import sys
+from pathlib import Path
+
+config = json.loads(Path(sys.argv[1]).read_text())
+for key, default in (
+    ("data_dir", None), ("closed_source_dir", "case/dataset/ar12-test"),
+    ("release_id", None), ("max_solutions", 6), ("finalists", 2), ("output_count", 1),
+):
+    print(config[key] if default is None else config.get(key, default))
+PYCONFIG
+)
+mapfile -t runtime <<< "$runtime_values"
+data="$PWD/${runtime[0]}"
+closed_source="$PWD/${runtime[1]}"
+release_id=${runtime[2]}
+max_solutions=${runtime[3]}
+finalists=${runtime[4]}
+winners=${runtime[5]}
+
+
 case "${1:-}" in
-  setup|train|public|private|run) action=$1 ;;
-  *) echo "Usage: bash case/deploy/e2e.sh {setup|train|public|private|run MODEL_ACCESS_JSON}" >&2; exit 2 ;;
+  prepare|setup|train|public|private|run) action=$1 ;;
+  *) echo "Usage: bash case/deploy/e2e.sh {prepare|setup|train|public|private|run MODEL_ACCESS_JSON}" >&2; exit 2 ;;
 esac
 
+if [[ "$action" == prepare ]]; then
+  exec .venv/bin/python case/deploy/arena.py --campaign "$campaign"     prepare-pilot --max-solutions "$max_solutions"
+fi
+
 if [[ ! -f "$run/search.sqlite3" ]]; then
-  echo "Prepare ar-12-e2e with prepare-pilot before running this command." >&2
+  echo "Prepare the campaign with e2e.sh prepare before running this command." >&2
   exit 1
 fi
 
@@ -28,8 +54,8 @@ if [[ "$action" == setup ]]; then
   if [[ ! -f "$closed_pointer" ]]; then
     closed=${AR12_CLOSED_DIR:-}
     if [[ -z "$closed" ]]; then
-      closed=$(mktemp -d "${XDG_STATE_HOME:-$HOME/.local/state}/ar12-e2e.XXXXXX" 2>/dev/null) ||
-        closed=$(mktemp -d /tmp/ar12-e2e.XXXXXX)
+      closed=$(mktemp -d "${XDG_STATE_HOME:-$HOME/.local/state}/${release_id}.XXXXXX" 2>/dev/null) ||
+        closed=$(mktemp -d /tmp/${release_id}.XXXXXX)
     fi
     closed=$(realpath -e -- "$closed")
     if [[ ! -d "$closed" || "$closed" == "$PWD" || "$closed" == "$PWD/"* ]]; then
@@ -42,7 +68,7 @@ if [[ "$action" == setup ]]; then
   for split in public private; do
     if [[ ! -f "$closed/$split.jsonl" ]]; then
       .venv/bin/python case/dataset/export_arena.py \
-        "case/dataset/ar12-test/ar12.$split.jsonl" "$closed/$split.jsonl"
+        "$closed_source/ar12.$split.jsonl" "$closed/$split.jsonl"
     fi
   done
 fi
@@ -52,6 +78,20 @@ if [[ ! -f "$closed_pointer" ]]; then
   exit 1
 fi
 closed=$(<"$closed_pointer")
+if [[ -f "$campaign/closed-arena.lock.json" ]]; then
+  .venv/bin/python - "$campaign/closed-arena.lock.json" "$closed" <<'PY'
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+lock, directory = map(Path, sys.argv[1:])
+for name, expected in json.loads(lock.read_text()).items():
+    path = directory / name
+    if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+        raise SystemExit(f"Frozen closed export is missing or changed: {path}")
+PY
+fi
 bind_host=${AR12_BIND_HOST:-}
 if [[ -z "$bind_host" ]]; then
   bind_host=$(docker network inspect "$network" --format '{{(index .IPAM.Config 0).Gateway}}')
@@ -101,27 +141,34 @@ try:
             model=access["model"], messages=[{"role": "user", "content": "Reply READY."}],
         )
 except openai.APIError as error:
-    raise SystemExit(f"Model gateway smoke failed: {type(error).__name__}") from None
+    details = [type(error).__name__]
+    status = getattr(error, "status_code", None)
+    if type(status) is int:
+        details.append(f"HTTP {status}")
+    cause = error.__cause__
+    while cause is not None:
+        details.append(type(cause).__name__)
+        cause = cause.__cause__
+    raise SystemExit("Model gateway smoke failed: " + " -> ".join(details)) from None
 if response.usage is None or response.usage.total_tokens <= 0:
     raise SystemExit("Model gateway smoke did not return token usage.")
 print(f"Model gateway smoke passed: {response.usage.total_tokens} tokens.")
 PY
     workspace="$run/agent-workspace"
-    data="$PWD/case/dataset/ar12-pilot-v1/data"
     if [[ ! -d "$workspace" ]]; then
       .venv/bin/python case/deploy/agents.py stage --campaign "$campaign" \
         --train "$data/train.jsonl" --evaluation "$data/evaluation.arena.jsonl" \
         --workspace "$workspace"
     fi
     private_config="$closed/agent-access.json"
-    .venv/bin/python - "$private_config" "$private_url" <<'PY'
+    .venv/bin/python - "$private_config" "$private_url" "$finalists" "$winners" <<'PY'
 import json
 from pathlib import Path
 import sys
 
 Path(sys.argv[1]).write_text(json.dumps({
     "url": sys.argv[2], "token_file": "/run/arena/private-token",
-    "finalists": 2, "output_count": 1,
+    "finalists": int(sys.argv[3]), "output_count": int(sys.argv[4]),
 }) + "\n", encoding="utf-8")
 PY
     exec .venv/bin/python case/deploy/agents.py run --workspace "$workspace" \
@@ -138,7 +185,7 @@ PY
       --split "$action" --port "$port" --host "$bind_host" \
       --dataset "$closed/$action.jsonl" --state "$closed/$action" \
       --metric "$campaign/metric" --runner-image "$(<"$run/runner-image.txt")" \
-      --journal "$run/search.sqlite3" --release-id ar12-e2e-v1 \
-      --max-solutions 6 --finalists 2 --winners 1
+      --journal "$run/search.sqlite3" --release-id "$release_id" \
+      --max-solutions "$max_solutions" --finalists "$finalists" --winners "$winners"
     ;;
 esac

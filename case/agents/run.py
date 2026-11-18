@@ -3,6 +3,7 @@
 import argparse
 import json
 import os
+import sys
 import time
 from pathlib import Path
 
@@ -16,6 +17,10 @@ from evaluator.reliability import request_timeout
 ROOT = Path(__file__).resolve().parents[2]
 ARENA = ROOT / "arena"
 ROLES = ("prepare", "orchestrator", "researcher", "reviewer")
+
+
+class HermesTurnError(RuntimeError):
+    """Передаёт безопасную причину неудачного хода без текста модельного ответа."""
 
 
 def prompt_for(role, campaign, assignment, journal_path=None, private=None, train_url=None, public_url=None):
@@ -79,12 +84,33 @@ def prompt_for(role, campaign, assignment, journal_path=None, private=None, trai
         "arena/prompts/reviewer.md and the exact snapshot. Read the referenced common files. "
         "Store claims, findings and reviews in the campaign board. Use isolated worktrees. "
         "The operator's preparation and private services run outside your workspace. "
+        "Model response dumps in board/agent-runs/responses are operator diagnostics, "
+        "not campaign inputs: do not read or summarize them. Recover task state from "
+        "campaign.md, claims, findings, reviews and the canonical journal. "
         "Use only configured model access. Do not execute operator deploy commands."
     )
     return "\n\n".join(sections)
 
 
-def run_role(factory, prompt, role, journal=None, read_private=None, check=lambda: None):
+def next_action(status):
+    """Указывает следующий этап по журналу, не принимая завершение бейзлайнов за итог поиска."""
+    if status["finalization"]:
+        return "The journal is finalized: do not propose or measure; verify private status."
+    if status["stopped"]:
+        return "Honor the stop request: finish permitted pending work and select finalists."
+    if status["remaining_proposals"]:
+        return (
+            f"There are {status['remaining_proposals']} proposal slots remaining. "
+            "The campaign is NOT complete. Inspect existing claims and pending work, "
+            "then delegate the next unclaimed research direction, register its distinct "
+            "candidate in the journal and evaluate it. Use tools to perform the next "
+            "concrete action; do not return only a plan or a baseline summary."
+        )
+    return "Finish pending checks and reviews, select finalists and finalize the frozen batch."
+
+
+def run_role(factory, prompt, role, journal=None, read_private=None, check=lambda: None,
+             observe=lambda result: None):
     """Выполняет роль Hermes и продолжает поиск до подтверждённой финализации."""
     previous = journal.status() if journal else None
     if role == "orchestrator" and previous["finalization"] and not previous["running"]:
@@ -94,8 +120,34 @@ def run_role(factory, prompt, role, journal=None, read_private=None, check=lambd
         )):
             return {"completed": True, "final_response": "Campaign already finalized"}
     agent = factory()
+    initial_prompt = prompt
     history = None
     idle = 0
+    recoveries = 0
+
+    def restart(reason, current):
+        """Заменяет контекст после известного сбоя, сохраняя общий журнал и лимит попыток."""
+        nonlocal agent, recoveries, history, idle, previous, prompt
+        recoveries += 1
+        print(
+            f"Hermes {reason}: recovery {recoveries}/2 with fresh context; "
+            "existing journal and workspace retained.", file=sys.stderr, flush=True,
+        )
+        agent.close()
+        agent = None
+        agent = factory()
+        history = None
+        idle = 0
+        previous = current
+        prompt = (
+            initial_prompt
+            + f"\n\nRecovery after {reason}. Reconstruct progress from campaign files, "
+            "board and canonical journal. Check existing claims before delegating. "
+            "Do not repeat completed submissions or register existing candidates again. "
+            "Keep responses concise. Current journal status: " + json.dumps(current)
+            + "\n" + next_action(current)
+        )
+
     try:
         while True:
             result = agent.run_conversation(
@@ -103,9 +155,27 @@ def run_role(factory, prompt, role, journal=None, read_private=None, check=lambd
                 system_message="Follow the supplied Arena role, campaign and access boundaries.",
                 conversation_history=history,
             )
+            observe(result)
             check()
             if result.get("failed") or not result.get("completed"):
-                raise RuntimeError("Hermes turn failed; campaign remains incomplete")
+                repetition = str(result.get("error", "")).startswith(
+                    "Model output entered a repetition loop"
+                )
+                # Повторяем только известный сбой генерации, а не сетевые ошибки или инструменты.
+                if repetition and role == "orchestrator" and recoveries < 2:
+                    restart("repetition loop", journal.status())
+                    continue
+                if repetition:
+                    reason = "repetition_loop"
+                elif result.get("compression_exhausted"):
+                    reason = "context_compression_exhausted"
+                elif result.get("partial"):
+                    reason = "partial_response"
+                else:
+                    reason = "unspecified_failure"
+                raise HermesTurnError(
+                    f"Hermes turn failed ({reason}); campaign remains incomplete"
+                )
             if role != "orchestrator":
                 return result
             status = journal.status()
@@ -120,7 +190,13 @@ def run_role(factory, prompt, role, journal=None, read_private=None, check=lambd
             # Ограничиваем повторные ходы при неизменном журнале, чтобы не расходовать токены на опрос.
             idle = idle + 1 if status == previous else 0
             if idle >= 2:
-                raise RuntimeError("Two turns made no journal progress; inspect saved agent result")
+                if recoveries < 2:
+                    restart("no journal progress", status)
+                    continue
+                raise HermesTurnError(
+                    "Two turns made no journal progress after recovery limit; "
+                    "inspect saved turn diagnostics"
+                )
             history = result.get("messages")
             if not history:
                 raise RuntimeError("Hermes returned no conversation history")
@@ -130,10 +206,12 @@ def run_role(factory, prompt, role, journal=None, read_private=None, check=lambd
                 + ". Honor stop requests. Collect pending results, review snapshots and finalize "
                 "when authorized. If private is configured, submit the frozen batch and wait "
                 "only for status. Never read private scores."
+                + "\n" + next_action(status)
             )
             previous = status
     finally:
-        agent.close()
+        if agent is not None:
+            agent.close()
 
 
 def main():
@@ -185,6 +263,25 @@ def main():
     record = output / f"{args.role}-{time.time_ns()}.json"
     record.write_text(json.dumps({"state": "running", "role": args.role, "model": model}))
     usage_log = UsageLog(record.with_suffix(".usage.jsonl"))
+
+    def save_turn(result):
+        """Сохраняет краткий итог хода без аргументов инструментов и сырых API-запросов."""
+        messages = result.get("messages") or []
+        tool_calls = [
+            call.get("function", {}).get("name")
+            for message in messages if isinstance(message, dict)
+            for call in (message.get("tool_calls") or []) if isinstance(call, dict)
+        ]
+        diagnostic = {
+            "completed": bool(result.get("completed")), "failed": bool(result.get("failed")),
+            "partial": bool(result.get("partial")),
+            "compression_exhausted": bool(result.get("compression_exhausted")),
+            "error": str(result.get("error") or "")[:2000],
+            "final_response": str(result.get("final_response") or "")[:12000],
+            "message_count": len(messages), "tool_call_names": tool_calls[-100:],
+        }
+        with record.with_suffix(".turns.jsonl").open("a", encoding="utf-8") as stream:
+            stream.write(json.dumps(diagnostic, ensure_ascii=False) + "\n")
     state = runtime.install(
         access["model_base_url"], model, timeout, access.get("api_key", "arena"),
         usage_log=usage_log,
@@ -208,10 +305,14 @@ def main():
             create_agent,
             prompt_for(args.role, campaign, args.assignment, args.journal, private, args.train_url,
                        args.public_url),
-            args.role, journal, read_private, state.check,
+            args.role, journal, read_private, state.check, save_turn,
         )
-    except Exception:
-        record.write_text(json.dumps({"state": "failed", "role": args.role, "model": model}))
+    except Exception as error:
+        failure = {"state": "failed", "role": args.role, "model": model,
+                   "error_type": type(error).__name__}
+        if isinstance(error, HermesTurnError):
+            failure["error"] = str(error)
+        record.write_text(json.dumps(failure))
         raise
     record.write_text(json.dumps({"state": "complete", "role": args.role, "model": model,
                                   "final_response": result.get("final_response", "")}, ensure_ascii=False))

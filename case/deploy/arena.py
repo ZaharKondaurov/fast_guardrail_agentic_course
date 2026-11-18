@@ -392,6 +392,8 @@ def prepare_pilot(campaign, config, run, data, max_solutions):
     """Готовит данные и runner, проводит приёмку и создаёт пустой журнал с заданным лимитом."""
     if max_solutions < len(BASELINES):
         raise ValueError("The proposal limit must accommodate all three baselines")
+    if config.get("max_solutions", max_solutions) != max_solutions:
+        raise ValueError("The proposal limit differs from the frozen campaign configuration")
     journal = run / "search.sqlite3"
     if journal.exists():
         status = arena_json("search", "--journal", journal, "status")
@@ -420,6 +422,11 @@ def prepare_pilot(campaign, config, run, data, max_solutions):
     for filename in ("train.jsonl", "evaluation.jsonl", "evaluation.arena.jsonl"):
         if not (data / filename).is_file():
             raise ValueError(f"Missing pilot split file: {data / filename}")
+    dataset_lock = campaign / "dataset.lock.json"
+    if dataset_lock.is_file():
+        for filename, expected in json.loads(dataset_lock.read_text(encoding="utf-8")).items():
+            if hashlib.sha256((ROOT / filename).read_bytes()).hexdigest() != expected:
+                raise ValueError(f"Frozen dataset file changed: {filename}")
 
     metric = campaign / "metric"
     evidence["metric_verification"] = arena_json("prepare", "verify", "--metric", metric)
