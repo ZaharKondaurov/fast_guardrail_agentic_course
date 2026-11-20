@@ -1,0 +1,1092 @@
+{
+  "schema_version": 1,
+  "campaign": {
+    "max_solutions": 18,
+    "stopped_at": null,
+    "stop_reason": null,
+    "finalization": {
+      "batch_digest": "c0cbb0c6a3ae71058aa290ba429b3eadc182aeb52a14903063344b972eacb133",
+      "finalized_at": "2026-11-18T20:03:02.987158+00:00"
+    },
+    "stopped": false,
+    "proposed": 18,
+    "remaining_proposals": 0,
+    "running": [],
+    "completed_measurements": 23
+  },
+  "candidates": [
+    {
+      "bundle_error": null,
+      "candidate_id": "matching",
+      "change": "Операторский baseline matching: rules.json из частотных n-грамм train, порог по вхождению; код и артефакты без изменений.",
+      "created_at": "2026-11-18T15:51:42.266251+00:00",
+      "digest": "b1ab0ddb7697e94d0386260efccb95fa6d9860072153208b1803642a7e4dc1a3",
+      "digest_version": 2,
+      "hypothesis": "Базовый словарь частотных n-грамм даёт воспроизводимый нижний ориентир F1 и используется как контроль для сравнения признаковых моделей.",
+      "parents": [],
+      "proposal": 1,
+      "resources": {
+        "seconds": 0.0,
+        "tokens_complete": false,
+        "total_tokens": 0
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "boosting",
+      "change": "Операторский baseline boosting: обученный CatBoost на TF-IDF word(1,2)+char(3,4), порог по FPR<=5%; код и артефакты без изменений.",
+      "created_at": "2026-11-18T15:51:42.715221+00:00",
+      "digest": "359974f67aa4bf40001c648ef9785d6ed00bb6f80460f469950e25aee0bd1d5a",
+      "digest_version": 2,
+      "hypothesis": "TF-IDF словесных и символьных n-грамм с CatBoost ловит нелинейные сочетания признаков и должен превзойти словарный baseline по F1.",
+      "parents": [],
+      "proposal": 2,
+      "resources": {
+        "seconds": 0.0,
+        "tokens_complete": false,
+        "total_tokens": 0
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "transformer",
+      "change": "Операторский baseline transformer: byte-level Transformer INT8 ONNX, порог по FPR<=5%; код и артефакты без изменений.",
+      "created_at": "2026-11-18T15:51:43.153667+00:00",
+      "digest": "db33ad911eb1a6b47de530a5d5c3fe94f4ae4d2288f5c74544d62e7b4122bf35",
+      "digest_version": 2,
+      "hypothesis": "Малый байтовый трансформер, обученный с нуля, даёт независимый от словарей механизм и устойчивость к обфускации.",
+      "parents": [],
+      "proposal": 3,
+      "resources": {
+        "seconds": 0.0,
+        "tokens_complete": false,
+        "total_tokens": 0
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-lin-wordchar",
+      "change": "Новый решатель: собственные детерминированные признаки word12+char3-5 (NFKC, нижний регистр, схлопывание пробелов), точный словарь 238929 признаков, TF-IDF sublinear + L2, LogisticRegression C=4, порог 0.56 по 5-fold OOF train.",
+      "created_at": "2026-11-18T15:59:49.141828+00:00",
+      "digest": "0671fc3d9e59ec5902a55eae6f5047dd87a57ae0163c456e91a05aae55981169",
+      "digest_version": 2,
+      "hypothesis": "Словесные 1-2-граммы и символьные 3-5-граммы с TF-IDF и логистической регрессией лучше разделяют обфусцированные инъекции и безопасные запросы, чем частотный словарь, за счёт взвешивания редких дискриминативных фрагментов.",
+      "parents": [],
+      "proposal": 4,
+      "resources": {
+        "seconds": 410.0,
+        "tokens_complete": false,
+        "total_tokens": 1723268
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-lin-char",
+      "change": "Char-only n-gram vocabulary (2-6), TF-IDF sublinear + L2, LogisticRegression C=128, score threshold 1.1021 chosen by class-balanced 5-fold OOF F1 on train.",
+      "created_at": "2026-11-18T17:42:25.227479+00:00",
+      "digest": "4f4e39ef5b51f347b1e02a017a23bb45066b25352eae510e3a5c7e6bbe23ff3c",
+      "digest_version": 2,
+      "hypothesis": "Character-only 2-6 gram TF-IDF should capture obfuscated and truncated attack strings better than word features while keeping high precision on benign text; a feature ablation of the word+char model.",
+      "parents": [
+        "variant-lin-wordchar"
+      ],
+      "proposal": 5,
+      "resources": {
+        "seconds": 830.0,
+        "tokens_complete": false,
+        "total_tokens": 3103339
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-lin-robust",
+      "change": "Two-view word1-2+char2-6 TF-IDF (normal + deobfuscated), 679147 features, LogisticRegression C=32, score threshold 0.6505 by class-balanced 5-fold OOF F1.",
+      "created_at": "2026-11-18T17:42:25.769510+00:00",
+      "digest": "864501509daab2403138e0399ba509313ba20d71840531af1ccd5a5e50ef56c3",
+      "digest_version": 2,
+      "hypothesis": "Adding a deterministic deobfuscation view (homoglyph/leet folding, format-char removal, repeated-char collapse) alongside the original text should reduce misses on encoding and token-smuggling attacks without hurting benign precision.",
+      "parents": [
+        "variant-lin-wordchar"
+      ],
+      "proposal": 6,
+      "resources": {
+        "seconds": 1015.0,
+        "tokens_complete": false,
+        "total_tokens": 3795047
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-svc",
+      "change": "LinearSVC C=4 on word1-2+char2-6 TF-IDF, 387364 features, decision margin threshold 0.1477 chosen by class-balanced 5-fold OOF F1.",
+      "created_at": "2026-11-18T17:42:26.364238+00:00",
+      "digest": "1a42fb8710bf2164487a6b368d422ec61f1bf7148ca2a93c66723fb8245b732d",
+      "digest_version": 2,
+      "hypothesis": "A max-margin linear SVM on the same word+char TF-IDF space makes different errors than logistic loss (margin-focused, no probability calibration) and may improve F1 or ensemble diversity.",
+      "parents": [
+        "variant-lin-wordchar"
+      ],
+      "proposal": 7,
+      "resources": {
+        "seconds": 957.0,
+        "tokens_complete": false,
+        "total_tokens": 3578187
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-cat-tuned",
+      "change": "CatBoost 250 iters depth 6 lr 0.1 rsm 0.5 on word1-3+char3-5 TF-IDF (60k+60k caps), thread_count=1 inference, OOF-F1 threshold 0.46444.",
+      "created_at": "2026-11-18T17:42:26.949380+00:00",
+      "digest": "4a59599cebbe27ec8ef3c8c1d3c5f56cc17dbd83d265e564450494b5320b8053",
+      "digest_version": 2,
+      "hypothesis": "A larger CatBoost on richer word1-3/char3-5 TF-IDF with an F1-tuned (not FPR-gated) threshold should beat the baseline boosting F1; its non-linear interactions add diversity to linear models.",
+      "parents": [
+        "boosting"
+      ],
+      "proposal": 8,
+      "resources": {
+        "seconds": 1464.0,
+        "tokens_complete": false,
+        "total_tokens": 3172458
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-cat-feat",
+      "change": "CatBoost with the same TF-IDF plus 36 deterministic numeric features, imported by both training and solve; OOF-F1 threshold 0.46207.",
+      "created_at": "2026-11-18T17:42:27.453627+00:00",
+      "digest": "77a8437d8c0e218f1e8e985df2c8ed517e15dab1b426db4eb29758ab46e7fa1f",
+      "digest_version": 2,
+      "hypothesis": "Explicit numeric text features (length, token/digit/uppercase/punctuation ratios, suspicious-word counts, control chars, repetition, encoding indicators) should help CatBoost separate short benign chat from terse toxic/adversarial prompts.",
+      "parents": [
+        "variant-cat-tuned"
+      ],
+      "proposal": 9,
+      "resources": {
+        "seconds": 1514.0,
+        "tokens_complete": false,
+        "total_tokens": 3172458
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-ens-lc",
+      "change": "Frozen ensemble: copied variant-lin-wordchar linear model + variant-cat-tuned CatBoost, average probabilities, threshold 0.53936 from 5-fold OOF F1.",
+      "created_at": "2026-11-18T17:42:27.986078+00:00",
+      "digest": "3e11dd770dab7f6f661c8825db5493f121ac765de345d8dc8762b440573d5dc7",
+      "digest_version": 2,
+      "hypothesis": "A 50/50 probability blend of the linear TF-IDF model and CatBoost should combine their decorrelated errors and raise F1 above either component; ensemble diversity is the main expected gain.",
+      "parents": [
+        "variant-lin-wordchar",
+        "variant-cat-tuned"
+      ],
+      "proposal": 10,
+      "resources": {
+        "seconds": 60.0,
+        "tokens_complete": false,
+        "total_tokens": 1586229
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-trans-192",
+      "change": "From-scratch byte Transformer seq192 d_model64 2 layers 4 heads, 8 epochs, AdamW 2.5e-3, pos_weight 1.15, INT8 ONNX export, holdout-F1 cutoff 0.305964.",
+      "created_at": "2026-11-18T17:42:28.449452+00:00",
+      "digest": "41f38f2998865fd957cad5250bfbdf6b5e76c94e4c9102690dc6e5a4abb21c2f",
+      "digest_version": 2,
+      "hypothesis": "A deeper byte-level transformer with longer 192-byte context and F1-tuned cutoff should capture suffix/prefix injection patterns better than the 128-byte 4-epoch baseline while staying fast.",
+      "parents": [
+        "transformer"
+      ],
+      "proposal": 11,
+      "resources": {
+        "seconds": 1678.0,
+        "tokens_complete": false,
+        "total_tokens": 4719544
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-trans-wide",
+      "change": "Byte+hashed-word Transformer seq192 d_model96 2 layers 8 heads FF256, blake2b word buckets 4096 (40 head + 24 tail words), 8 epochs, INT8 ONNX, holdout-F1 cutoff -0.0016.",
+      "created_at": "2026-11-18T17:42:28.945796+00:00",
+      "digest": "dfc36b16cbb1a2b7d501a0ae6b1be2c541bc07d8f3497b296a95ae571e9db46d",
+      "digest_version": 2,
+      "hypothesis": "Adding hashed word channels (head+tail words) to the byte transformer gives the model lexical evidence beyond the first 192 bytes and should improve F1 and error diversity versus a byte-only model.",
+      "parents": [
+        "transformer"
+      ],
+      "proposal": 12,
+      "resources": {
+        "seconds": 2364.0,
+        "tokens_complete": false,
+        "total_tokens": 6648989
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-ens-ct",
+      "change": "Frozen ensemble: variant-cat-tuned CatBoost + variant-trans-wide INT8 ONNX, equal probability average, threshold 0.46255 tuned on the shared 12% train holdout (seed42).",
+      "created_at": "2026-11-18T17:48:48.572624+00:00",
+      "digest": "8a685435c95767d078d400c47a4281ef439a983b19b8687a72583d2550bcc942",
+      "digest_version": 2,
+      "hypothesis": "CatBoost and the hashed-word transformer make decorrelated errors (different mechanisms: sparse lexical trees vs byte sequence model); a 50/50 probability blend should beat either component on F1.",
+      "parents": [
+        "variant-cat-tuned",
+        "variant-trans-wide"
+      ],
+      "proposal": 13,
+      "resources": {
+        "seconds": 300.0,
+        "tokens_complete": false,
+        "total_tokens": 584065
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-ens-lct",
+      "change": "Frozen ensemble: linear wordchar + cat-tuned + trans-wide probabilities, weights 0.2/0.4/0.4, threshold 0.4888 selected on the shared 12% train holdout (seed42).",
+      "created_at": "2026-11-18T17:48:49.113248+00:00",
+      "digest": "a771c3e48c20ea4ac513363806e45dd838f702491a4ef392a999d788bd518fe7",
+      "digest_version": 2,
+      "hypothesis": "A three-family blend (linear TF-IDF, CatBoost, byte transformer) should be more robust to distribution shift than any single family; weights 0.2/0.4/0.4 were selected on train holdout, where the blend reached F1 0.9956 vs 0.9939 for the best component.",
+      "parents": [
+        "variant-lin-wordchar",
+        "variant-cat-tuned",
+        "variant-trans-wide"
+      ],
+      "proposal": 14,
+      "resources": {
+        "seconds": 300.0,
+        "tokens_complete": false,
+        "total_tokens": 584065
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-ens-all4",
+      "change": "Frozen ensemble: CatBoost tuned + CatBoost numeric-features + trans-wide ONNX, weights 0.5/0.1/0.4, threshold 0.4287 selected on the shared 12% train holdout (seed42).",
+      "created_at": "2026-11-18T17:50:30.616921+00:00",
+      "digest": "14b0f5a2f994b8a3feea49d5de9b0b44253b1154bdff57e020884aafc87de3b5",
+      "digest_version": 2,
+      "hypothesis": "Adding the numeric-feature CatBoost variant to the cat+transformer blend may improve separation of short toxic prompts from benign chat; the 4-way holdout grid reached F1 0.9962 with 0.5 cat + 0.1 catfeat + 0.4 trans.",
+      "parents": [
+        "variant-cat-tuned",
+        "variant-cat-feat",
+        "variant-trans-wide"
+      ],
+      "proposal": 15,
+      "resources": {
+        "seconds": 300.0,
+        "tokens_complete": false,
+        "total_tokens": 300000
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-ens-rct",
+      "change": "Frozen ensemble: variant-lin-robust linear + cat-tuned + trans-wide, weights 0.2/0.4/0.4, threshold 0.4888 from the shared 12% train holdout.",
+      "created_at": "2026-11-18T17:50:54.808081+00:00",
+      "digest": "590e88020757f6de8f6e035ac474abfa4e48fa8fd8c0b502860cc93a4e40659c",
+      "digest_version": 2,
+      "hypothesis": "Replacing the plain linear component with the deobfuscation-view linear model should make the three-family ensemble more robust to encoding/token-smuggling attacks while keeping the same blend geometry.",
+      "parents": [
+        "variant-lin-robust",
+        "variant-cat-tuned",
+        "variant-trans-wide"
+      ],
+      "proposal": 16,
+      "resources": {
+        "seconds": 240.0,
+        "tokens_complete": false,
+        "total_tokens": 300000
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-trans-wide-full",
+      "change": "Same architecture/epochs/seed as variant-trans-wide, trained on 11420 rows, final-epoch INT8 ONNX export, fixed cutoff -0.00162439 transferred; 256-set diagnostic F1 0.9961.",
+      "created_at": "2026-11-18T18:18:34.272156+00:00",
+      "digest": "575bf6d04504aa838423f13fcf92becb5d36cfc883ec1125136f9ab9176b0d4b",
+      "digest_version": 2,
+      "hypothesis": "Retraining the same byte+hashed-word transformer on all 11420 train rows (instead of 10049) should add signal without changing the mechanism; the fixed cutoff from the 88% model transfers because the score scale is unchanged.",
+      "parents": [
+        "variant-trans-wide"
+      ],
+      "proposal": 17,
+      "resources": {
+        "seconds": 1266.0,
+        "tokens_complete": false,
+        "total_tokens": 1521876
+      },
+      "snapshot_error": null
+    },
+    {
+      "bundle_error": null,
+      "candidate_id": "variant-ens-lct-full",
+      "change": "Frozen ensemble: linear wordchar + cat-tuned + trans-wide-full probabilities, weights 0.2/0.4/0.4, threshold 0.4888 from the shared 12% train holdout.",
+      "created_at": "2026-11-18T18:18:56.259149+00:00",
+      "digest": "d68a3d972b9a20bbe200ee4e43ef5a7ef448424e5822251aff71e3171e14a287",
+      "digest_version": 2,
+      "hypothesis": "The best three-family blend should improve if its transformer component is retrained on the full train set; the fixed cutoff and blend weights transfer because the score scale is unchanged.",
+      "parents": [
+        "variant-lin-wordchar",
+        "variant-cat-tuned",
+        "variant-trans-wide-full"
+      ],
+      "proposal": 18,
+      "resources": {
+        "seconds": 180.0,
+        "tokens_complete": false,
+        "total_tokens": 300000
+      },
+      "snapshot_error": null
+    }
+  ],
+  "measurements": [
+    {
+      "candidate_id": "matching",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 1,
+      "digest": "b1ab0ddb7697e94d0386260efccb95fa6d9860072153208b1803642a7e4dc1a3",
+      "elapsed_seconds": 261.00452,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "60b6e0c48f6df491a83734f020d7e931cbeb229238f35b42f89c9208456a247d",
+        "record": "/workspace/campaign/results/matching.train.json"
+      },
+      "finished_at": "2026-11-18T15:56:11.502016+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 26.720366219,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-matching-1",
+      "proposal_count_at_finish": 3,
+      "score": 0.8627450980392157,
+      "solver": {
+        "seconds": 170.0432220499897,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T15:51:50.497496+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "boosting",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 2,
+      "digest": "359974f67aa4bf40001c648ef9785d6ed00bb6f80460f469950e25aee0bd1d5a",
+      "elapsed_seconds": 6285.839427,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "8ee359e6f00bcdd3cea3bbd982a55c4cba6847686ea0577e5c73feed3fa38be9",
+        "record": "/workspace/campaign/results/boosting.train.json"
+      },
+      "finished_at": "2026-11-18T17:41:05.834592+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 26.298008715,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-boosting-1",
+      "proposal_count_at_finish": 4,
+      "score": 0.9652509652509652,
+      "solver": {
+        "seconds": 491.2677207590277,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T15:56:19.995165+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-lin-wordchar",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 3,
+      "digest": "0671fc3d9e59ec5902a55eae6f5047dd87a57ae0163c456e91a05aae55981169",
+      "elapsed_seconds": 6405.364624,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "c5ede4cdc4534e0b87f899d767fc5d6ed154be5caf953d452f304f2e4c2be285",
+        "record": "/workspace/campaign/results/lin-wordchar.train.json"
+      },
+      "finished_at": "2026-11-18T17:46:39.724264+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 30.20449593,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-lin-wordchar-1",
+      "proposal_count_at_finish": 12,
+      "score": 0.9882352941176471,
+      "solver": {
+        "seconds": 243.21928891302377,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T15:59:54.359640+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-lin-char",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 4,
+      "digest": "4f4e39ef5b51f347b1e02a017a23bb45066b25352eae510e3a5c7e6bbe23ff3c",
+      "elapsed_seconds": 313.516356,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "24ff674a830916b7f8ce8564761c56383d24a9b2f105b5ee12f374f118d8c436",
+        "record": "/workspace/campaign/results/variant-lin-char.train.json"
+      },
+      "finished_at": "2026-11-18T17:52:23.531364+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 29.986876477,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-lin-char-1",
+      "proposal_count_at_finish": 16,
+      "score": 0.9921875,
+      "solver": {
+        "seconds": 252.91912447801224,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T17:47:10.015008+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-lin-robust",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 5,
+      "digest": "864501509daab2403138e0399ba509313ba20d71840531af1ccd5a5e50ef56c3",
+      "elapsed_seconds": 344.55368,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "c657fbac2016a88953ebc3afcc9b2fdce76a615bf3046f2a3780b256e99119e8",
+        "record": "/workspace/campaign/results/variant-lin-robust.train.json"
+      },
+      "finished_at": "2026-11-18T17:58:09.482226+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 26.755289892,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-lin-robust-1",
+      "proposal_count_at_finish": 16,
+      "score": 0.9921875,
+      "solver": {
+        "seconds": 287.5360373220319,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T17:52:24.928546+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-svc",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 6,
+      "digest": "1a42fb8710bf2164487a6b368d422ec61f1bf7148ca2a93c66723fb8245b732d",
+      "elapsed_seconds": 313.035409,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "802c61adb68dc3d74c4eca7784a196a709a679d7579de631d65832ef6f42222e",
+        "record": "/workspace/campaign/results/variant-svc.train.json"
+      },
+      "finished_at": "2026-11-18T18:03:23.773519+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 25.048918965,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-svc-1",
+      "proposal_count_at_finish": 16,
+      "score": 0.9921875,
+      "solver": {
+        "seconds": 248.9158219420242,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T17:58:10.738110+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-cat-tuned",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 7,
+      "digest": "4a59599cebbe27ec8ef3c8c1d3c5f56cc17dbd83d265e564450494b5320b8053",
+      "elapsed_seconds": 437.406095,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "71e0de86c403c160a615bb4e106c514bf12b53c93aea590803221c856a9be72a",
+        "record": "/workspace/campaign/results/variant-cat-tuned.train.json"
+      },
+      "finished_at": "2026-11-18T18:10:42.329277+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 25.28947853,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-cat-tuned-1",
+      "proposal_count_at_finish": 16,
+      "score": 0.984251968503937,
+      "solver": {
+        "seconds": 359.3173901780174,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T18:03:24.923182+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-cat-feat",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 8,
+      "digest": "77a8437d8c0e218f1e8e985df2c8ed517e15dab1b426db4eb29758ab46e7fa1f",
+      "elapsed_seconds": 405.52235,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "8a5ec4360be0419831799a74d91e8daa76ba1930f55faba0e4c71dc371620d46",
+        "record": "/workspace/campaign/results/variant-cat-feat.train.json"
+      },
+      "finished_at": "2026-11-18T18:17:28.884755+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 25.056178907,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-cat-feat-1",
+      "proposal_count_at_finish": 16,
+      "score": 0.9882352941176471,
+      "solver": {
+        "seconds": 350.41786765201323,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T18:10:43.362405+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-ens-lc",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 9,
+      "digest": "3e11dd770dab7f6f661c8825db5493f121ac765de345d8dc8762b440573d5dc7",
+      "elapsed_seconds": 435.691405,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "f0a823083134177571e6c69f498dd9f08e0285b66622033257fe06876ac09118",
+        "record": "/workspace/campaign/results/variant-ens-lc.train.json"
+      },
+      "finished_at": "2026-11-18T18:24:45.634099+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 30.040303821,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-ens-lc-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.9921875,
+      "solver": {
+        "seconds": 367.9880538309444,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T18:17:29.942694+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-trans-192",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 10,
+      "digest": "41f38f2998865fd957cad5250bfbdf6b5e76c94e4c9102690dc6e5a4abb21c2f",
+      "elapsed_seconds": 280.745362,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "af172d2827a9996897e509f0d06b09eb1bc3dd15b9e474650c19c7846052fc8d",
+        "record": "/workspace/campaign/results/variant-trans-192.train.json"
+      },
+      "finished_at": "2026-11-18T18:29:27.309036+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 29.995926335,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-trans-192-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.952755905511811,
+      "solver": {
+        "seconds": 217.90557782205724,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T18:24:46.563674+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-trans-wide",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 11,
+      "digest": "dfc36b16cbb1a2b7d501a0ae6b1be2c541bc07d8f3497b296a95ae571e9db46d",
+      "elapsed_seconds": 280.774903,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "8b7040f40a70f71fe96bcb6bcc53b69e96f188697bffff94ed258f576b874235",
+        "record": "/workspace/campaign/results/variant-trans-wide.train.json"
+      },
+      "finished_at": "2026-11-18T18:34:09.076404+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 29.230007154,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-trans-wide-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.9921259842519685,
+      "solver": {
+        "seconds": 218.41231462196447,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T18:29:28.301501+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "transformer",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 12,
+      "digest": "db33ad911eb1a6b47de530a5d5c3fe94f4ae4d2288f5c74544d62e7b4122bf35",
+      "elapsed_seconds": 280.946483,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "5100a60276a13e14f75ef8520969cdb27193610704611bbca7185ece6a70b211",
+        "record": "/workspace/campaign/results/transformer.train.json"
+      },
+      "finished_at": "2026-11-18T19:11:27.014322+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 26.030668287,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-transformer-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.9568627450980393,
+      "solver": {
+        "seconds": 213.87675561199285,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T19:06:46.067839+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-lin-char",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-public",
+        "split": "public",
+        "subset_id": "ar12-public-full-v1"
+      },
+      "completion_order": 15,
+      "digest": "4f4e39ef5b51f347b1e02a017a23bb45066b25352eae510e3a5c7e6bbe23ff3c",
+      "elapsed_seconds": 1480.633929,
+      "error": null,
+      "evidence": null,
+      "finished_at": "2026-11-18T19:32:16.622066+00:00",
+      "job": "http://172.20.0.1:8767",
+      "judge": null,
+      "measurement_id": "public-lin-char-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.9571428571428572,
+      "solver": null,
+      "started_at": "2026-11-18T19:07:35.988137+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-trans-wide-full",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-public",
+        "split": "public",
+        "subset_id": "ar12-public-full-v1"
+      },
+      "completion_order": 17,
+      "digest": "575bf6d04504aa838423f13fcf92becb5d36cfc883ec1125136f9ab9176b0d4b",
+      "elapsed_seconds": 1695.491707,
+      "error": null,
+      "evidence": null,
+      "finished_at": "2026-11-18T19:39:34.575497+00:00",
+      "job": "http://172.20.0.1:8767",
+      "judge": null,
+      "measurement_id": "public-trans-wide-full-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.9552447552447553,
+      "solver": null,
+      "started_at": "2026-11-18T19:11:19.083790+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-ens-ct",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 13,
+      "digest": "8a685435c95767d078d400c47a4281ef439a983b19b8687a72583d2550bcc942",
+      "elapsed_seconds": 533.123213,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "d29b6d14a15f9e1fd7ff23e78a99bde4f25d76de351d20c8923148df293f07d0",
+        "record": "/workspace/campaign/results/variant-ens-ct.train.json"
+      },
+      "finished_at": "2026-11-18T19:20:21.228235+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 30.71778471,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-ens-ct-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.996078431372549,
+      "solver": {
+        "seconds": 456.33619282810105,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T19:11:28.105022+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-ens-lct-full",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-public",
+        "split": "public",
+        "subset_id": "ar12-public-full-v1"
+      },
+      "completion_order": 21,
+      "digest": "d68a3d972b9a20bbe200ee4e43ef5a7ef448424e5822251aff71e3171e14a287",
+      "elapsed_seconds": 2311.522899,
+      "error": null,
+      "evidence": null,
+      "finished_at": "2026-11-18T19:50:08.116255+00:00",
+      "job": "http://172.20.0.1:8767",
+      "judge": null,
+      "measurement_id": "public-variant-ens-lct-full-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.9575504523312457,
+      "solver": null,
+      "started_at": "2026-11-18T19:11:36.593356+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-ens-ct",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-public",
+        "split": "public",
+        "subset_id": "ar12-public-full-v1"
+      },
+      "completion_order": 19,
+      "digest": "8a685435c95767d078d400c47a4281ef439a983b19b8687a72583d2550bcc942",
+      "elapsed_seconds": 2308.911477,
+      "error": null,
+      "evidence": null,
+      "finished_at": "2026-11-18T19:50:06.924730+00:00",
+      "job": "http://172.20.0.1:8767",
+      "judge": null,
+      "measurement_id": "public-variant-ens-ct-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.9573724668064291,
+      "solver": null,
+      "started_at": "2026-11-18T19:11:38.013253+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-ens-lct",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-public",
+        "split": "public",
+        "subset_id": "ar12-public-full-v1"
+      },
+      "completion_order": 20,
+      "digest": "a771c3e48c20ea4ac513363806e45dd838f702491a4ef392a999d788bd518fe7",
+      "elapsed_seconds": 2307.973577,
+      "error": null,
+      "evidence": null,
+      "finished_at": "2026-11-18T19:50:07.549913+00:00",
+      "job": "http://172.20.0.1:8767",
+      "judge": null,
+      "measurement_id": "public-variant-ens-lct-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.9573724668064291,
+      "solver": null,
+      "started_at": "2026-11-18T19:11:39.576336+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-ens-lct",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 14,
+      "digest": "a771c3e48c20ea4ac513363806e45dd838f702491a4ef392a999d788bd518fe7",
+      "elapsed_seconds": 533.672376,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "b78436feeaec550828fafdf8aa7132ada561004fbfc2342db7029a47ba4496ec",
+        "record": "/workspace/campaign/results/variant-ens-lct.train.json"
+      },
+      "finished_at": "2026-11-18T19:29:16.442628+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 31.461670013,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-ens-lct-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.996078431372549,
+      "solver": {
+        "seconds": 460.1058030689892,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T19:20:22.770252+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-ens-all4",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 16,
+      "digest": "14b0f5a2f994b8a3feea49d5de9b0b44253b1154bdff57e020884aafc87de3b5",
+      "elapsed_seconds": 500.935289,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "5584b075b3de4cf5844e4ea3786219689d695d1e30bea6c8ac13dfd1550e5d93",
+        "record": "/workspace/campaign/results/variant-ens-all4.train.json"
+      },
+      "finished_at": "2026-11-18T19:37:38.605522+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 29.36894366,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-ens-all4-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.996078431372549,
+      "solver": {
+        "seconds": 421.02982084696123,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T19:29:17.670233+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-ens-rct",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 18,
+      "digest": "590e88020757f6de8f6e035ac474abfa4e48fa8fd8c0b502860cc93a4e40659c",
+      "elapsed_seconds": 628.483503,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "695883793cf4d2492ef1d893c218eaaabb2096f768815a441ac896e3eb90635a",
+        "record": "/workspace/campaign/results/variant-ens-rct.train.json"
+      },
+      "finished_at": "2026-11-18T19:48:08.369581+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 32.699129046,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-ens-rct-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.996078431372549,
+      "solver": {
+        "seconds": 535.7831797098988,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T19:37:39.886078+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-trans-wide-full",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 22,
+      "digest": "575bf6d04504aa838423f13fcf92becb5d36cfc883ec1125136f9ab9176b0d4b",
+      "elapsed_seconds": 312.374444,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "04ba99733f4b78d1c3d8c85b74138094fc578adb4b8ba01218c9035c33f9855d",
+        "record": "/workspace/campaign/results/variant-trans-wide-full.train.json"
+      },
+      "finished_at": "2026-11-18T19:53:21.983680+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 30.185212166,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-trans-wide-full-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.9961089494163424,
+      "solver": {
+        "seconds": 227.33041885899001,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T19:48:09.609236+00:00",
+      "state": "succeeded"
+    },
+    {
+      "candidate_id": "variant-ens-lct-full",
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "completion_order": 23,
+      "digest": "d68a3d972b9a20bbe200ee4e43ef5a7ef448424e5822251aff71e3171e14a287",
+      "elapsed_seconds": 434.547111,
+      "error": null,
+      "evidence": {
+        "evaluation_id": "87dc3a3de66a356c033b1e13979acc92be21f047350de7f1d87d91e44cc34f95",
+        "record": "/workspace/campaign/results/variant-ens-lct-full.train.json"
+      },
+      "finished_at": "2026-11-18T20:00:37.678242+00:00",
+      "job": "http://172.20.0.1:8765",
+      "judge": {
+        "seconds": 25.278130604,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "measurement_id": "train-ens-lct-full-1",
+      "proposal_count_at_finish": 18,
+      "score": 0.9961089494163424,
+      "solver": {
+        "seconds": 359.3768466279944,
+        "tokens_complete": true,
+        "total_tokens": 0
+      },
+      "started_at": "2026-11-18T19:53:23.131131+00:00",
+      "state": "succeeded"
+    }
+  ]
+}

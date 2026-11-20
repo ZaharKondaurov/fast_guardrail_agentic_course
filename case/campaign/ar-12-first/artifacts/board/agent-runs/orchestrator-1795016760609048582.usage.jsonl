@@ -1,0 +1,674 @@
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 2.9582483869999123, "total_tokens": 23294, "generation_id": "gen-1795016766-J5jlxOL1ykLBrJntFrXc"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.116815116998623, "total_tokens": 24278, "generation_id": "gen-1795016770-ScJwst5iqmUyZYas4QKu"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.962580291001359, "total_tokens": 25059, "generation_id": "gen-1795016773-soIzQNmvSHYgIcuzolwH"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.076848962002259, "total_tokens": 26052, "generation_id": "gen-1795016777-qOkiF7JwjPxoJmh4szjV"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.003260483001213, "total_tokens": 26801, "generation_id": "gen-1795016782-mqHHH5tFibo3mrfs4hLK"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.5461171899987676, "total_tokens": 27271, "generation_id": "gen-1795016786-PWNV4bPCN1loxOFUqyjE"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.961914807998255, "total_tokens": 30016, "generation_id": "gen-1795016791-4J5SOqWcIY5r4DO1UBwI"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.8344033760004095, "total_tokens": 32791, "generation_id": "gen-1795016795-2xGi2Lg8eF7uBjzawQqM"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.586102746998222, "total_tokens": 36309, "generation_id": "gen-1795016798-UrckZrRFizHCD8eMjIEQ"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.057510254002409, "total_tokens": 38938, "generation_id": "gen-1795016803-stlbucoeQFIrozJGkiE8"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.195626415999868, "total_tokens": 42025, "generation_id": "gen-1795016807-pH1myTofTAFbTNDEtjAa"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.259809110997594, "total_tokens": 46991, "generation_id": "gen-1795016811-Z3X75cqRTv4v5DLqUlOs"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.615173570000479, "total_tokens": 54054, "generation_id": "gen-1795016817-8CE4r6s2sve9oi7FDiNj"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.8586705189991335, "total_tokens": 55078, "generation_id": "gen-1795016823-QkvDHcJUihY3vfK3t5Ev"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.695975213999191, "total_tokens": 56943, "generation_id": "gen-1795016830-etvEkXB2IAqjXynXA0uT"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.017232273003174, "total_tokens": 59051, "generation_id": "gen-1795016835-bFNapfMGNPCHhc6VYikr"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.674426401001256, "total_tokens": 63152, "generation_id": "gen-1795016840-e5caz7bdREI3KBjhgXuP"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.982917418998113, "total_tokens": 65532, "generation_id": "gen-1795016851-vLXWy1t9Ho9k67PrnqFF"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.415693217000808, "total_tokens": 70326, "generation_id": "gen-1795016857-S2gmudfnqKfSVsHh192C"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.109666370000923, "total_tokens": 73000, "generation_id": "gen-1795016864-mJw15VuUDjYLh0sGNkOJ"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.7700967119999405, "total_tokens": 74855, "generation_id": "gen-1795016870-pEOWuXCsQTNjaZ6ZFRVO"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.212615298001765, "total_tokens": 77957, "generation_id": "gen-1795016874-CsKVgJndFXstRujENki7"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 21.690723426003387, "total_tokens": 83039, "generation_id": "gen-1795016879-NM4L5ErgxuZX0zqQJy0l"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.971565961001033, "total_tokens": 84242, "generation_id": "gen-1795016905-wylAg4LwD1QthAQgJoS2"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.1623891909985105, "total_tokens": 86580, "generation_id": "gen-1795016910-tjcT1Wvy36rL6TwltoZA"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.958768087999488, "total_tokens": 88060, "generation_id": "gen-1795016918-kgdCKR0s9CZo1nhQPVht"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.747350669000298, "total_tokens": 88228, "generation_id": "gen-1795016930-cWtpbwP4C6al5YQ0fBFU"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.146157535000384, "total_tokens": 89388, "generation_id": "gen-1795016942-RgzgaSbT1mMay8iPHdU8"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 15.489689646001352, "total_tokens": 91168, "generation_id": "gen-1795017026-cePN1wRTSQ4PWei8I0E7"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 9.537855927999772, "total_tokens": 92374, "generation_id": "gen-1795017036-oaEFiCqJxJvWgxHbvzCk"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.1291664929995022, "total_tokens": 92548, "generation_id": "gen-1795017045-T96xMcXhPcXIZPDgr4p7"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.9320449650003866, "total_tokens": 93234, "generation_id": "gen-1795017057-JjDCSgwQf5KrV7Y5TF3R"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 2.4100238220016763, "total_tokens": 93671, "generation_id": "gen-1795017060-X44U9mkeYIVUspPtxvHU"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.989948100999754, "total_tokens": 95052, "generation_id": "gen-1795017072-cVPYalRPa2O5aXrELEIq"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.225840934999724, "total_tokens": 96829, "generation_id": "gen-1795017083-lu3LlOGFl0xR7jOBMHzH"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.342271347999485, "total_tokens": 97976, "generation_id": "gen-1795017090-vSt8o8UXMFVFdUvrLOxa"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.352611277001415, "total_tokens": 99791, "generation_id": "gen-1795017098-xIG4wVH74CzwOha5aPSZ"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.958491828998376, "total_tokens": 101022, "generation_id": "gen-1795017107-01vtAUNCD5sr0E7cKFFk"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.980544709000242, "total_tokens": 101511, "generation_id": "gen-1795017113-PckLRRjV7lKUEM2of3oC"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 12.180858153002191, "total_tokens": 103127, "generation_id": "gen-1795017120-NBpUuyP8sqh4XjQYX4Zx"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.188768619002076, "total_tokens": 103436, "generation_id": "gen-1795017133-wHJtaYPQZCZX6RdvUHip"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 11.27497306100122, "total_tokens": 104672, "generation_id": "gen-1795017138-FcyCJ7J4IYs5DHirYAcK"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 11.708953568999277, "total_tokens": 106527, "generation_id": "gen-1795017150-F0RbqMmZHCl4w7xs24NM"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 11.850759426997683, "total_tokens": 108571, "generation_id": "gen-1795017163-xmh1rftTKbvzGPaIarLy"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.207282898001722, "total_tokens": 109185, "generation_id": "gen-1795017174-0cchdd7rembgCZwO0DS6"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.184196540001722, "total_tokens": 109598, "generation_id": "gen-1795017180-X6B31gM21d6dVhJZ37Y5"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.275608116000512, "total_tokens": 109937, "generation_id": "gen-1795017188-iOpVJSXQritROGfL3kGj"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.092925935001404, "total_tokens": 111883, "generation_id": "gen-1795017208-RBJLelR2zBBhMoPW3It8"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 2.8279192029986007, "total_tokens": 112572, "generation_id": "gen-1795017217-JbPG8SylHp6gBoVM1IC1"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.702231092000147, "total_tokens": 113731, "generation_id": "gen-1795017237-rimsFUNkVmkdyRQ3pIU7"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.950273559999914, "total_tokens": 114474, "generation_id": "gen-1795017245-5PvsQ6qg1W0tUeytsrCZ"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.870760175999749, "total_tokens": 116054, "generation_id": "gen-1795017252-e7dC1fKkGQUX9TtWCDQY"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 15.233817393000209, "total_tokens": 117813, "generation_id": "gen-1795017261-mzZLjr7KqOvrNUbGUnEl"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.735699830998783, "total_tokens": 118256, "generation_id": "gen-1795017367-be1oagqn9Hbk9iL6gdiW"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.367690301998664, "total_tokens": 118814, "generation_id": "gen-1795017377-qSaNRNqKyAz6yG5I0Wnd"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 9.184120270001586, "total_tokens": 119651, "generation_id": "gen-1795017384-jHzkwWk7OXaPue7qTvsv"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.219607344999531, "total_tokens": 119860, "generation_id": "gen-1795017394-v98dR0g4u6MJi3107tOo"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.382440806002705, "total_tokens": 120735, "generation_id": "gen-1795017467-85Z4svIN3maaVQBVSr3f"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.598297542001092, "total_tokens": 121563, "generation_id": "gen-1795017479-pJlfmEs2hhF5PAXpLbFz"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.438265898999816, "total_tokens": 122128, "generation_id": "gen-1795017484-CzQIi0rOLBXfa0nNWBLe"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 11.71321127400006, "total_tokens": 123188, "generation_id": "gen-1795017510-v8sehba1pH9EB95bncRi"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.927863003998937, "total_tokens": 124976, "generation_id": "gen-1795017523-qpfbmKiOUf7b0PGdozQm"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 15.670481180000934, "total_tokens": 127104, "generation_id": "gen-1795017536-Xi4eGNqL7xvUPhXjJY7A"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 17.53052897499947, "total_tokens": 129271, "generation_id": "gen-1795017555-iYnaK4UV15hCi25o0tNs"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.813757859999896, "total_tokens": 129723, "generation_id": "gen-1795017572-JWLJXqdzt7kwlrYTmrbT"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.719003008998698, "total_tokens": 130186, "generation_id": "gen-1795017578-Z4z2cB4UTJG3yavtlSxZ"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.779251508000016, "total_tokens": 130565, "generation_id": "gen-1795017586-yNSRnaOH6v0dqzRpCgaf"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.7886535190009454, "total_tokens": 131226, "generation_id": "gen-1795017592-kYqVH1Sn8eoY08jk6Kjm"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.432795116001216, "total_tokens": 131744, "generation_id": "gen-1795017598-0ZmFcGRnvtQXBqcrlB9c"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 28.472785402998852, "total_tokens": 136225, "generation_id": "gen-1795017723-SfGob3omCt61MGWU00H0"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 1.582452889000706, "total_tokens": 7635, "generation_id": "gen-1795017750-dKdTyLHYPcufTbRQ8sq1"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 1.620959915999265, "total_tokens": 7555, "generation_id": "gen-1795017750-9HhjHECXfj5hETQ9vJKF"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.3015910190006252, "total_tokens": 7661, "generation_id": "gen-1795017750-kcBxr2g15tHfA0GZAqvi"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 1.232198031997541, "total_tokens": 23582, "generation_id": "gen-1795017751-UnlYzi0BTQ8UG2RUqa2v"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.603435863999039, "total_tokens": 23710, "generation_id": "gen-1795017751-cHQGmAiWTgPHo6FDnAlE"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 1.6296913379992475, "total_tokens": 26708, "generation_id": "gen-1795017756-QgWoAQb8ZeO2kksZbB11"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 1.9841473859996768, "total_tokens": 29174, "generation_id": "gen-1795017758-2E8maS47k3zjScrndMP5"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 12.797121399999014, "total_tokens": 23621, "generation_id": "gen-1795017752-sMLEF0dGS4jX8DUw1ebc"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.253310985001008, "total_tokens": 30340, "generation_id": "gen-1795017762-Q3c05I2Vpv7EnMNIQLwu"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.978309916001308, "total_tokens": 28874, "generation_id": "gen-1795017766-iKvCbWNHFT00r9C4dkQx"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.9879515819993685, "total_tokens": 33424, "generation_id": "gen-1795017769-LefpFetPwGRHMtSRvW0T"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.1962133909983095, "total_tokens": 37197, "generation_id": "gen-1795017773-Xfs31nbdbgXeswb2fshP"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.520770849001565, "total_tokens": 32751, "generation_id": "gen-1795017769-YIOE21W1Ge4rSaSLL56W"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.855425030997139, "total_tokens": 40974, "generation_id": "gen-1795017779-ZGwa5rUESXgZ35glpSh0"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 39.02810201399916, "total_tokens": 28118, "generation_id": "gen-1795017756-ACCWoXQAOXPzc5FRNfMI"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 21.271748770999693, "total_tokens": 61310, "generation_id": "gen-1795017779-EsrlBcZccj7YHhSER2W8"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.348234139000851, "total_tokens": 31824, "generation_id": "gen-1795017797-5v95pYKaaCN7275us65q"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.695316494002327, "total_tokens": 62755, "generation_id": "gen-1795017799-zfMc5S7mxBnfAq7T1K2L"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.216893015000096, "total_tokens": 34049, "generation_id": "gen-1795017802-3BRQVP830QQMEer7r8iU"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 32.27647147800235, "total_tokens": 50362, "generation_id": "gen-1795017788-Mq0gYaf5O63UJLKnRvGT"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.515722462001577, "total_tokens": 46240, "generation_id": "gen-1795017810-8KiICnauwFuXM4C8OaWT"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 23.17856860399843, "total_tokens": 70176, "generation_id": "gen-1795017807-mJMFbHXPHenofhmZ3kqs"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.181057990001136, "total_tokens": 70592, "generation_id": "gen-1795017829-vcRqB3cEPHaWbGMGeOeg"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.048219191001408, "total_tokens": 71200, "generation_id": "gen-1795017834-nOiCCp53xelPDMF3gHN4"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.4049849809998705, "total_tokens": 71676, "generation_id": "gen-1795017839-M3bWsLq19Ipf5kLNmRbo"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 23.247976173999632, "total_tokens": 54200, "generation_id": "gen-1795017824-2XolOvyvjkwmxcUmY5ei"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.159102649002307, "total_tokens": 72428, "generation_id": "gen-1795017845-51X1yERzchwOUdu2hSSc"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.917704703002528, "total_tokens": 72793, "generation_id": "gen-1795017848-rm5vketXdqh22z6sKNcx"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.5677948980010115, "total_tokens": 72977, "generation_id": "gen-1795017853-5B8MZ8IPqlcad6dfXpon"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.440526214999409, "total_tokens": 74539, "generation_id": "gen-1795017856-4OpO26IMPsfDJZ5bb9HO"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.015109141997527, "total_tokens": 75916, "generation_id": "gen-1795017864-Obp27WY4DNWk6wWzFMet"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.888088919000438, "total_tokens": 76287, "generation_id": "gen-1795017870-ZWWeyGbT9qbMcAPyeZR3"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 31.10169256500012, "total_tokens": 60269, "generation_id": "gen-1795017847-s5DLUl2JWSqTKAAxW4NE"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.708135175998905, "total_tokens": 76872, "generation_id": "gen-1795017876-hZlvw2nSmtYKo39YwXDk"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.186745985000016, "total_tokens": 77072, "generation_id": "gen-1795017880-dtYrmdwRyyljgxiDwiAq"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 58.859975433002546, "total_tokens": 50030, "generation_id": "gen-1795017827-izA3twZgd9Y90AvoVW2Q"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.397117471002275, "total_tokens": 60906, "generation_id": "gen-1795017880-VX0mjc1Hc5AtCqUFdPnt"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.877197713001806, "total_tokens": 77720, "generation_id": "gen-1795017885-NeoxRrnLC68RcfltfZLE"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.652240167997661, "total_tokens": 51253, "generation_id": "gen-1795017886-VI0j4yIiTDybPoxpl3Ov"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.28794964700137, "total_tokens": 81105, "generation_id": "gen-1795017890-BDm2PAg1OsDginYA68mp"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.76391679399967, "total_tokens": 51783, "generation_id": "gen-1795017894-y24tW4AJ7Xiuceqqr8wg"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.0627143340025214, "total_tokens": 51954, "generation_id": "gen-1795017898-7aisG6GD6AbAxKEQVqi2"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.1498216090003552, "total_tokens": 81454, "generation_id": "gen-1795017899-3SjJNdwKewbejsKlKB6f"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 17.022486870999273, "total_tokens": 64663, "generation_id": "gen-1795017886-27FzEGwbP5iq4NArtLDY"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.174216018000152, "total_tokens": 81970, "generation_id": "gen-1795017903-fAe4wJ0O7iPLxLSn04gv"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.876308194001467, "total_tokens": 65120, "generation_id": "gen-1795017902-cZJV7DdVHZOL4tvHoWAq"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.4608421369994176, "total_tokens": 82734, "generation_id": "gen-1795017906-QP2u3XlqyxxXLfKIxxdc"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.2519176040004822, "total_tokens": 83123, "generation_id": "gen-1795017910-50z8sgHZELUq50XANUzD"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.12218122899867, "total_tokens": 83958, "generation_id": "gen-1795017930-gcrcxt28WhctWDv3hFvE"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.8434912749980867, "total_tokens": 84356, "generation_id": "gen-1795017935-Tj6IpkMOxGyA57lD26We"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 13.299226301001909, "total_tokens": 54245, "generation_id": "gen-1795017943-DuPCI2Wy0MOmjByTV0tk"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 14.733766430999822, "total_tokens": 55107, "generation_id": "gen-1795017958-Z25jQ1YupF76xcc4bWr7"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.6908989249968727, "total_tokens": 55313, "generation_id": "gen-1795017973-YJZajXTeUO1bXKzELfxC"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.3820156949987, "total_tokens": 66802, "generation_id": "gen-1795018030-r6jCvlui1w1TNVMSGl3L"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 12.390510586003074, "total_tokens": 68683, "generation_id": "gen-1795018044-Av7zoO28jriPfeKxvYVE"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.8299104850011645, "total_tokens": 69033, "generation_id": "gen-1795018058-KOSgPDvDamZuFNkTVid8"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.89805980500023, "total_tokens": 69781, "generation_id": "gen-1795018064-Wt3DxYehLF0CEvCvZaxt"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 25.19329373399887, "total_tokens": 73867, "generation_id": "gen-1795018073-BcWD1WItP3WuwNMSpyVL"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.313196954000887, "total_tokens": 74001, "generation_id": "gen-1795018098-B8pqjqLgYWbLzPmGMJpQ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.65309992100083, "total_tokens": 75358, "generation_id": "gen-1795018102-GN1FzIyY6VFLuWWVko2i"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.6822475970002415, "total_tokens": 75970, "generation_id": "gen-1795018106-KW5c2iAcKYgMOjmHoyip"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.476931384000636, "total_tokens": 77642, "generation_id": "gen-1795018110-x0ve0ElaBUE3kXsSqWTW"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.889332210001157, "total_tokens": 79322, "generation_id": "gen-1795018120-RLnQfKHzAfKGg10uPUZy"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.097562710998318, "total_tokens": 86523, "generation_id": "gen-1795018138-cBBui95XbjlXVrhZlKSE"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 16.91129342899876, "total_tokens": 81563, "generation_id": "gen-1795018132-VEuMCKD8JWjXsbxKuY9q"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.379916891997709, "total_tokens": 81702, "generation_id": "gen-1795018146-Un3OEOj5mRAvAKyE9seT"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.90762651499972, "total_tokens": 88061, "generation_id": "gen-1795018146-LGXDvp91qOwt6xMYy91E"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.9784796700005245, "total_tokens": 89928, "generation_id": "gen-1795018152-qjYFhcN07NBEYWKUM92e"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 17.267817585001467, "total_tokens": 85608, "generation_id": "gen-1795018152-H0VKPrikB8gwaCHdN8Wk"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.695873099000892, "total_tokens": 90559, "generation_id": "gen-1795018165-8BsxwTmwllINVbJ1yG2H"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.593785123000998, "total_tokens": 86952, "generation_id": "gen-1795018170-NO73beDWrkDUjwozRXwb"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 12.889319939000416, "total_tokens": 94059, "generation_id": "gen-1795018173-HA1oXx843vWg1gmIlw3Q"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.092305702000886, "total_tokens": 94315, "generation_id": "gen-1795018189-DXvMGGu1jgOo0lsDlWt2"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.707928787000128, "total_tokens": 100493, "generation_id": "gen-1795018196-evxamFrL0eXVRhcYoI4x"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.49454778800282, "total_tokens": 103485, "generation_id": "gen-1795018204-5bA024Zp9YK0zphdHF7e"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.602447930999915, "total_tokens": 103716, "generation_id": "gen-1795018218-cE1WSSU7YEHmJKHhUclw"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.4034697329989285, "total_tokens": 104085, "generation_id": "gen-1795018225-OoSgbHAx0OmfYNYQykzO"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.093127131000074, "total_tokens": 106320, "generation_id": "gen-1795018231-3lNvagp9mDa3ldfQWJVh"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.3078031269978965, "total_tokens": 107134, "generation_id": "gen-1795018240-20BE7PYVYnctXTmhvVzs"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.706223945999227, "total_tokens": 107838, "generation_id": "gen-1795018249-9TYtH3QXcym5JC1TDL66"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.287336361001508, "total_tokens": 107985, "generation_id": "gen-1795018256-kLtCQj0Oli9UpHs06hqz"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.800307491997955, "total_tokens": 108574, "generation_id": "gen-1795018261-V7PzjU9NAqF5DRHKsPE8"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.098338490999595, "total_tokens": 109437, "generation_id": "gen-1795018267-DxLtaGC56GIeuziyTO7F"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.586627270000463, "total_tokens": 112380, "generation_id": "gen-1795018280-Kprc3rcQqzbmSRIJHlf3"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.990047642000718, "total_tokens": 113018, "generation_id": "gen-1795018287-k8mwiltYh6CfDMBVbO1L"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.699460069001361, "total_tokens": 113541, "generation_id": "gen-1795018293-hIXKHn62GWaO97oovmst"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.691583769999852, "total_tokens": 114034, "generation_id": "gen-1795018298-sFHYAyEoFpxDIT6ci6az"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.584726295997825, "total_tokens": 114828, "generation_id": "gen-1795018301-M0FKFGKCaRMHgUSNBi7s"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.595918723000068, "total_tokens": 115506, "generation_id": "gen-1795018305-gheQ4kb45eK2RW5yH60V"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.235937143999763, "total_tokens": 115714, "generation_id": "gen-1795018309-WKUEmJnQzJsMUD2ZrEaQ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.6958343840015004, "total_tokens": 116114, "generation_id": "gen-1795018389-y4MctiRrcW2zHgbeHiu3"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.179467267000291, "total_tokens": 116624, "generation_id": "gen-1795018394-K4GIrIJQ2HQemudR1q9k"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.399049397001363, "total_tokens": 116761, "generation_id": "gen-1795018397-DJ5BMFhErSh0kuUfVYjK"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.08404893199986, "total_tokens": 87515, "generation_id": "gen-1795018779-Syh4vhMgDquCStykWWId"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 18.492613095000706, "total_tokens": 89774, "generation_id": "gen-1795018788-NzJo0cUMZnPctmH9bDS3"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.69063538699993, "total_tokens": 90278, "generation_id": "gen-1795018808-yHZOv5eAm0PbC4H8Rmsl"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.601952725999581, "total_tokens": 90884, "generation_id": "gen-1795018821-FQO7bbkERiWVa4phk6xa"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.999129339001229, "total_tokens": 117008, "generation_id": "gen-1795018825-cp9RHk6xVU13C2bxj4zM"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.9006218549984624, "total_tokens": 117415, "generation_id": "gen-1795018832-KkyYkjjYllZf7kfngTGT"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 12.69587925900123, "total_tokens": 91729, "generation_id": "gen-1795018828-qBg2wHdY8aKyu70Mj9Fm"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.90302135699676, "total_tokens": 118019, "generation_id": "gen-1795018840-vaRQmst9gB9bjAqgRLJX"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 21.496952499001054, "total_tokens": 92797, "generation_id": "gen-1795018854-gK0n2t6VXesCm6E7Uune"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.101071010998567, "total_tokens": 93535, "generation_id": "gen-1795018874-PnEfn7TTuhtcKOZjrMG5"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.00121155799934, "total_tokens": 94930, "generation_id": "gen-1795018882-DY4OSbCyhhsSDIrAlwO0"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.593991628000367, "total_tokens": 120518, "generation_id": "gen-1795018883-iH8origyY4tLieEByT5N"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.29432682100014, "total_tokens": 96265, "generation_id": "gen-1795018897-6mLO5bceSg7fsurjEjAG"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.599083173001418, "total_tokens": 121696, "generation_id": "gen-1795018910-kboXMLNrCoGnM5MT91rv"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.600607822998427, "total_tokens": 123059, "generation_id": "gen-1795018918-Nus2eLCCrnEzjdFggGyc"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.776005985000666, "total_tokens": 123538, "generation_id": "gen-1795018934-WOuxhslpm5k8v3EkCUsX"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.275977582998166, "total_tokens": 123845, "generation_id": "gen-1795018945-dFupBinbTmu6n6Dz6GZY"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 18.183433965001313, "total_tokens": 57817, "generation_id": "gen-1795019074-LAobkabFjO7QghsWWYVM"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.699756027999683, "total_tokens": 59077, "generation_id": "gen-1795019098-IzK6qN4v2GPeO4V6yyp2"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.407764550996944, "total_tokens": 59653, "generation_id": "gen-1795019111-CLSxdy1c8dhy06NmSeip"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 14.914913569002238, "total_tokens": 98815, "generation_id": "gen-1795019113-VDxm8yu4CwVbqZ33RzJf"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 13.320835776001331, "total_tokens": 62285, "generation_id": "gen-1795019117-tF2A93WTtI39L4hlGaXj"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.672728658999404, "total_tokens": 64108, "generation_id": "gen-1795019131-3jeQYFyVZl5cAT0ZJK56"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.442333142997086, "total_tokens": 101712, "generation_id": "gen-1795019127-1yUwfGVG78WtQ4KGDMA4"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.131022176999977, "total_tokens": 102458, "generation_id": "gen-1795019139-Vf6wPyd6DnkWjDa2VBJO"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.754905694000627, "total_tokens": 65073, "generation_id": "gen-1795019140-tOgMgDKgsHlzc9qjwdJg"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.881705088999297, "total_tokens": 65322, "generation_id": "gen-1795019146-5CZlCvrxFsyRB2BVNX4p"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 18.049928723001358, "total_tokens": 105665, "generation_id": "gen-1795019148-UXDtmDM6QCzLY8N1tRIV"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 35.57842446900031, "total_tokens": 110027, "generation_id": "gen-1795019174-ZtXtJlcy3zPPQmQ6ZVko"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.19886955399852, "total_tokens": 110273, "generation_id": "gen-1795019202-jq9z7FaCH3UfacgQJecF"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.3089350899972487, "total_tokens": 124133, "generation_id": "gen-1795019248-CugOl43PhVMjme3kDlOU"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.388772694001091, "total_tokens": 125266, "generation_id": "gen-1795019254-EaalWDA3aWHSuMs5HYH8"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.6994414969994978, "total_tokens": 125950, "generation_id": "gen-1795019333-uCaBdBGCHJS8rzKZyIYg"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 12.864662534997478, "total_tokens": 67227, "generation_id": "gen-1795019332-VBx1MtJplZNqEtNLfPKW"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.158876707999298, "total_tokens": 67674, "generation_id": "gen-1795019413-qK5T2bOoB0p20DDjqzpd"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.402751157998864, "total_tokens": 68071, "generation_id": "gen-1795019419-xCH9vRtIQ7vCgNs67a6g"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.70904189599969, "total_tokens": 110947, "generation_id": "gen-1795019523-3Aus5LHxMQNTqYAUBNTS"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 13.91450334199908, "total_tokens": 111996, "generation_id": "gen-1795019648-31OwB72jNyBJD9ji5Ug0"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.589455479999742, "total_tokens": 112695, "generation_id": "gen-1795019656-II6nUmtOLUGJBuvTVqir"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 18.381424319999496, "total_tokens": 71381, "generation_id": "gen-1795019659-fuqTrtUWe5fWIqOuOs8w"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 14.707999400001427, "total_tokens": 114139, "generation_id": "gen-1795019671-Alvf64Gj9y70AFfMLErx"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.3571429349976825, "total_tokens": 71711, "generation_id": "gen-1795019678-AVUrevZrWDdSDtUUROBL"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 28.299325814998156, "total_tokens": 76225, "generation_id": "gen-1795019685-TXWjKleYoEiEIwsEoZLX"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.560132768998301, "total_tokens": 76375, "generation_id": "gen-1795019714-firHCSAMvf0PFBD8lWhr"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 23.29178280999986, "total_tokens": 79703, "generation_id": "gen-1795019722-BaTc81MKYwXaSRTrYroD"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.756409140001779, "total_tokens": 80308, "generation_id": "gen-1795019744-lUhdcYPmYyG3o6KWQJxb"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.394267196999863, "total_tokens": 80461, "generation_id": "gen-1795019752-TBcwND59l0agaicNRTEd"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 18.572758030997647, "total_tokens": 83271, "generation_id": "gen-1795019759-69fDkuFII69D5l5H35Hu"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.591116065999813, "total_tokens": 83423, "generation_id": "gen-1795019775-ciDUMjXpxnCpifnIZnhw"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.992746931999136, "total_tokens": 85384, "generation_id": "gen-1795019779-sJnmVByDGw7COf9oA7fX"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 13.611048597002082, "total_tokens": 86509, "generation_id": "gen-1795019796-aRePQ9mcxPo1nM0Rz2km"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.767453022999689, "total_tokens": 115052, "generation_id": "gen-1795019798-ntAMNgVv3Eoi7TA2FzzQ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.289790246002667, "total_tokens": 115228, "generation_id": "gen-1795019806-waxmkzKBq8NnUwro4jqr"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.5843360079998092, "total_tokens": 115516, "generation_id": "gen-1795019809-jUWjV9iUHvlRzsbFhpAp"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.34336371399695, "total_tokens": 86662, "generation_id": "gen-1795019810-ECga5Eiz6e2UoCzwC2FM"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.566311829999904, "total_tokens": 116314, "generation_id": "gen-1795019814-Q5OQYYxIfFSNUXLlIozR"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.566112252003222, "total_tokens": 88329, "generation_id": "gen-1795019814-lI04lUeifHff5FtrPWok"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.287080530997628, "total_tokens": 88481, "generation_id": "gen-1795019829-E00j6fyFdJYMSgP7HFdZ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.572027281003102, "total_tokens": 88988, "generation_id": "gen-1795019839-dA5S3O6JC6WrVweL7fLo"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.591192831998342, "total_tokens": 89279, "generation_id": "gen-1795019851-Qwza4fhSsFSa3xW09XDO"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.996565391000331, "total_tokens": 89504, "generation_id": "gen-1795019858-XGBqoPEbGZsfaypAq5Jg"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.296439811998425, "total_tokens": 89956, "generation_id": "gen-1795019864-jaQgNj6oOJWXq7XbAMuh"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.093564431997947, "total_tokens": 91676, "generation_id": "gen-1795019871-AtcNV9ZVVoOfUfyLfDGR"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.674259356997936, "total_tokens": 92607, "generation_id": "gen-1795019889-KNckNlWwt3rSjddT0sk4"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.304896800000279, "total_tokens": 126176, "generation_id": "gen-1795019941-olA7vrqYVL7kkAe2ynq8"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.803503619001276, "total_tokens": 127082, "generation_id": "gen-1795019950-kNcmbsB8ERh6xTuajlgZ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.302285055997345, "total_tokens": 127229, "generation_id": "gen-1795019957-1gold9Up6GxPwm64Lz8E"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.891082947000541, "total_tokens": 127526, "generation_id": "gen-1795019965-8zTV3ROA6nAQVgTpyWLl"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.256544420000864, "total_tokens": 117329, "generation_id": "gen-1795020002-NvyoLR1RNW0OYyKVdzBk"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.897756237998692, "total_tokens": 128432, "generation_id": "gen-1795020027-qmuqB8beIq3vbcl10MG5"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.599489002001064, "total_tokens": 129275, "generation_id": "gen-1795020041-3A87v3q2XApmq4sViEAD"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.497618556997622, "total_tokens": 129538, "generation_id": "gen-1795020046-92OkPDDWOFWwneFvOBZK"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.760378602000856, "total_tokens": 118692, "generation_id": "gen-1795020046-0E1NrtBRI3PZCaR3luDz"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.6953596309977, "total_tokens": 129895, "generation_id": "gen-1795020054-uWFyESWqN52vimM7lX5I"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.459425144999841, "total_tokens": 119188, "generation_id": "gen-1795020054-NbgxTnU5QmVHeO72v125"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.046605562998593, "total_tokens": 120170, "generation_id": "gen-1795020174-q38rOudQ01kuVq9eBJKg"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.774739632001001, "total_tokens": 122311, "generation_id": "gen-1795020182-1nShHlAvLR5fYWmAWwfT"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.658732431998942, "total_tokens": 123884, "generation_id": "gen-1795020198-O6buG0eFhhLLselxQrve"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.3910769569993136, "total_tokens": 124773, "generation_id": "gen-1795020209-4IWbuUdw6Mwm8VlOyXSw"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.196510708999995, "total_tokens": 94105, "generation_id": "gen-1795020290-PPQS9n2km9f6e7KvajI0"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 71.86789270900044, "total_tokens": 94784, "generation_id": "gen-1795020297-FuqF83W5OAmcvMAihWbo"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.988038338000479, "total_tokens": 126332, "generation_id": "gen-1795020415-NE8BDbsqwBWNIPtXU9xe"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.598967378999077, "total_tokens": 128239, "generation_id": "gen-1795020424-zi30BuNhIbvaNDLyUJtw"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.687792551001621, "total_tokens": 129389, "generation_id": "gen-1795020438-a9xnH5jRKQAbsN74ny8S"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 75.92589974300063, "total_tokens": 95839, "generation_id": "gen-1795020370-VZFgl83cCRAJlBt7N2zE"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 85.09358526700089, "total_tokens": 98294, "generation_id": "gen-1795020447-L7DdFlFDO2LjSoSBMoom"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.20062821800093, "total_tokens": 99241, "generation_id": "gen-1795020533-S1IWicqFfvENGP7c46cs"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.293132187998708, "total_tokens": 99387, "generation_id": "gen-1795020544-RyCweQmEHln73Dgg46GT"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.379108722001547, "total_tokens": 130155, "generation_id": "gen-1795020549-BdlkNArEuN8GD02wtSFs"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.668616345999908, "total_tokens": 131060, "generation_id": "gen-1795020555-kwFBXJ8iDQ4M7bzQNmiP"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 15.794610700999328, "total_tokens": 101300, "generation_id": "gen-1795020550-myTUw8w4EXua9jiY1EP2"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.096800619001442, "total_tokens": 101446, "generation_id": "gen-1795020567-3wTTTYUioLitGviBM0JX"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 44.38142230799713, "total_tokens": 101969, "generation_id": "gen-1795020577-k7EA6I4wareCYO0p9Lqd"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.684050595002191, "total_tokens": 130134, "generation_id": "gen-1795020654-kVe0SmxHd3jjkwrgXPJN"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.769021813997824, "total_tokens": 131334, "generation_id": "gen-1795020660-C4O1apTzoJHu1KgvIBDb"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.898803005999071, "total_tokens": 131699, "generation_id": "gen-1795020665-x5XDAbIQ9TyoZWEdmjn4"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.086067935000756, "total_tokens": 132768, "generation_id": "gen-1795020675-xQ1TtLcxD6KhXSc9Oz1q"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.944544813999528, "total_tokens": 133149, "generation_id": "gen-1795020686-GtIgZGOK66bML65tkkpz"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.451820033998956, "total_tokens": 131790, "generation_id": "gen-1795020685-ZOhgYiL6xNGMCtVNORg4"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.771698191998439, "total_tokens": 133575, "generation_id": "gen-1795020695-KuqnazLiy4afUjA9NahO"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.5884878910001134, "total_tokens": 133365, "generation_id": "gen-1795020690-yfMQFSfvRiySxeHzNYjn"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.448045432000072, "total_tokens": 134543, "generation_id": "gen-1795020700-eisdc2lAnkIaua6rIBxn"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.836032887997135, "total_tokens": 133921, "generation_id": "gen-1795020706-Qb0hXIqh5MCP7Ma58MQV"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.90557299899956, "total_tokens": 135331, "generation_id": "gen-1795020704-KCc04LaqRsEQmyfb1wZk"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.493867326000327, "total_tokens": 134427, "generation_id": "gen-1795020713-rGJnCBFkICki9UccIRFw"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.979115654001362, "total_tokens": 135608, "generation_id": "gen-1795020723-jjL2blnObYoKKfBx1S1y"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.174046682001062, "total_tokens": 135883, "generation_id": "gen-1795020729-6bwpxLyYaHcaCO991CvO"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.017516400999739, "total_tokens": 135561, "generation_id": "gen-1795020780-nlXBR4NMzLHTolmXWq9d"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.249579568000627, "total_tokens": 135787, "generation_id": "gen-1795020787-GqZxwPSsWMYGmVA2SsR0"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.303822436999326, "total_tokens": 102618, "generation_id": "gen-1795020787-IwWjrwSGNdsLuCC6aSUn"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.643377542000962, "total_tokens": 136232, "generation_id": "gen-1795020842-QrOYjc2gNyWMKhjHruzk"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.521391359998233, "total_tokens": 138462, "generation_id": "gen-1795020848-8FyL0O7OoVLjZ8MRt6TJ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.763129984999978, "total_tokens": 136529, "generation_id": "gen-1795020980-vXvtC5U9v9Arat2SJDmV"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.713208168999699, "total_tokens": 137365, "generation_id": "gen-1795020988-QuLfZJ8TsjjNYTbKSB84"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.005015703998652, "total_tokens": 138244, "generation_id": "gen-1795020996-Ufo7VAoLjquZB7NYl5Ht"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.56199124900013, "total_tokens": 138751, "generation_id": "gen-1795021013-iz0vSqJkVdt0XjpHaWTT"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.430605913999898, "total_tokens": 139514, "generation_id": "gen-1795021110-9U0US0gbXzbUXzOdpLtI"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.859102207999968, "total_tokens": 140225, "generation_id": "gen-1795021122-iPfCq7GGmsKRqyLs0dEo"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 84.86653514700083, "total_tokens": 104232, "generation_id": "gen-1795021336-opJ3BTs8eHeRIXIUlxy8"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.940623903999949, "total_tokens": 140589, "generation_id": "gen-1795021426-OY7AuktTK535aFuQkIeh"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 76.0380242780011, "total_tokens": 104623, "generation_id": "gen-1795021418-6MhMy6nIWKSQ5b696Zj2"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.604669893000391, "total_tokens": 106025, "generation_id": "gen-1795021499-X5ZQBJ5OpxlhKjoR5uXK"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.695867571001145, "total_tokens": 106196, "generation_id": "gen-1795021510-kN1YiGFomtggXa3FmEsj"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.326082630999736, "total_tokens": 106883, "generation_id": "gen-1795021514-8DIHiU0yItkCt78gH0N3"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.189600749003148, "total_tokens": 138985, "generation_id": "gen-1795021620-EjeJJWz9fc7ErCnfaTyL"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.576053191998653, "total_tokens": 140576, "generation_id": "gen-1795021625-UhbSQ0pmVPUg5VvQowZA"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.413124956001411, "total_tokens": 140778, "generation_id": "gen-1795021640-melzp8e3Vq43E40qTWsW"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.930149323998194, "total_tokens": 141354, "generation_id": "gen-1795021833-J5Ix41qIeYCUMGzrLUG5"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.99071502699735, "total_tokens": 142777, "generation_id": "gen-1795021843-My3ziSdyb7rCu2K2w9rC"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.593205103999935, "total_tokens": 143705, "generation_id": "gen-1795021879-JGYtx0bGhGljeOr2hN0n"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 18.295216539001558, "total_tokens": 145954, "generation_id": "gen-1795021892-okfVhipMzAShpjrcOQWi"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 38.99718000800203, "total_tokens": 152813, "generation_id": "gen-1795021910-yWJw1TCVZ1mSqtiWA5Zd"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 18.77119583500098, "total_tokens": 154865, "generation_id": "gen-1795021950-VNhcIycP8MCmO5wUXMhz"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 18.461672272002033, "total_tokens": 157251, "generation_id": "gen-1795021972-luWle65oEMksgxQLONS7"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.414444477999496, "total_tokens": 159508, "generation_id": "gen-1795021983-scJKLF7X3bKIhVZ68oD7"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.180304751000222, "total_tokens": 160252, "generation_id": "gen-1795021996-0zOjGy2OR90oAm1PKKRg"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.153444948002289, "total_tokens": 161237, "generation_id": "gen-1795022051-poa53t8h9FjlTyOgrJM9"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.6243320100002165, "total_tokens": 163767, "generation_id": "gen-1795022059-zyzanjtrn28VweDXsUTu"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.168795515000966, "total_tokens": 164515, "generation_id": "gen-1795022071-Q5bMr073WlULs7xffi6j"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 16.197918104000564, "total_tokens": 165645, "generation_id": "gen-1795022090-yKDfQrkixzxijPC3eAMv"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.105047995999485, "total_tokens": 166369, "generation_id": "gen-1795022102-P6jaMXQiEikYrrSF443o"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.424823925997771, "total_tokens": 167191, "generation_id": "gen-1795022110-SIJ3fPZFgMyHgYxdR9uC"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 13.002538357999583, "total_tokens": 168011, "generation_id": "gen-1795022122-7sYiVh3Z9piDYWF6Mwif"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 12.499637874996552, "total_tokens": 168583, "generation_id": "gen-1795022137-X5gadWLg1gwDhoniBej1"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.771703490001528, "total_tokens": 169441, "generation_id": "gen-1795022143-mEZkjOAADbLLyNVcKb1W"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 14.529064297999867, "total_tokens": 170646, "generation_id": "gen-1795022156-HPr0Nf8hFnQxXLPdhP89"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.390538865998678, "total_tokens": 177473, "generation_id": "gen-1795022177-irbcJuk2J7ObaiLYrZBV"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.3651658310009225, "total_tokens": 178254, "generation_id": "gen-1795022183-RxDiy3kccPP7OLRc5nZG"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.43906350600082, "total_tokens": 179813, "generation_id": "gen-1795022191-6aTWKfAruVxWHMOuhAVo"}
+{"event": "turn", "role": "unattributed", "task": null, "seconds": 4449.582079421998}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.6134793179990083, "total_tokens": 141010, "generation_id": "gen-1795022243-tTuTnXB5ih8GoseyGBc7"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.7276959070004523, "total_tokens": 141728, "generation_id": "gen-1795022244-sfCiFK96LunsnO26g27h"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.300653922997299, "total_tokens": 107415, "generation_id": "gen-1795022302-Pxm8NwObPL7teQwIoB53"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.513161503997253, "total_tokens": 108300, "generation_id": "gen-1795022308-YSfm09GLJhTCTvroCHBD"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 81.33905369299828, "total_tokens": 109179, "generation_id": "gen-1795022965-tOVQI2MMNxl1Z4iOiViz"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.89467338599934, "total_tokens": 141991, "generation_id": "gen-1795023115-wRk8hLrtOendAUoGPSQv"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.208395904999634, "total_tokens": 143215, "generation_id": "gen-1795023119-XQspVZR0utxgvkIDSW2S"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 79.17050650500096, "total_tokens": 110330, "generation_id": "gen-1795023046-ASBPSiWmwh84OIGEUpGB"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 77.81009468000047, "total_tokens": 111126, "generation_id": "gen-1795023126-67lG4TmCYn06rClwpJSE"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.2223939840005187, "total_tokens": 144131, "generation_id": "gen-1795023213-cRaowRp7heazh4z9V75l"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.759804654000618, "total_tokens": 145986, "generation_id": "gen-1795023224-ezNoCNPRfNuigmmMKj9v"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.0389407129987376, "total_tokens": 111752, "generation_id": "gen-1795023231-9bmboHUtDRn2LFTkfBo7"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.506647279999015, "total_tokens": 149317, "generation_id": "gen-1795023230-YIsTsGDIkar5BMbNFZia"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.907241332999547, "total_tokens": 152717, "generation_id": "gen-1795023246-z0c8MuRbjBtGTLTfFREt"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.327775057998224, "total_tokens": 153372, "generation_id": "gen-1795023258-3D3K5qCwoG8qopu5dReO"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.4729566239984706, "total_tokens": 154064, "generation_id": "gen-1795023262-FdrAhztDFUmWbKvyrDua"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.846388976999151, "total_tokens": 155400, "generation_id": "gen-1795023267-PBq0ZWsOerwnGjsouw9x"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.45543196500148, "total_tokens": 156763, "generation_id": "gen-1795023279-opAcEaTKF8SIx3P7sRHw"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.382608320000145, "total_tokens": 112640, "generation_id": "gen-1795023283-InRWg82JTMCqFKKAzPSP"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.597765720998723, "total_tokens": 158050, "generation_id": "gen-1795023286-z0Qxt7ZQc5ULcvgiDpL6"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.110089688998414, "total_tokens": 159439, "generation_id": "gen-1795023290-Y4yb3IjaOvVYf20oZtmB"}
+{"event": "turn", "role": "unattributed", "task": null, "seconds": 5545.216606094}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.176637185999425, "total_tokens": 114944, "generation_id": "gen-1795023330-zcd1GIwGLaNmsFx1kYse"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.936339829000644, "total_tokens": 117202, "generation_id": "gen-1795023344-Vb74MSPtaULCfyxSZaQx"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.728901962000236, "total_tokens": 119516, "generation_id": "gen-1795023354-9yrwUUDUZc0XirRhKY8K"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.350369818002946, "total_tokens": 121143, "generation_id": "gen-1795023366-xlLvztMBwFx0acBz0oY0"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.580362736000097, "total_tokens": 124215, "generation_id": "gen-1795023376-bDM9VQFnymQiAIjJqFWk"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.362752328001079, "total_tokens": 125116, "generation_id": "gen-1795023389-TuWHjzjwVNS3sMu8DnsX"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 86.98190081199937, "total_tokens": 125873, "generation_id": "gen-1795023402-lHSHQXvCzRcE3rsWdHGn"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.133322730998771, "total_tokens": 126575, "generation_id": "gen-1795023492-mvgqRjwuOSjNYNRDM1mG"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.745642827001575, "total_tokens": 128261, "generation_id": "gen-1795023498-nwNHfQc0FuepuQNt4hbY"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 32.80359497400059, "total_tokens": 133644, "generation_id": "gen-1795023509-5bFHyb1UmMEZzNF60Ze6"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.214756072000455, "total_tokens": 134613, "generation_id": "gen-1795023544-Vi03DOyzOjb4wcGqJMLc"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.2101855740002065, "total_tokens": 135231, "generation_id": "gen-1795023562-n1wyw0vWbvHPGjmcNV5o"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.254266439998901, "total_tokens": 135994, "generation_id": "gen-1795023567-DmZQ5mEqlVHp7XeAmdth"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.447777553999913, "total_tokens": 136852, "generation_id": "gen-1795023573-9KBQDnHd9FaQi1arlYDu"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 12.222494949997781, "total_tokens": 138587, "generation_id": "gen-1795023580-MTuoke8Dq4V2glzRnepQ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.708903435999673, "total_tokens": 139422, "generation_id": "gen-1795023597-qRrDslAZQAUUZodAkB05"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 19.317271611998876, "total_tokens": 143971, "generation_id": "gen-1795023602-LRpp4esY8uc5zOUfyr7W"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.249525504998019, "total_tokens": 144878, "generation_id": "gen-1795023622-XKBzFfcKQn6kpEBXOWQf"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.572125044000131, "total_tokens": 145631, "generation_id": "gen-1795023630-3APOoGn6zl9RAAu8nTx3"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.532182785002078, "total_tokens": 146195, "generation_id": "gen-1795023635-9LUmr0lu2jnk1w9e4JT6"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.08864321099827, "total_tokens": 147797, "generation_id": "gen-1795023641-aGVRzoWKppYGxIfwAgbh"}
+{"event": "turn", "role": "unattributed", "task": null, "seconds": 5899.95890297}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.222445843999594, "total_tokens": 160469, "generation_id": "gen-1795023651-zY65qVa3xYdXOZiohw8Z"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.446771300001274, "total_tokens": 163858, "generation_id": "gen-1795023661-YaG5o9GIGBfVqsE0dR29"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.586423918000946, "total_tokens": 164368, "generation_id": "gen-1795023670-WZlNP4YUQgWkqPYAyaSj"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.24752381199869, "total_tokens": 164892, "generation_id": "gen-1795023676-TsfnuaD4MGymRVsro3AP"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 12.746670760003326, "total_tokens": 169156, "generation_id": "gen-1795023684-ehkYLrpit9YwxSzJwaO7"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.242125065997243, "total_tokens": 172076, "generation_id": "gen-1795023697-lkewm70bNfYSGeGxiebO"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.833227200000692, "total_tokens": 172878, "generation_id": "gen-1795023704-m3DWTtWV4wmuC6c1wlGl"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.867959387000155, "total_tokens": 173613, "generation_id": "gen-1795023733-ERaHmRiZ7PBKoQBTYtFA"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 9.111469477000355, "total_tokens": 175143, "generation_id": "gen-1795023738-CzvWzWALmWHVy6CmLPkq"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.739608486997895, "total_tokens": 178438, "generation_id": "gen-1795023753-XfdZPiBYwTS4EyJFqVSn"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.990478515999712, "total_tokens": 178846, "generation_id": "gen-1795023762-VCkmOa68DwN4DLrFos4f"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.8147931700004847, "total_tokens": 179204, "generation_id": "gen-1795023996-ReFnKgsEzBCFaAlmfSo7"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.296885558997019, "total_tokens": 180810, "generation_id": "gen-1795024001-JUdQkefA4uWvJhWcBQNM"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.7663919670012547, "total_tokens": 181044, "generation_id": "gen-1795024010-UAelOWeYW2nKM8eznb8n"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.7795823820015357, "total_tokens": 181302, "generation_id": "gen-1795024014-S0vCqEFs9TatJCKp21Vr"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.8168197849990975, "total_tokens": 181855, "generation_id": "gen-1795024017-ynUTLcGS43gV3IS071Bw"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.341577498998959, "total_tokens": 182260, "generation_id": "gen-1795024022-DkVmT6aoJnuYbhDCcrus"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.398379046997434, "total_tokens": 182467, "generation_id": "gen-1795024027-k6vJYaZTQ27jsRFglU8b"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 13.45881758700125, "total_tokens": 184511, "generation_id": "gen-1795024032-MPNfT5P4dqVxp8At17bm"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.726720316000865, "total_tokens": 185951, "generation_id": "gen-1795024045-NAqVmLVS9uBfn0vqNvn5"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.383111225997709, "total_tokens": 188501, "generation_id": "gen-1795024050-MFJZvdeavuDIzqYswzsX"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.854011473002174, "total_tokens": 188662, "generation_id": "gen-1795024060-zMJtqEYMScID4KPX10Ed"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.81307130300047, "total_tokens": 190650, "generation_id": "gen-1795024070-Zuor4ZycRc1o590IMIxB"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.725956694997876, "total_tokens": 191425, "generation_id": "gen-1795024082-s3enaSm7oaAUcAFogx6X"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.787117243999091, "total_tokens": 193527, "generation_id": "gen-1795024089-Pa73Dz3MwyLVPnoQpgPo"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 9.36996400100179, "total_tokens": 197142, "generation_id": "gen-1795024094-47tMXcaW1OiS9zMiLZ6I"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.413447409999208, "total_tokens": 197490, "generation_id": "gen-1795024105-qE369gZTK77xJa9A89Fx"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.9376688539996394, "total_tokens": 197896, "generation_id": "gen-1795024117-uczlO7SQwadyOXo1rUsS"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.22867067399784, "total_tokens": 198541, "generation_id": "gen-1795024125-oM74XSG0h7xifbTi2IoN"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.143847408999136, "total_tokens": 199401, "generation_id": "gen-1795024133-00qKmQ6Gg6ehEhCc8IYR"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 18.95427595000001, "total_tokens": 202172, "generation_id": "gen-1795024139-mb1mDPy9PS8Tz9VB00Cb"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.3538033020013245, "total_tokens": 202528, "generation_id": "gen-1795024159-w48qqJ7Ho7I5M6lxnucA"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.791902240001946, "total_tokens": 203124, "generation_id": "gen-1795024163-1DoHG1lA5g2KpYGZlPvl"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 14.741408829999273, "total_tokens": 205973, "generation_id": "gen-1795024170-fvUGYre4fGzSXKJiJYSc"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.8872047219992965, "total_tokens": 206496, "generation_id": "gen-1795024185-G2EhtryV1foTfWjInVLk"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.387548799000797, "total_tokens": 207474, "generation_id": "gen-1795024190-fFn0j7PmmEUIDsjvG1Qj"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.4750661500002025, "total_tokens": 207660, "generation_id": "gen-1795024201-j4s4bq7EKeP0DtimZfBb"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.342286402999889, "total_tokens": 207931, "generation_id": "gen-1795024206-jUAkeTTKzeUKUtWzr4YY"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.90016804699917, "total_tokens": 208454, "generation_id": "gen-1795024216-iK31eScxBVYvmLbULqoZ"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.863904140998784, "total_tokens": 208872, "generation_id": "gen-1795024226-IkJxNBnA4LosEqiZkbYl"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.676858408001863, "total_tokens": 210268, "generation_id": "gen-1795024233-PTcL9dp0Vll7PFc9Fn5h"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.353118042999995, "total_tokens": 211839, "generation_id": "gen-1795024242-hJpzzIY4S6jm9HHpnG4t"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.4950992060003045, "total_tokens": 212295, "generation_id": "gen-1795024252-TzHUCXclRPvaJPneqvem"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.845436755000264, "total_tokens": 213457, "generation_id": "gen-1795024256-Db7WDj0vkfaclibvvRgi"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.431876275000832, "total_tokens": 214858, "generation_id": "gen-1795024264-Lr2DDP9tdbyreIyH1jCs"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.751845623002737, "total_tokens": 215909, "generation_id": "gen-1795024272-9Q3cTdeHAKht8vbzvMws"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.2597005299976445, "total_tokens": 217684, "generation_id": "gen-1795024278-ZhzQcCMcHrddFHSIMGSv"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.7245794070004195, "total_tokens": 218237, "generation_id": "gen-1795024283-WLfxv6KXLV4heJXPp2lD"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 9.286229399000149, "total_tokens": 220122, "generation_id": "gen-1795024287-EeMVFZsCOExibvC5basv"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.050717722002446, "total_tokens": 220288, "generation_id": "gen-1795024296-Tsvdkzby5Km0iIzNeqNo"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.38665770499938, "total_tokens": 221676, "generation_id": "gen-1795024308-vRYUTfe7ksySVyyaExlz"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.313291411999671, "total_tokens": 222725, "generation_id": "gen-1795024316-I3FUQKdHc92X3vI3Oh9s"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 1.6653617459996894, "total_tokens": 7250, "generation_id": "gen-1795024321-1xEoJB8GblgjOfpg6i7u"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.0693217039988667, "total_tokens": 22864, "generation_id": "gen-1795024322-AZNQvlPyqv2G6qdhC8Zn"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 1.3791229290000047, "total_tokens": 25239, "generation_id": "gen-1795024324-y5iQlHNvkuXd9v1pNzKi"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.839198309000494, "total_tokens": 34608, "generation_id": "gen-1795024326-2wfynYxC0BjKspDUdAuo"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.459528210998542, "total_tokens": 40166, "generation_id": "gen-1795024333-sC5iW8wYZv5NZsOtk612"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 13.814632043999154, "total_tokens": 44439, "generation_id": "gen-1795024347-KjEc8jUP6H2JCmQl3UAA"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.086642636000761, "total_tokens": 46293, "generation_id": "gen-1795024361-Dq1a05sB67x9RkkbHgw1"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 19.838228176002303, "total_tokens": 52332, "generation_id": "gen-1795024363-3dKANza0VchHqAh7j2TP"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.791579688000638, "total_tokens": 53367, "generation_id": "gen-1795024383-ZdlWNPwim8J5hMLnGEiY"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.592766638998, "total_tokens": 54732, "generation_id": "gen-1795024390-v0y8nJBQ49Q37PettQOo"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.5303182850002486, "total_tokens": 55392, "generation_id": "gen-1795024398-ohFm4ZaJBk4LhZDqPngL"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 1.9424312839983031, "total_tokens": 55786, "generation_id": "gen-1795024401-N9TO3iSkkdfYl4TtmFpL"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 1.556197115998657, "total_tokens": 56109, "generation_id": "gen-1795024406-6D5UpLgo65nvIJmJaMel"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.672376825001265, "total_tokens": 57838, "generation_id": "gen-1795024418-5i3JQyLcGDerzHexDDqt"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.797446339001908, "total_tokens": 58336, "generation_id": "gen-1795024430-qBEOBXQsf67O9oj9hKow"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.884685985001852, "total_tokens": 58959, "generation_id": "gen-1795024883-Vzsnj9TzLhsFQR8k9AQb"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.041792724001425, "total_tokens": 59645, "generation_id": "gen-1795024890-KFagZVnDY6sGymmVIFrx"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.214409443004115, "total_tokens": 59851, "generation_id": "gen-1795025703-gOvXDVrUcluBakRBUC1m"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.663290867996693, "total_tokens": 62802, "generation_id": "gen-1795025704-EB3THpwYpcbtQNW5u1Za"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.012186494997877, "total_tokens": 63007, "generation_id": "gen-1795025715-3cfB2bWBUrP4i8UNX4cB"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.154985418994329, "total_tokens": 64149, "generation_id": "gen-1795025747-J7nbMrkT221a1fMQOs15"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.6564389580016723, "total_tokens": 64443, "generation_id": "gen-1795025843-KUu50faeFqAkZffJjsUA"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.594907878999948, "total_tokens": 66010, "generation_id": "gen-1795025845-GmtEnPgWPBSg1uz0PCts"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.299753195999074, "total_tokens": 66612, "generation_id": "gen-1795025852-uKqa9pyw1uJZFyYiqDf3"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 21.89891710500524, "total_tokens": 71518, "generation_id": "gen-1795025857-h63zHhF0ZKgBiwgh9XPH"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.119929742002569, "total_tokens": 72281, "generation_id": "gen-1795025880-QJWqCHZYv5u5c6pHTYA2"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.097119306003151, "total_tokens": 73463, "generation_id": "gen-1795025888-hXMkckkP76VIGvcFm6V5"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.822419687996444, "total_tokens": 74385, "generation_id": "gen-1795025896-6pGvLw7E2QdqZzqvTNuM"}
+{"event": "turn", "role": "unattributed", "task": null, "seconds": 1579.3360330119976}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 2.5780243550034356, "total_tokens": 226106, "generation_id": "gen-1795025901-Lr20QzyjKutB9JCkcRa2"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 11.065032516999054, "total_tokens": 228294, "generation_id": "gen-1795025908-OU5NIUlpRJy4OrAlkb9H"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 9.52243643100519, "total_tokens": 229276, "generation_id": "gen-1795025920-KbnB8DiCzlzWc2ZNJ6Pp"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.298498436000955, "total_tokens": 229750, "generation_id": "gen-1795025934-vTevHXb9luzrnjsJMQo2"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 25.22383463499864, "total_tokens": 233791, "generation_id": "gen-1795025942-DyEhjYmZWwWN0FtCnugH"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.000167762998899, "total_tokens": 7251, "generation_id": "gen-1795025962-hZsJSE0XNyc25qCDsbN3"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.0979343600047287, "total_tokens": 7361, "generation_id": "gen-1795025962-TaTvImRs3i6s7o7MDsSo"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 1.3308939409980667, "total_tokens": 9266, "generation_id": "gen-1795025964-PuQmXXpNUqu5AzQzNg9F"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.1505650480030454, "total_tokens": 13925, "generation_id": "gen-1795025965-W4OqEVRizToal8hNl48J"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.036714469999424, "total_tokens": 16030, "generation_id": "gen-1795025966-CDwJRivwN50uuw0Jf8nd"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 1.7324996559982537, "total_tokens": 17141, "generation_id": "gen-1795025968-6Kj8zBDbu0MkqKMEGIrj"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.5761257269987254, "total_tokens": 27268, "generation_id": "gen-1795025969-GW6QuhBsH3tuTYRfyNt3"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.254778353002621, "total_tokens": 27679, "generation_id": "gen-1795025970-RwfGynvFKtHp2YbXHPgi"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.025065109002753, "total_tokens": 45033, "generation_id": "gen-1795025973-ICeaM68zyrh9NJTE713f"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.906536499998765, "total_tokens": 32855, "generation_id": "gen-1795025974-gSIASEr9Jx70oe3zFnnV"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.8356427869948675, "total_tokens": 38435, "generation_id": "gen-1795025978-r6be46i7EiHTUrnn6IxK"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.291846006002743, "total_tokens": 46554, "generation_id": "gen-1795025977-H6HKpUEmqRmlIH2gyvi7"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.7949741349948454, "total_tokens": 46507, "generation_id": "gen-1795025982-BVAjY24GmyK8Hbj3GFNm"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.639417320002394, "total_tokens": 48662, "generation_id": "gen-1795025981-929IStQoPaLrZj8KtbA2"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.677830282998912, "total_tokens": 54175, "generation_id": "gen-1795025986-EVBEEmzzHxlJ7aD4rwIE"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.8297617440039176, "total_tokens": 49070, "generation_id": "gen-1795025988-3n1w2u6WVxFSQd0hsSUj"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.5283061520021874, "total_tokens": 49360, "generation_id": "gen-1795025992-wQ0aejLqWWi8a3Sytjws"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.487932469994121, "total_tokens": 55819, "generation_id": "gen-1795025992-zds77vcQNK73geGqckiE"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.7148922459964524, "total_tokens": 49888, "generation_id": "gen-1795025995-FZzTR0QWypLpySx45CI2"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.947431942993717, "total_tokens": 58109, "generation_id": "gen-1795025996-qZkmaRenhLTCstXLLjsu"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.487707843996759, "total_tokens": 54306, "generation_id": "gen-1795025998-KFu4of3VFyQhyrqb3ZDf"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.3537930230013444, "total_tokens": 60194, "generation_id": "gen-1795026003-lDTCt2GGaCR0YsIbajbg"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.202142094996816, "total_tokens": 60731, "generation_id": "gen-1795026002-OnTBeNQ40CD9QBZ7SDxP"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.767401485994924, "total_tokens": 61290, "generation_id": "gen-1795026007-xLNoQdfeRAHXJsLyJzgz"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.215630770995631, "total_tokens": 62223, "generation_id": "gen-1795026013-D8bWHLKr40ursQlEsNks"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.956810068993946, "total_tokens": 65554, "generation_id": "gen-1795026010-0oaDCQsrhhzBU1nm0Woc"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.8125434539979324, "total_tokens": 71536, "generation_id": "gen-1795026017-zCi1V6IADbW2CjNhPPZd"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.44377008399897, "total_tokens": 71958, "generation_id": "gen-1795026022-fMcbxnR18Hhq9J5VPjFH"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.58452080200368, "total_tokens": 64830, "generation_id": "gen-1795026017-3h1ptHPrHNdPzHJLBgJj"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.6210515549973934, "total_tokens": 68288, "generation_id": "gen-1795026026-h7IjgSRheonQNDyRNgwo"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.9833375710004475, "total_tokens": 77633, "generation_id": "gen-1795026025-YuPqDMZJ5Zh7W2tzXK7Y"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.528950079002243, "total_tokens": 79516, "generation_id": "gen-1795026032-olMpva0llFlk9x2QBosi"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.986531099006243, "total_tokens": 72446, "generation_id": "gen-1795026031-Esv1mr57fI50vbBXO2NW"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.357754869000928, "total_tokens": 75920, "generation_id": "gen-1795026040-Ebm5253Vdx0833dp21xM"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.923873805004405, "total_tokens": 84169, "generation_id": "gen-1795026035-P8tVw7EhCiXXQ1g3UkiM"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.395863575999101, "total_tokens": 80084, "generation_id": "gen-1795026047-TBAycVI5vQK7yYNYEvNz"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.23495956199622, "total_tokens": 85855, "generation_id": "gen-1795026048-AwvveS4EmRvWwg90W9v7"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.983144359001017, "total_tokens": 80712, "generation_id": "gen-1795026053-R3ic82dACrAUpk1FYVrj"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.695023580999987, "total_tokens": 81590, "generation_id": "gen-1795026058-2ACEaLFcrkngeue5FPzF"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.469648912003322, "total_tokens": 88533, "generation_id": "gen-1795026053-q16pF3F2V2hBxBCzhFX5"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.406777860996954, "total_tokens": 84272, "generation_id": "gen-1795026062-RORb9F5sYc2LVunDgyBX"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.7479280670013395, "total_tokens": 89526, "generation_id": "gen-1795026065-Y0m9LnONRoSZOYQf1Vc8"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.43198398900131, "total_tokens": 85813, "generation_id": "gen-1795026067-iEkaQR7ukwEudmImwFI4"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.085055179995834, "total_tokens": 91171, "generation_id": "gen-1795026070-gD3awk4AVsQ0KtEhCuU4"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.754112146998523, "total_tokens": 91958, "generation_id": "gen-1795026075-34AJADjTiahJ5wo1r4KR"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.5033890470003826, "total_tokens": 86899, "generation_id": "gen-1795026193-nmSwN8vOKu0b9mXmMd4q"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.928225551004289, "total_tokens": 93671, "generation_id": "gen-1795026260-zzxPlDE6m1X299Iacyjr"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 12.959366951996344, "total_tokens": 95354, "generation_id": "gen-1795026269-ss97hBBPbUdD5tHTGtfY"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.077203253000334, "total_tokens": 95830, "generation_id": "gen-1795026283-2XjU9HgG2ibKvvQvUsjf"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.230151393996493, "total_tokens": 96145, "generation_id": "gen-1795026289-GEBUFVVNKgBdbEl6qD0H"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.780616390999057, "total_tokens": 96729, "generation_id": "gen-1795026294-TOcgEImWt4h0uPC4Ty0Z"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.555756084999302, "total_tokens": 97494, "generation_id": "gen-1795026302-kNWdq6Rb6eiKtxiHFwhO"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.379809392994503, "total_tokens": 98202, "generation_id": "gen-1795026308-qk1yXAzYbamQhFnA641C"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.481617710996943, "total_tokens": 98784, "generation_id": "gen-1795026314-SpsJ3rn2Ap02q5G6DPSD"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.1211763879982755, "total_tokens": 99791, "generation_id": "gen-1795026319-5b9L8IrywkZTymr7uNMf"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.00886073300353, "total_tokens": 101027, "generation_id": "gen-1795026326-qdtApwiVyqpEjmX5oqfv"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.132811698000296, "total_tokens": 103631, "generation_id": "gen-1795026331-tgyL7d9YFUK2tQCCv6FV"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.615983287003473, "total_tokens": 103796, "generation_id": "gen-1795026343-rsfbABinPODA0HwJZCAp"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.887819169001887, "total_tokens": 105668, "generation_id": "gen-1795026348-fFNigQLF6qUaS8fLmCdb"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.456754296996223, "total_tokens": 106959, "generation_id": "gen-1795026358-Ssat4e0dqtq7XJTRUcAV"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.725384548997681, "total_tokens": 107124, "generation_id": "gen-1795026365-6oczMel79Fh2TLtxUCEf"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.633578024993767, "total_tokens": 87157, "generation_id": "gen-1795026375-5gKb4bX1fUFqSqmnYSQs"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.941876846998639, "total_tokens": 88162, "generation_id": "gen-1795026379-sjz3RKPTHcOad0J5H3uk"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 16.609288019004453, "total_tokens": 110079, "generation_id": "gen-1795026368-3YLJXDiAwCTy29ZXq9Zv"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 13.114318269996147, "total_tokens": 112643, "generation_id": "gen-1795026386-J88NkZghMUptkDJKRWSw"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.520542726000713, "total_tokens": 113360, "generation_id": "gen-1795026398-UgpRfdOiHHVOOtYhIgPK"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 18.348127443998237, "total_tokens": 116725, "generation_id": "gen-1795026404-2Pza8vZfJQZSCnmXH4tf"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.035420241998509, "total_tokens": 120098, "generation_id": "gen-1795026425-8ptovKuiiKHWbNwcApfd"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 16.601063911999518, "total_tokens": 122359, "generation_id": "gen-1795026437-xSsYVtyydEy8gbv1Xunu"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.4198560010045185, "total_tokens": 122810, "generation_id": "gen-1795026452-PtO3N3t5Nu1iPZMWVIMl"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 3.875352938994183, "total_tokens": 123068, "generation_id": "gen-1795026458-SfyNX9QiYOWrmwU5cnGN"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.860659071993723, "total_tokens": 124134, "generation_id": "gen-1795026464-cuw5gqM9sqMVkPqIGYJx"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.063789080995775, "total_tokens": 124628, "generation_id": "gen-1795026470-eoNSMRNGgnoH8Kk4yjQU"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.941537840000819, "total_tokens": 125349, "generation_id": "gen-1795026477-WMzc2haBaQUrIObc3Luw"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.8802530050015775, "total_tokens": 126493, "generation_id": "gen-1795026482-cFVsPsCepJZ3yATsLpdL"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.149602823999885, "total_tokens": 127246, "generation_id": "gen-1795026490-TF9bBPPCuqN7GcMFgzzV"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 14.878068218000408, "total_tokens": 131008, "generation_id": "gen-1795026498-8ZtExIIxF1cQYbqnefDK"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.58039601999917, "total_tokens": 132336, "generation_id": "gen-1795026513-GiwhXkVmMwTN2Ju0DiPx"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.523193557994091, "total_tokens": 133237, "generation_id": "gen-1795026523-hxZBREZiQFq5DFc1G8Jc"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.996244696005306, "total_tokens": 133491, "generation_id": "gen-1795026533-6tdacfUCtIMIEhgkgL4G"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.344790191993525, "total_tokens": 134793, "generation_id": "gen-1795026540-ADxaYXfcr9a5FmrVDc2z"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.880334204004612, "total_tokens": 136477, "generation_id": "gen-1795026548-B776s5Aqvxzw0er1QFT2"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 18.885653736004315, "total_tokens": 140785, "generation_id": "gen-1795026559-ehLD8RP85AriRgB27Cud"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.3378665069976705, "total_tokens": 141547, "generation_id": "gen-1795026576-qrZ8DFPisyybXDAV5YvI"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.130424537004728, "total_tokens": 88434, "generation_id": "gen-1795026582-UaT67aIJ4DcBmrLau0Bg"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.16371467999852, "total_tokens": 142225, "generation_id": "gen-1795026585-baAQoKHMhffqRehKGScQ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.609150144999148, "total_tokens": 89831, "generation_id": "gen-1795026588-yL40IAPeGXt0AQ3whL9d"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.91042074500001, "total_tokens": 143067, "generation_id": "gen-1795026595-ptPwpv667Yb8rj3cTxQo"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.472720026002207, "total_tokens": 91295, "generation_id": "gen-1795026596-SuNGCdxdi8qD1gkc4oxl"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.455266523997125, "total_tokens": 162742, "generation_id": "gen-1795026606-WDiAXZXkB6L3YdD2JoEj"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.617903947000741, "total_tokens": 94033, "generation_id": "gen-1795026608-tWMHbHYIa1wL8YW57s10"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.201416632000473, "total_tokens": 97829, "generation_id": "gen-1795026616-iSm8aj3CkQAA2lDr8zjp"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 17.93771400800324, "total_tokens": 165236, "generation_id": "gen-1795026613-JF1UZ5KgBm5sEIhBfyKQ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.090528293003445, "total_tokens": 98595, "generation_id": "gen-1795026625-g9Wx6SeMpXY59mY3wkSe"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 18.393764187996567, "total_tokens": 166690, "generation_id": "gen-1795026635-PkS10w9sg4dUtprlDUOH"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.7081605960047455, "total_tokens": 99711, "generation_id": "gen-1795026662-8CZPICZr7TI0u5RGJBVs"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.966303437999159, "total_tokens": 100564, "generation_id": "gen-1795026673-QJOyrG6dDGDC5PXsw5F6"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 15.306229670997709, "total_tokens": 103267, "generation_id": "gen-1795026681-PXI67lhwuL8vdzrWFSPA"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.984989085998677, "total_tokens": 104453, "generation_id": "gen-1795026695-IWOZyUYgmH3xNbwtSVGy"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.242484513997624, "total_tokens": 107699, "generation_id": "gen-1795026701-el6rF466XNNe4BcZJ58w"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.704520485996909, "total_tokens": 110799, "generation_id": "gen-1795026708-tXTPWEojUzzlIBWhEIBv"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.383437871998467, "total_tokens": 112313, "generation_id": "gen-1795026719-Ul5GhpYaU5lnomazXFfR"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.190358328000002, "total_tokens": 114771, "generation_id": "gen-1795026729-gFjNaIChgawvhHlxMNby"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.84784604300512, "total_tokens": 115248, "generation_id": "gen-1795026736-5Dp5bgNBxeXUH1pR66j0"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 14.097678353995434, "total_tokens": 116995, "generation_id": "gen-1795026743-pjjqRJkpIITGwhmchvsR"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.443974472000264, "total_tokens": 118174, "generation_id": "gen-1795026756-8ZPw2wU5Sv7ntQUcPSeC"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.2027205460035475, "total_tokens": 119004, "generation_id": "gen-1795026763-U0nDXxCZPGLwgOKmAHKc"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 16.971410512000148, "total_tokens": 123992, "generation_id": "gen-1795026769-vfPzXOaquk6pJoJDCb3t"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.925112680000893, "total_tokens": 125107, "generation_id": "gen-1795026785-J0Ur5xI8TcJhetCUdyeK"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.4027956860009, "total_tokens": 126389, "generation_id": "gen-1795026794-w76sfIsAwmIqkibviwBo"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 17.447727632999886, "total_tokens": 129853, "generation_id": "gen-1795026802-SMnRz2mGukophWMCX6l8"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.4678804029972525, "total_tokens": 130511, "generation_id": "gen-1795026819-upz5KtXONVWTu7gsNLr2"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.248062004997337, "total_tokens": 133115, "generation_id": "gen-1795026825-iUbnKrnXskplqO7c4plY"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.947803769995517, "total_tokens": 133480, "generation_id": "gen-1795026834-8fwYiBI6tME3eS5bafNt"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.099283694995393, "total_tokens": 134091, "generation_id": "gen-1795026838-KagVpSrNwqSEaYte5Q21"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.624128886003746, "total_tokens": 135256, "generation_id": "gen-1795026845-MYZJQY5u6MZNf6XTBF9N"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.66991976799909, "total_tokens": 136938, "generation_id": "gen-1795026851-Qtbg08qz6aX3HxQv3cA5"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.1289452529963455, "total_tokens": 167662, "generation_id": "gen-1795026948-rQQoZWvUe9HbVmxFLMRW"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.741081579006277, "total_tokens": 169446, "generation_id": "gen-1795026959-a3f8mAbmKYnd1xRlGIjv"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.870444405001763, "total_tokens": 169880, "generation_id": "gen-1795026965-DLivSsxdev7VHGNt1FlS"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.67519655599608, "total_tokens": 170795, "generation_id": "gen-1795026975-d74QZlX3Tk4BFGCmGd9G"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.148814794003556, "total_tokens": 172246, "generation_id": "gen-1795027004-2iarmCbkIZoMIfqRvgHK"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.261502305002068, "total_tokens": 172933, "generation_id": "gen-1795027018-MSoFzoT3LE6KBR5DNClq"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.406587657998898, "total_tokens": 173089, "generation_id": "gen-1795027028-lDfmM1FAWc6zqYmLzvL1"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.92175083100301, "total_tokens": 174611, "generation_id": "gen-1795027034-jkO9dbHHQ52KWgud9JYS"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.900674392003566, "total_tokens": 137972, "generation_id": "gen-1795027037-s8MaqWlBjjqbNdtA2mC3"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 6.033003382006427, "total_tokens": 138624, "generation_id": "gen-1795027042-mRnsszHDXLhUQX5ISzEk"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 2.605148716000258, "total_tokens": 174836, "generation_id": "gen-1795027051-u7orsePsPK3iWkTgNTkv"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.467433926001831, "total_tokens": 140641, "generation_id": "gen-1795027048-deTFRZvd1p3oPdagrQaA"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.201690973997756, "total_tokens": 142321, "generation_id": "gen-1795027060-S3me8qThv2aS8TLja6lZ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.13308752199373, "total_tokens": 147350, "generation_id": "gen-1795027069-dfmiAwBWzwWWidIrfSRQ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.452732533005474, "total_tokens": 149058, "generation_id": "gen-1795027079-kCHPKqYDBfMEtS4yGxj9"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 16.11050275800517, "total_tokens": 151896, "generation_id": "gen-1795027091-2fwqWYXq1dXuttPKXMc4"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 4.123529521006276, "total_tokens": 152742, "generation_id": "gen-1795027404-944FpFB8bEaQ213ulkKS"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 22.59157227400283, "total_tokens": 157773, "generation_id": "gen-1795027409-AvcdRbD9Lrsqmapsvp1d"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 15.53654797499621, "total_tokens": 160680, "generation_id": "gen-1795027435-pDyEylEw0JrRtsVqcUUM"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 19.554106776005938, "total_tokens": 166317, "generation_id": "gen-1795027452-zwZcFgJZIvnEsJIo4q5t"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 30.68214543799695, "total_tokens": 172306, "generation_id": "gen-1795027471-Rzb9EY45fTGOmB6WAiY2"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.09046170500369, "total_tokens": 173562, "generation_id": "gen-1795027508-bWN3GnIvYEiPHyezJAeW"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 25.301227942996775, "total_tokens": 178930, "generation_id": "gen-1795027517-hkPVkWtHVQxWlAnVr1ya"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 23.446566022001207, "total_tokens": 183364, "generation_id": "gen-1795027544-TtoFiIUu9qwbZU7Rj0p7"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 20.15727868599788, "total_tokens": 186718, "generation_id": "gen-1795027567-WhfgG6Gp2uZpeiblHihX"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.730111987999408, "total_tokens": 187110, "generation_id": "gen-1795027590-93zBiyELoCj7VbkoWADR"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 16.681515058000514, "total_tokens": 189610, "generation_id": "gen-1795027601-7P9UK6MYhl6zEvFmzzNB"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 15.0626212559946, "total_tokens": 193213, "generation_id": "gen-1795027616-dConAXCEy72Lk75phiXd"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.481118201001664, "total_tokens": 194822, "generation_id": "gen-1795027633-AYWaZ2muIaXFRn38CHMe"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.363448264004546, "total_tokens": 195527, "generation_id": "gen-1795027643-MQ3zgMaDW5lL0SIEaZkI"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.497446123001282, "total_tokens": 196414, "generation_id": "gen-1795027651-MXPcM92bDtwMmgIh3Ogz"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 17.810677731002215, "total_tokens": 198000, "generation_id": "gen-1795027666-tYshjipXFtZZNRDgpfPi"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 30.861831632995745, "total_tokens": 179464, "generation_id": "gen-1795027656-xort5EiZrrrbVfuoYSiL"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 17.459387085000344, "total_tokens": 199707, "generation_id": "gen-1795027682-NE4Xqj4XckYt4GCnEodN"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.14334613399842, "total_tokens": 179673, "generation_id": "gen-1795027689-guE5HuU7CZyJRKHmrBzQ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.164129639997554, "total_tokens": 201424, "generation_id": "gen-1795027697-mj9wDJ65vD2NJMx81sOZ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 26.040779263996228, "total_tokens": 183255, "generation_id": "gen-1795027697-vZddE6Kzvxtziww2Qcxh"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.222482857003342, "total_tokens": 183739, "generation_id": "gen-1795027726-IEk0kkPXLinrW5RP7qVL"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 23.052114808000624, "total_tokens": 188013, "generation_id": "gen-1795027736-OF6nLaIAQNx4qjgV5lnM"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.34358642999723, "total_tokens": 188446, "generation_id": "gen-1795027757-qbExW7Z75K3l6BexHiHA"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.4922209569995175, "total_tokens": 202144, "generation_id": "gen-1795028006-H9li3PPEHnbvHazhwM6l"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 15.167303164002078, "total_tokens": 208812, "generation_id": "gen-1795028017-FdWJWVXOEeo9IPGmq16m"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 11.859584972000448, "total_tokens": 211083, "generation_id": "gen-1795028031-Nia0IhX4mC0fX9sHx9OT"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.53711273099907, "total_tokens": 212303, "generation_id": "gen-1795028044-V0b7hMwMAYX8NWY1UIOA"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.69903370099928, "total_tokens": 213726, "generation_id": "gen-1795028052-hQkMPIEMzDl8QzTOQ6HJ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 12.269776527005888, "total_tokens": 217360, "generation_id": "gen-1795028359-6fvfcB4tK6c5qOUyF9E8"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.180630166003539, "total_tokens": 189884, "generation_id": "gen-1795028365-xUb5uaoft7xEha0Ek0WL"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 5.952947831006895, "total_tokens": 190195, "generation_id": "gen-1795028377-mUr1Xu151hojwOUbMARL"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 10.442779960001644, "total_tokens": 217800, "generation_id": "gen-1795028679-EmouxniIHSRcKMKb7Rqp"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 12.276505734000239, "total_tokens": 225623, "generation_id": "gen-1795028687-itWNJlO1rHuOG0pzhGDd"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.374435261001054, "total_tokens": 227655, "generation_id": "gen-1795028700-xK2WSBxKQhXkUFwefgyS"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 13.289260669000214, "total_tokens": 230054, "generation_id": "gen-1795028709-YYG0jZFcUnR5FPxpTu1z"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 7.673043235001387, "total_tokens": 231425, "generation_id": "gen-1795028721-GbbUK9Rgm1UkZgTuazIr"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.67063744099869, "total_tokens": 232665, "generation_id": "gen-1795028730-quG5hOW4WnZi8Q75d3HM"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 13.829951286999858, "total_tokens": 234615, "generation_id": "gen-1795028740-L364WnaxufxIU7OtPR51"}
+{"event": "turn", "role": "unattributed", "task": null, "seconds": 2785.0939195030005}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.404836371999409, "total_tokens": 190894, "generation_id": "gen-1795028746-LOcJr4f6DLiOKSzNGt1S"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 9.897925571996893, "total_tokens": 191861, "generation_id": "gen-1795028757-MqSf7XsEq771FAQiWJ1R"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 8.501934259998961, "total_tokens": 192930, "generation_id": "gen-1795028765-2PoLXyQcl0e4GEZrcmeQ"}
+{"event": "model", "role": "unattributed", "task": null, "seconds": 13.144725054997252, "total_tokens": 194435, "generation_id": "gen-1795028775-HYFefzhfdJ8Xup6TnULf"}
+{"event": "turn", "role": "unattributed", "task": null, "seconds": 2820.470828921003}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.710477742999501, "total_tokens": 250512, "generation_id": "gen-1795028784-B4TW4mKmEO43Nc1yFJm8"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.959357931998966, "total_tokens": 252935, "generation_id": "gen-1795028793-Zc70d3ks8jcfUcOO5x5O"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.765169273006904, "total_tokens": 253352, "generation_id": "gen-1795028803-owPPbKrS4sIWH8M6irAA"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.787245651001285, "total_tokens": 253573, "generation_id": "gen-1795028811-31ATJIhB6twzn7bSABNj"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 11.064916987998004, "total_tokens": 255137, "generation_id": "gen-1795028822-GHqhRJPVnxmyojg7t8Mh"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.644908336995286, "total_tokens": 257174, "generation_id": "gen-1795028829-Jh0L90Cu7f9SgYiTZFCI"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.43677731599746, "total_tokens": 259838, "generation_id": "gen-1795028837-gsTbyyOJTFtYOstQF0Ry"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.98215582499688, "total_tokens": 260308, "generation_id": "gen-1795028852-sIKerPLDJBCaYKIAap6S"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.20352468600322, "total_tokens": 260877, "generation_id": "gen-1795028863-B8N3vaU0McLljL0BNrBl"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.86892730499676, "total_tokens": 261264, "generation_id": "gen-1795028871-ai5gqGsA9oOg0bltmMzX"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.138311828006408, "total_tokens": 261755, "generation_id": "gen-1795028884-KZf472LLpHBwuqMzl0Ni"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.84313658499741, "total_tokens": 262567, "generation_id": "gen-1795028889-xGTcyc0CZkQv2RBmUpek"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 6.193784396993578, "total_tokens": 263149, "generation_id": "gen-1795029075-1LmgoRyJoY4XbtbSsLyD"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.156988127993827, "total_tokens": 263592, "generation_id": "gen-1795029087-jxxOOIdlo47kNkherNmE"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.998706646998471, "total_tokens": 263883, "generation_id": "gen-1795029094-gp525sdzKTU7SLxS8DVl"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.145289806998335, "total_tokens": 264665, "generation_id": "gen-1795029108-Z4iaSJQrXpDFFFHQuMNz"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.1649186039940105, "total_tokens": 265058, "generation_id": "gen-1795029116-25lX3Sh1N5w18z0eWMJ4"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 9.812524064000172, "total_tokens": 266427, "generation_id": "gen-1795029124-FVEVnWjs0qIAqDzSdP2F"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 5.823436368998955, "total_tokens": 266788, "generation_id": "gen-1795029133-7Nj7KJBmdSfopXSNFBeu"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.322755909997795, "total_tokens": 267526, "generation_id": "gen-1795029443-jwmHoGadUzpVtQp5R4qu"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.059117783996044, "total_tokens": 268201, "generation_id": "gen-1795029454-xoBLpfIwzFJUxg0zu7M7"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 9.574769033999473, "total_tokens": 268626, "generation_id": "gen-1795029464-do4KYg8rdYwFevskrsDZ"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 2.6069661829969846, "total_tokens": 268909, "generation_id": "gen-1795029828-GdlJq3WJnNiUh3sd6h60"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.135942221000732, "total_tokens": 269895, "generation_id": "gen-1795029834-uh3a2NIaFTem5EpOonK6"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 8.883503302000463, "total_tokens": 270201, "generation_id": "gen-1795029844-IVCjeyJN7Ui5tvJ40fpa"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 9.208265612003743, "total_tokens": 271160, "generation_id": "gen-1795030332-9xKIEG04vAkrnQ2GYMqi"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 13.158061755006202, "total_tokens": 272280, "generation_id": "gen-1795030346-1TsAbvpoddNyJGQIfO25"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.0012165299995104, "total_tokens": 273352, "generation_id": "gen-1795030772-Wc5tEOdiRFtRZHZLA7hH"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 7.646108253997227, "total_tokens": 273764, "generation_id": "gen-1795030780-sIqjdg9g9yPDAyx2GGfx"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 23.396194706001552, "total_tokens": 276843, "generation_id": "gen-1795031392-ylTt52rYYAaGNKVhQC51"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.519517796994478, "total_tokens": 277074, "generation_id": "gen-1795031417-Z4ZYPVAUipwzrkYvZRKR"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.651240554005199, "total_tokens": 279147, "generation_id": "gen-1795031782-XTjWXbkZmYtWLFwMidZ7"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 18.20050780800375, "total_tokens": 280675, "generation_id": "gen-1795032103-PfhWZnNJIN0XY2hHSziR"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 9.869483820999449, "total_tokens": 281545, "generation_id": "gen-1795032117-JSDjQNG1x1aBqIYqgBSZ"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 11.07235425500403, "total_tokens": 282005, "generation_id": "gen-1795032128-5VEiiHWvoThXcA9NPQyo"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 26.771160797004995, "total_tokens": 287629, "generation_id": "gen-1795032138-INdMYlW4P7RdgkfGBfAI"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 12.222152070004086, "total_tokens": 288011, "generation_id": "gen-1795032167-ecF44pYMWr8MXcyAm8rW"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.226658141997177, "total_tokens": 288639, "generation_id": "gen-1795032179-qc6wXP36K1J22GyRxn3N"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.492999836998933, "total_tokens": 289198, "generation_id": "gen-1795032191-ZvxtLgnonz07kolbiC6q"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 9.038497449000715, "total_tokens": 290057, "generation_id": "gen-1795032201-CCYtG8K4Lnk7GLv54zR9"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 12.825783111999044, "total_tokens": 290287, "generation_id": "gen-1795032215-kjJR8i0QPnuTC3mq1Jfx"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.464937548000307, "total_tokens": 290698, "generation_id": "gen-1795032225-pP3W4i2bub41LBZZICed"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 10.72940674200072, "total_tokens": 290926, "generation_id": "gen-1795032237-w41gz9p9MZB0YNHJmjOC"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 11.09797873700154, "total_tokens": 291467, "generation_id": "gen-1795032248-aGXQzalqwVdVVwsjzURh"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 13.171815039997455, "total_tokens": 292647, "generation_id": "gen-1795032261-BfYpaKK82Acg2RdKbBnO"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 20.84675103799964, "total_tokens": 293086, "generation_id": "gen-1795032273-PNsNXscNwAlDOAslQjzS"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 18.764995056997577, "total_tokens": 295869, "generation_id": "gen-1795032294-E9KDFQVC3NdNbPsenyQ8"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 9.979565009001817, "total_tokens": 296223, "generation_id": "gen-1795032312-AcieUn7qzWAnCx6kMQ7J"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 4.9566060040015145, "total_tokens": 296410, "generation_id": "gen-1795033515-Xi35vlVPrYdeaa45jTm9"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.624239509998006, "total_tokens": 296562, "generation_id": "gen-1795035320-CeSTUddZjmey2T3k7awG"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 3.9668993730010698, "total_tokens": 297105, "generation_id": "gen-1795037124-3G0tDK7Y82T7MBpSQeR9"}
+{"event": "model", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 13.930171643005451, "total_tokens": 299258, "generation_id": "gen-1795037135-OzDpfcuZLBFVKKmKIHUw"}
+{"event": "turn", "role": "orchestrator", "task": "Execute the configured campaign role", "seconds": 20376.722693556996}

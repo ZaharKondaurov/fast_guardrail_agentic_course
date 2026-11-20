@@ -1,0 +1,1 @@
+{"score": 0.9921875, "statistics": {"f1": 0.9921875, "messages": 256, "tp": 127, "fp": 1, "tn": 127, "fn": 1, "tpr": 0.9921875, "fpr": 0.0078125, "recall": 0.9921875, "precision": 0.9921875, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}

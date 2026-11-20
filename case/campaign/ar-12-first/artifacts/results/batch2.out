@@ -1,0 +1,132 @@
+19:06:45 === transformer (train-transformer-1)
+19:06:46 transformer: submitted 5100a60276a13e14f75ef8520969cdb27193610704611bbca7185ece6a70b211 status=RUNNING
+19:06:47 transformer: RUNNING 0/256 elapsed=0.820646833
+19:07:18 transformer: RUNNING 31/256 elapsed=31.724107939
+19:07:49 transformer: RUNNING 61/256 elapsed=62.23134771
+19:08:20 transformer: RUNNING 92/256 elapsed=93.775029417
+19:08:51 transformer: RUNNING 121/256 elapsed=124.223494128
+19:09:22 transformer: RUNNING 151/256 elapsed=155.700287255
+19:09:53 transformer: RUNNING 179/256 elapsed=185.883277702
+19:10:24 transformer: RUNNING 209/256 elapsed=217.590305616
+19:10:54 transformer: RUNNING 239/256 elapsed=248.733507923
+19:11:26 transformer: FINISHED 256/256 elapsed=267.615933523
+19:11:27 transformer: DONE {"score": 0.9568627450980393, "statistics": {"f1": 0.9568627450980393, "messages": 256, "tp": 122, "fp": 5, "tn": 123, "fn": 6, "tpr": 0.953125, "fpr": 0.0390625, "recall": 0.953125, "precision": 0.9606299212598425, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+19:11:27 === variant-ens-ct (train-ens-ct-1)
+19:11:28 variant-ens-ct: submitted d29b6d14a15f9e1fd7ff23e78a99bde4f25d76de351d20c8923148df293f07d0 status=RUNNING
+19:11:29 variant-ens-ct: RUNNING 0/256 elapsed=0.021175774
+19:12:00 variant-ens-ct: RUNNING 16/256 elapsed=30.651218375
+19:12:31 variant-ens-ct: RUNNING 32/256 elapsed=61.691704793
+19:13:02 variant-ens-ct: RUNNING 48/256 elapsed=93.510187279
+19:13:34 variant-ens-ct: RUNNING 63/256 elapsed=124.008134685
+19:14:05 variant-ens-ct: RUNNING 79/256 elapsed=155.793355042
+19:14:36 variant-ens-ct: RUNNING 94/256 elapsed=186.285661688
+19:15:07 variant-ens-ct: RUNNING 110/256 elapsed=217.996345677
+19:15:39 variant-ens-ct: RUNNING 125/256 elapsed=249.252172386
+19:16:10 variant-ens-ct: RUNNING 141/256 elapsed=281.729727137
+19:16:41 variant-ens-ct: RUNNING 156/256 elapsed=312.045159481
+19:17:12 variant-ens-ct: RUNNING 171/256 elapsed=342.535634978
+19:17:43 variant-ens-ct: RUNNING 187/256 elapsed=375.074981768
+19:18:15 variant-ens-ct: RUNNING 202/256 elapsed=405.802350337
+19:18:46 variant-ens-ct: RUNNING 217/256 elapsed=437.691299802
+19:19:17 variant-ens-ct: RUNNING 231/256 elapsed=467.347087774
+19:19:48 variant-ens-ct: RUNNING 246/256 elapsed=499.363900225
+19:20:19 variant-ens-ct: FINISHED 256/256 elapsed=520.42012852
+19:20:21 variant-ens-ct: DONE {"score": 0.996078431372549, "statistics": {"f1": 0.996078431372549, "messages": 256, "tp": 127, "fp": 0, "tn": 128, "fn": 1, "tpr": 0.9921875, "fpr": 0.0, "recall": 0.9921875, "precision": 1.0, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+19:20:21 === variant-ens-lct (train-ens-lct-1)
+19:20:23 variant-ens-lct: submitted b78436feeaec550828fafdf8aa7132ada561004fbfc2342db7029a47ba4496ec status=RUNNING
+19:20:24 variant-ens-lct: RUNNING 0/256 elapsed=0.014452273
+19:20:55 variant-ens-lct: RUNNING 14/256 elapsed=31.142838471
+19:21:27 variant-ens-lct: RUNNING 28/256 elapsed=63.901593105
+19:21:58 variant-ens-lct: RUNNING 44/256 elapsed=94.04158882
+19:22:29 variant-ens-lct: RUNNING 60/256 elapsed=125.706456506
+19:23:00 variant-ens-lct: RUNNING 75/256 elapsed=156.017945006
+19:23:31 variant-ens-lct: RUNNING 91/256 elapsed=188.59359817
+19:24:03 variant-ens-lct: RUNNING 106/256 elapsed=218.250886384
+19:24:34 variant-ens-lct: RUNNING 122/256 elapsed=250.449975878
+19:25:05 variant-ens-lct: RUNNING 138/256 elapsed=282.283771864
+19:25:36 variant-ens-lct: RUNNING 153/256 elapsed=312.308689868
+19:26:07 variant-ens-lct: RUNNING 168/256 elapsed=342.966425928
+19:26:39 variant-ens-lct: RUNNING 184/256 elapsed=375.343795559
+19:27:10 variant-ens-lct: RUNNING 199/256 elapsed=406.100814399
+19:27:41 variant-ens-lct: RUNNING 214/256 elapsed=436.650829384
+19:28:12 variant-ens-lct: RUNNING 229/256 elapsed=469.446900334
+19:28:43 variant-ens-lct: RUNNING 244/256 elapsed=499.543891801
+19:29:15 variant-ens-lct: FINISHED 256/256 elapsed=525.496571463
+19:29:16 variant-ens-lct: DONE {"score": 0.996078431372549, "statistics": {"f1": 0.996078431372549, "messages": 256, "tp": 127, "fp": 0, "tn": 128, "fn": 1, "tpr": 0.9921875, "fpr": 0.0, "recall": 0.9921875, "precision": 1.0, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+19:29:16 === variant-ens-all4 (train-ens-all4-1)
+19:29:18 variant-ens-all4: submitted 5584b075b3de4cf5844e4ea3786219689d695d1e30bea6c8ac13dfd1550e5d93 status=RUNNING
+19:29:19 variant-ens-all4: RUNNING 0/256 elapsed=0.019475786
+19:29:50 variant-ens-all4: RUNNING 16/256 elapsed=31.855244264
+19:30:21 variant-ens-all4: RUNNING 32/256 elapsed=62.758869928
+19:30:52 variant-ens-all4: RUNNING 48/256 elapsed=93.906152169
+19:31:24 variant-ens-all4: RUNNING 64/256 elapsed=124.45520631
+19:31:55 variant-ens-all4: RUNNING 81/256 elapsed=157.063450519
+19:32:26 variant-ens-all4: RUNNING 97/256 elapsed=187.50963857
+19:32:57 variant-ens-all4: RUNNING 113/256 elapsed=218.633074351
+19:33:28 variant-ens-all4: RUNNING 130/256 elapsed=249.909383734
+19:33:59 variant-ens-all4: RUNNING 147/256 elapsed=281.204499787
+19:34:30 variant-ens-all4: RUNNING 164/256 elapsed=312.230659939
+19:35:01 variant-ens-all4: RUNNING 181/256 elapsed=343.244295179
+19:35:32 variant-ens-all4: RUNNING 198/256 elapsed=374.291067215
+19:36:04 variant-ens-all4: RUNNING 215/256 elapsed=405.82327938
+19:36:35 variant-ens-all4: RUNNING 232/256 elapsed=436.997429869
+19:37:06 variant-ens-all4: RUNNING 248/256 elapsed=467.104505809
+19:37:37 variant-ens-all4: FINISHED 256/256 elapsed=482.655092676
+19:37:38 variant-ens-all4: DONE {"score": 0.996078431372549, "statistics": {"f1": 0.996078431372549, "messages": 256, "tp": 127, "fp": 0, "tn": 128, "fn": 1, "tpr": 0.9921875, "fpr": 0.0, "recall": 0.9921875, "precision": 1.0, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+19:37:38 === variant-ens-rct (train-ens-rct-1)
+19:37:40 variant-ens-rct: submitted 695883793cf4d2492ef1d893c218eaaabb2096f768815a441ac896e3eb90635a status=RUNNING
+19:37:41 variant-ens-rct: RUNNING 0/256 elapsed=0.022018455
+19:38:12 variant-ens-rct: RUNNING 15/256 elapsed=32.051323776
+19:38:43 variant-ens-rct: RUNNING 29/256 elapsed=61.579719128
+19:39:14 variant-ens-rct: RUNNING 45/256 elapsed=94.468971572
+19:39:45 variant-ens-rct: RUNNING 60/256 elapsed=125.053519346
+19:40:17 variant-ens-rct: RUNNING 75/256 elapsed=156.112204164
+19:40:48 variant-ens-rct: RUNNING 90/256 elapsed=186.786868917
+19:41:19 variant-ens-rct: RUNNING 105/256 elapsed=217.927967132
+19:41:50 variant-ens-rct: RUNNING 118/256 elapsed=248.811368549
+19:42:22 variant-ens-rct: RUNNING 131/256 elapsed=281.135214177
+19:42:53 variant-ens-rct: RUNNING 143/256 elapsed=312.928590721
+19:43:24 variant-ens-rct: RUNNING 156/256 elapsed=342.585795375
+19:43:56 variant-ens-rct: RUNNING 169/256 elapsed=375.380227159
+19:44:27 variant-ens-rct: RUNNING 181/256 elapsed=406.203869376
+19:44:58 variant-ens-rct: RUNNING 193/256 elapsed=437.010385723
+19:45:30 variant-ens-rct: RUNNING 205/256 elapsed=467.976951489
+19:46:01 variant-ens-rct: RUNNING 217/256 elapsed=499.005571398
+19:46:33 variant-ens-rct: RUNNING 229/256 elapsed=530.697517127
+19:47:04 variant-ens-rct: RUNNING 241/256 elapsed=562.070201235
+19:47:36 variant-ens-rct: RUNNING 254/256 elapsed=595.407265524
+19:48:07 variant-ens-rct: FINISHED 256/256 elapsed=600.644579338
+19:48:08 variant-ens-rct: DONE {"score": 0.996078431372549, "statistics": {"f1": 0.996078431372549, "messages": 256, "tp": 127, "fp": 0, "tn": 128, "fn": 1, "tpr": 0.9921875, "fpr": 0.0, "recall": 0.9921875, "precision": 1.0, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+19:48:08 === variant-trans-wide-full (train-trans-wide-full-1)
+19:48:09 variant-trans-wide-full: submitted 04ba99733f4b78d1c3d8c85b74138094fc578adb4b8ba01218c9035c33f9855d status=RUNNING
+19:48:10 variant-trans-wide-full: RUNNING 1/256 elapsed=1.141468449
+19:48:42 variant-trans-wide-full: RUNNING 26/256 elapsed=31.420448303
+19:49:13 variant-trans-wide-full: RUNNING 52/256 elapsed=62.968499928
+19:49:44 variant-trans-wide-full: RUNNING 79/256 elapsed=94.485135033
+19:50:15 variant-trans-wide-full: RUNNING 106/256 elapsed=125.459876642
+19:50:46 variant-trans-wide-full: RUNNING 133/256 elapsed=156.030367343
+19:51:17 variant-trans-wide-full: RUNNING 161/256 elapsed=186.895268506
+19:51:48 variant-trans-wide-full: RUNNING 191/256 elapsed=218.23768709
+19:52:19 variant-trans-wide-full: RUNNING 220/256 elapsed=248.707284561
+19:52:49 variant-trans-wide-full: RUNNING 249/256 elapsed=279.403911157
+19:53:20 variant-trans-wide-full: FINISHED 256/256 elapsed=286.911265286
+19:53:22 variant-trans-wide-full: DONE {"score": 0.9961089494163424, "statistics": {"f1": 0.9961089494163424, "messages": 256, "tp": 128, "fp": 1, "tn": 127, "fn": 0, "tpr": 1.0, "fpr": 0.0078125, "recall": 1.0, "precision": 0.9922480620155039, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+19:53:22 === variant-ens-lct-full (train-ens-lct-full-1)
+19:53:23 variant-ens-lct-full: submitted 87dc3a3de66a356c033b1e13979acc92be21f047350de7f1d87d91e44cc34f95 status=RUNNING
+19:53:24 variant-ens-lct-full: RUNNING 0/256 elapsed=0.024014487
+19:53:55 variant-ens-lct-full: RUNNING 20/256 elapsed=31.603022428
+19:54:25 variant-ens-lct-full: RUNNING 39/256 elapsed=61.700523889
+19:54:56 variant-ens-lct-full: RUNNING 59/256 elapsed=93.4776674
+19:55:27 variant-ens-lct-full: RUNNING 78/256 elapsed=123.868722037
+19:55:58 variant-ens-lct-full: RUNNING 97/256 elapsed=154.30394277
+19:56:29 variant-ens-lct-full: RUNNING 116/256 elapsed=184.990367701
+19:57:00 variant-ens-lct-full: RUNNING 135/256 elapsed=215.73210176
+19:57:31 variant-ens-lct-full: RUNNING 154/256 elapsed=246.517227941
+19:58:02 variant-ens-lct-full: RUNNING 173/256 elapsed=277.328268997
+19:58:32 variant-ens-lct-full: RUNNING 192/256 elapsed=308.202611681
+19:59:03 variant-ens-lct-full: RUNNING 211/256 elapsed=339.335885716
+19:59:34 variant-ens-lct-full: RUNNING 230/256 elapsed=370.51654281
+20:00:05 variant-ens-lct-full: RUNNING 249/256 elapsed=401.726799017
+20:00:36 variant-ens-lct-full: FINISHED 256/256 elapsed=413.388138313
+20:00:37 variant-ens-lct-full: DONE {"score": 0.9961089494163424, "statistics": {"f1": 0.9961089494163424, "messages": 256, "tp": 128, "fp": 1, "tn": 127, "fn": 0, "tpr": 1.0, "fpr": 0.0078125, "recall": 1.0, "precision": 0.9922480620155039, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+20:00:37 batch complete

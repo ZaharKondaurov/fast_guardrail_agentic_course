@@ -1,0 +1,17 @@
+{
+  "private_required": true,
+  "public_required": true,
+  "data_dir": "case/campaign/ar-12-first/.run/data",
+  "source_train": "case/dataset/ar12-deduplicated-v2/ar12.train.jsonl",
+  "evaluation_ids": "case/campaign/ar-12-first/evaluation-ids.txt",
+  "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+  "conditions_id": "ar12-first-f1-v1",
+  "release_id": "ar12-first-f1-v1",
+  "runner_timeout_seconds": 30,
+  "research_model": "deepseek/deepseek-v4.1-flash-1017",
+  "public_dataset_id": "ar12-deduplicated-v2-public",
+  "closed_source_dir": "case/dataset/ar12-deduplicated-v2",
+  "max_solutions": 18,
+  "finalists": 3,
+  "output_count": 1
+}

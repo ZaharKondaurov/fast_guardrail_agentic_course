@@ -6,6 +6,7 @@ arena/
 *.private.jsonl
 *.public.jsonl
 .env
+.uvcache/
 .run/
 .ruff_cache/
 .venv/

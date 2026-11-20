@@ -1,0 +1,123 @@
+17:47:09 === variant-lin-char (train-lin-char-1)
+17:47:10 variant-lin-char: submitted 24ff674a830916b7f8ce8564761c56383d24a9b2f105b5ee12f374f118d8c436 status=RUNNING
+17:47:11 variant-lin-char: RUNNING 0/256 elapsed=1.00176128
+17:47:42 variant-lin-char: RUNNING 27/256 elapsed=32.116945928
+17:48:13 variant-lin-char: RUNNING 53/256 elapsed=62.666777792
+17:48:44 variant-lin-char: RUNNING 79/256 elapsed=93.576488068
+17:49:15 variant-lin-char: RUNNING 104/256 elapsed=125.491642356
+17:49:46 variant-lin-char: RUNNING 129/256 elapsed=156.517521998
+17:50:17 variant-lin-char: RUNNING 156/256 elapsed=187.449579868
+17:50:49 variant-lin-char: RUNNING 181/256 elapsed=218.138209079
+17:51:20 variant-lin-char: RUNNING 206/256 elapsed=249.454978661
+17:51:51 variant-lin-char: RUNNING 231/256 elapsed=281.187025934
+17:52:22 variant-lin-char: FINISHED 256/256 elapsed=312.196909656
+17:52:23 variant-lin-char: DONE {"score": 0.9921875, "statistics": {"f1": 0.9921875, "messages": 256, "tp": 127, "fp": 1, "tn": 127, "fn": 1, "tpr": 0.9921875, "fpr": 0.0078125, "recall": 0.9921875, "precision": 0.9921875, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+17:52:23 === variant-lin-robust (train-lin-robust-1)
+17:52:25 variant-lin-robust: submitted c657fbac2016a88953ebc3afcc9b2fdce76a615bf3046f2a3780b256e99119e8 status=RUNNING
+17:52:26 variant-lin-robust: RUNNING 0/256 elapsed=0.022809265
+17:52:57 variant-lin-robust: RUNNING 24/256 elapsed=31.251868122
+17:53:28 variant-lin-robust: RUNNING 48/256 elapsed=63.129198211
+17:53:59 variant-lin-robust: RUNNING 71/256 elapsed=94.144240076
+17:54:30 variant-lin-robust: RUNNING 94/256 elapsed=124.728856602
+17:55:01 variant-lin-robust: RUNNING 117/256 elapsed=155.160013178
+17:55:32 variant-lin-robust: RUNNING 141/256 elapsed=186.499071517
+17:56:03 variant-lin-robust: RUNNING 165/256 elapsed=217.917214634
+17:56:34 variant-lin-robust: RUNNING 188/256 elapsed=249.290008628
+17:57:06 variant-lin-robust: RUNNING 212/256 elapsed=280.586981623
+17:57:37 variant-lin-robust: RUNNING 234/256 elapsed=311.77232531
+17:58:08 variant-lin-robust: FINISHED 256/256 elapsed=341.774812088
+17:58:09 variant-lin-robust: DONE {"score": 0.9921875, "statistics": {"f1": 0.9921875, "messages": 256, "tp": 127, "fp": 1, "tn": 127, "fn": 1, "tpr": 0.9921875, "fpr": 0.0078125, "recall": 0.9921875, "precision": 0.9921875, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+17:58:09 === variant-svc (train-svc-1)
+17:58:11 variant-svc: submitted 802c61adb68dc3d74c4eca7784a196a709a679d7579de631d65832ef6f42222e status=RUNNING
+17:58:12 variant-svc: RUNNING 0/256 elapsed=1.264540716
+17:58:43 variant-svc: RUNNING 27/256 elapsed=31.633926442
+17:59:14 variant-svc: RUNNING 55/256 elapsed=63.182783971
+17:59:45 variant-svc: RUNNING 82/256 elapsed=93.632216319
+18:00:16 variant-svc: RUNNING 109/256 elapsed=125.088322545
+18:00:47 variant-svc: RUNNING 135/256 elapsed=155.57692667
+18:01:18 variant-svc: RUNNING 163/256 elapsed=187.501301412
+18:01:49 variant-svc: RUNNING 189/256 elapsed=217.807700647
+18:02:20 variant-svc: RUNNING 215/256 elapsed=249.070811042
+18:02:51 variant-svc: RUNNING 241/256 elapsed=280.574844517
+18:03:22 variant-svc: FINISHED 256/256 elapsed=300.481892641
+18:03:23 variant-svc: DONE {"score": 0.9921875, "statistics": {"f1": 0.9921875, "messages": 256, "tp": 127, "fp": 1, "tn": 127, "fn": 1, "tpr": 0.9921875, "fpr": 0.0078125, "recall": 0.9921875, "precision": 0.9921875, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+18:03:23 === variant-cat-tuned (train-cat-tuned-1)
+18:03:25 variant-cat-tuned: submitted 71e0de86c403c160a615bb4e106c514bf12b53c93aea590803221c856a9be72a status=RUNNING
+18:03:26 variant-cat-tuned: RUNNING 0/256 elapsed=0.024921911
+18:03:57 variant-cat-tuned: RUNNING 20/256 elapsed=32.465364832
+18:04:28 variant-cat-tuned: RUNNING 41/256 elapsed=62.895035986
+18:04:59 variant-cat-tuned: RUNNING 61/256 elapsed=93.162164289
+18:05:30 variant-cat-tuned: RUNNING 82/256 elapsed=125.279799586
+18:06:01 variant-cat-tuned: RUNNING 102/256 elapsed=156.11940033
+18:06:32 variant-cat-tuned: RUNNING 122/256 elapsed=187.392784633
+18:07:03 variant-cat-tuned: RUNNING 141/256 elapsed=217.165579215
+18:07:34 variant-cat-tuned: RUNNING 161/256 elapsed=248.397910992
+18:08:05 variant-cat-tuned: RUNNING 180/256 elapsed=280.285011071
+18:08:36 variant-cat-tuned: RUNNING 198/256 elapsed=311.018321196
+18:09:08 variant-cat-tuned: RUNNING 215/256 elapsed=341.413724254
+18:09:39 variant-cat-tuned: RUNNING 233/256 elapsed=373.357605412
+18:10:10 variant-cat-tuned: RUNNING 252/256 elapsed=405.146453755
+18:10:41 variant-cat-tuned: FINISHED 256/256 elapsed=411.646179322
+18:10:42 variant-cat-tuned: DONE {"score": 0.984251968503937, "statistics": {"f1": 0.984251968503937, "messages": 256, "tp": 125, "fp": 1, "tn": 127, "fn": 3, "tpr": 0.9765625, "fpr": 0.0078125, "recall": 0.9765625, "precision": 0.9920634920634921, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+18:10:42 === variant-cat-feat (train-cat-feat-1)
+18:10:43 variant-cat-feat: submitted 8a5ec4360be0419831799a74d91e8daa76ba1930f55faba0e4c71dc371620d46 status=RUNNING
+18:10:44 variant-cat-feat: RUNNING 0/256 elapsed=0.023186749
+18:11:15 variant-cat-feat: RUNNING 21/256 elapsed=31.958668718
+18:11:46 variant-cat-feat: RUNNING 40/256 elapsed=62.570359704
+18:12:17 variant-cat-feat: RUNNING 58/256 elapsed=93.349699724
+18:12:48 variant-cat-feat: RUNNING 78/256 elapsed=124.139095475
+18:13:20 variant-cat-feat: RUNNING 98/256 elapsed=155.086074408
+18:13:50 variant-cat-feat: RUNNING 118/256 elapsed=186.238755439
+18:14:22 variant-cat-feat: RUNNING 138/256 elapsed=217.955095504
+18:14:53 variant-cat-feat: RUNNING 158/256 elapsed=249.471163395
+18:15:24 variant-cat-feat: RUNNING 177/256 elapsed=279.400884809
+18:15:55 variant-cat-feat: RUNNING 197/256 elapsed=311.048939777
+18:16:26 variant-cat-feat: RUNNING 217/256 elapsed=341.669945793
+18:16:56 variant-cat-feat: RUNNING 237/256 elapsed=372.246034304
+18:17:27 variant-cat-feat: FINISHED 256/256 elapsed=401.984204846
+18:17:29 variant-cat-feat: DONE {"score": 0.9882352941176471, "statistics": {"f1": 0.9882352941176471, "messages": 256, "tp": 126, "fp": 1, "tn": 127, "fn": 2, "tpr": 0.984375, "fpr": 0.0078125, "recall": 0.984375, "precision": 0.9921259842519685, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+18:17:29 === variant-ens-lc (train-ens-lc-1)
+18:17:30 variant-ens-lc: submitted f0a823083134177571e6c69f498dd9f08e0285b66622033257fe06876ac09118 status=RUNNING
+18:17:31 variant-ens-lc: RUNNING 0/256 elapsed=0.024046394
+18:18:02 variant-ens-lc: RUNNING 19/256 elapsed=30.900756729
+18:18:33 variant-ens-lc: RUNNING 38/256 elapsed=61.703183163
+18:19:03 variant-ens-lc: RUNNING 57/256 elapsed=92.52293422
+18:19:34 variant-ens-lc: RUNNING 76/256 elapsed=124.003652695
+18:20:05 variant-ens-lc: RUNNING 94/256 elapsed=155.628962286
+18:20:36 variant-ens-lc: RUNNING 113/256 elapsed=185.490915761
+18:21:07 variant-ens-lc: RUNNING 132/256 elapsed=216.994414343
+18:21:38 variant-ens-lc: RUNNING 150/256 elapsed=248.456402036
+18:22:09 variant-ens-lc: RUNNING 169/256 elapsed=278.935152479
+18:22:40 variant-ens-lc: RUNNING 187/256 elapsed=309.036859638
+18:23:11 variant-ens-lc: RUNNING 205/256 elapsed=340.560407411
+18:23:42 variant-ens-lc: RUNNING 223/256 elapsed=371.789485942
+18:24:13 variant-ens-lc: RUNNING 241/256 elapsed=402.19063268
+18:24:44 variant-ens-lc: FINISHED 256/256 elapsed=427.703633842
+18:24:45 variant-ens-lc: DONE {"score": 0.9921875, "statistics": {"f1": 0.9921875, "messages": 256, "tp": 127, "fp": 1, "tn": 127, "fn": 1, "tpr": 0.9921875, "fpr": 0.0078125, "recall": 0.9921875, "precision": 0.9921875, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+18:24:45 === variant-trans-192 (train-trans-192-1)
+18:24:46 variant-trans-192: submitted af172d2827a9996897e509f0d06b09eb1bc3dd15b9e474650c19c7846052fc8d status=RUNNING
+18:24:47 variant-trans-192: RUNNING 0/256 elapsed=0.953289379
+18:25:18 variant-trans-192: RUNNING 30/256 elapsed=31.294751175
+18:25:49 variant-trans-192: RUNNING 59/256 elapsed=62.15873928
+18:26:20 variant-trans-192: RUNNING 88/256 elapsed=93.45402919
+18:26:51 variant-trans-192: RUNNING 117/256 elapsed=124.669319932
+18:27:22 variant-trans-192: RUNNING 146/256 elapsed=155.736522349
+18:27:53 variant-trans-192: RUNNING 174/256 elapsed=186.37555998
+18:28:24 variant-trans-192: RUNNING 202/256 elapsed=217.085613666
+18:28:55 variant-trans-192: RUNNING 230/256 elapsed=248.198656946
+18:29:26 variant-trans-192: FINISHED 256/256 elapsed=277.322390042
+18:29:27 variant-trans-192: DONE {"score": 0.952755905511811, "statistics": {"f1": 0.952755905511811, "messages": 256, "tp": 121, "fp": 5, "tn": 123, "fn": 7, "tpr": 0.9453125, "fpr": 0.0390625, "recall": 0.9453125, "precision": 0.9603174603174603, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+18:29:27 === variant-trans-wide (train-trans-wide-1)
+18:29:28 variant-trans-wide: submitted 8b7040f40a70f71fe96bcb6bcc53b69e96f188697bffff94ed258f576b874235 status=RUNNING
+18:29:29 variant-trans-wide: RUNNING 0/256 elapsed=0.857231785
+18:30:00 variant-trans-wide: RUNNING 30/256 elapsed=31.586870304
+18:30:31 variant-trans-wide: RUNNING 59/256 elapsed=62.829434538
+18:31:02 variant-trans-wide: RUNNING 89/256 elapsed=93.070881571
+18:31:33 variant-trans-wide: RUNNING 118/256 elapsed=124.125384867
+18:32:04 variant-trans-wide: RUNNING 146/256 elapsed=155.739615896
+18:32:35 variant-trans-wide: RUNNING 175/256 elapsed=186.712806216
+18:33:06 variant-trans-wide: RUNNING 203/256 elapsed=217.642086688
+18:33:37 variant-trans-wide: RUNNING 230/256 elapsed=248.628797592
+18:34:08 variant-trans-wide: FINISHED 256/256 elapsed=276.642759934
+18:34:09 variant-trans-wide: DONE {"score": 0.9921259842519685, "statistics": {"f1": 0.9921259842519685, "messages": 256, "tp": 126, "fp": 0, "tn": 128, "fn": 2, "tpr": 0.984375, "fpr": 0.0, "recall": 0.984375, "precision": 1.0, "p99_ms": null, "messages_per_second": null, "gates": {"fpr": true, "p99": null, "throughput": null}}}
+18:34:09 batch complete

@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "evaluation_id": "b775a38fafb4c34aaeb9a8fb4afa483262bd226652cf632e2975aeab1ccc35ad",
+  "scores": [
+    {
+      "candidate_id": "variant-ens-lct-full",
+      "score": 0.9575504523312457
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "curves": [
+    {
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-public",
+        "split": "public",
+        "subset_id": "ar12-public-full-v1"
+      },
+      "direction": "maximize",
+      "baseline": 0.0,
+      "axis": "proposal_index",
+      "retrospective": true,
+      "integration": "left_step",
+      "measurement_selection": "latest_successful_per_candidate",
+      "horizon": 18,
+      "actual_proposals": 18,
+      "points": [
+        {
+          "proposals": 0,
+          "quality": 0.0,
+          "source": "baseline"
+        },
+        {
+          "proposals": 1,
+          "candidate_id": "matching",
+          "score": null,
+          "quality": 0.0,
+          "measurement_id": null,
+          "source": "unmeasured"
+        },
+        {
+          "proposals": 2,
+          "candidate_id": "boosting",
+          "score": null,
+          "quality": 0.0,
+          "measurement_id": null,
+          "source": "unmeasured"
+        },
+        {
+          "proposals": 3,
+          "candidate_id": "transformer",
+          "score": null,
+          "quality": 0.0,
+          "measurement_id": null,
+          "source": "unmeasured"
+        },
+        {
+          "proposals": 4,
+          "candidate_id": "variant-lin-wordchar",
+          "score": null,
+          "quality": 0.0,
+          "measurement_id": null,
+          "source": "unmeasured"
+        },
+        {
+          "proposals": 5,
+          "candidate_id": "variant-lin-char",
+          "score": 0.9571428571428572,
+          "quality": 0.9571428571428572,
+          "measurement_id": "public-lin-char-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 6,
+          "candidate_id": "variant-lin-robust",
+          "score": null,
+          "quality": 0.9571428571428572,
+          "measurement_id": null,
+          "source": "unmeasured"
+        },
+        {
+          "proposals": 7,
+          "candidate_id": "variant-svc",
+          "score": null,
+          "quality": 0.9571428571428572,
+          "measurement_id": null,
+          "source": "unmeasured"
+        },
+        {
+          "proposals": 8,
+          "candidate_id": "variant-cat-tuned",
+          "score": null,
+          "quality": 0.9571428571428572,
+          "measurement_id": null,
+          "source": "unmeasured"
+        },
+        {
+          "proposals": 9,
+          "candidate_id": "variant-cat-feat",
+          "score": null,
+          "quality": 0.9571428571428572,
+          "measurement_id": null,
+          "source": "unmeasured"
+        },
+        {
+          "proposals": 10,
+          "candidate_id": "variant-ens-lc",
+          "score": null,
+          "quality": 0.9571428571428572,
+          "measurement_id": null,
+          "source": "unmeasured"
+        },
+        {
+          "proposals": 11,
+          "candidate_id": "variant-trans-192",
+          "score": null,
+          "quality": 0.9571428571428572,
+          "measurement_id": null,
+          "source": "unmeasured"
+        },
+        {
+          "proposals": 12,
+          "candidate_id": "variant-trans-wide",
+          "score": null,
+          "quality": 0.9571428571428572,
+          "measurement_id": null,
+          "source": "unmeasured"
+        },
+        {
+          "proposals": 13,
+          "candidate_id": "variant-ens-ct",
+          "score": 0.9573724668064291,
+          "quality": 0.9573724668064291,
+          "measurement_id": "public-variant-ens-ct-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 14,
+          "candidate_id": "variant-ens-lct",
+          "score": 0.9573724668064291,
+          "quality": 0.9573724668064291,
+          "measurement_id": "public-variant-ens-lct-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 15,
+          "candidate_id": "variant-ens-all4",
+          "score": null,
+          "quality": 0.9573724668064291,
+          "measurement_id": null,
+          "source": "unmeasured"
+        },
+        {
+          "proposals": 16,
+          "candidate_id": "variant-ens-rct",
+          "score": null,
+          "quality": 0.9573724668064291,
+          "measurement_id": null,
+          "source": "unmeasured"
+        },
+        {
+          "proposals": 17,
+          "candidate_id": "variant-trans-wide-full",
+          "score": 0.9552447552447553,
+          "quality": 0.9573724668064291,
+          "measurement_id": "public-trans-wide-full-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 18,
+          "candidate_id": "variant-ens-lct-full",
+          "score": 0.9575504523312457,
+          "quality": 0.9575504523312457,
+          "measurement_id": "public-variant-ens-lct-full-1",
+          "source": "measurement"
+        }
+      ],
+      "final_quality": 0.9575504523312457,
+      "auc": 12.444005191175004,
+      "mean_quality": 0.6913336217319447,
+      "observed_auc": 12.444005191175004,
+      "observed_from": 0,
+      "covered_proposals": 18,
+      "svg": "score-public.svg",
+      "metric_version": "ar12-f1-v1",
+      "baseline_assumption": "До первого оценённого предложения принято F1=0; это допущение, а не измеренный score."
+    },
+    {
+      "comparison": {
+        "conditions_id": "ar12-first-f1-v1",
+        "dataset_id": "ar12-deduplicated-v2-train-holdout-v1",
+        "split": "train",
+        "subset_id": "8fc2c3da76d2dcfcba29fb866a23acf51e04120f198690cd1b64b47317f5bf83"
+      },
+      "direction": "maximize",
+      "baseline": 0.0,
+      "axis": "proposal_index",
+      "retrospective": true,
+      "integration": "left_step",
+      "measurement_selection": "latest_successful_per_candidate",
+      "horizon": 18,
+      "actual_proposals": 18,
+      "points": [
+        {
+          "proposals": 0,
+          "quality": 0.0,
+          "source": "baseline"
+        },
+        {
+          "proposals": 1,
+          "candidate_id": "matching",
+          "score": 0.8627450980392157,
+          "quality": 0.8627450980392157,
+          "measurement_id": "train-matching-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 2,
+          "candidate_id": "boosting",
+          "score": 0.9652509652509652,
+          "quality": 0.9652509652509652,
+          "measurement_id": "train-boosting-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 3,
+          "candidate_id": "transformer",
+          "score": 0.9568627450980393,
+          "quality": 0.9652509652509652,
+          "measurement_id": "train-transformer-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 4,
+          "candidate_id": "variant-lin-wordchar",
+          "score": 0.9882352941176471,
+          "quality": 0.9882352941176471,
+          "measurement_id": "train-lin-wordchar-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 5,
+          "candidate_id": "variant-lin-char",
+          "score": 0.9921875,
+          "quality": 0.9921875,
+          "measurement_id": "train-lin-char-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 6,
+          "candidate_id": "variant-lin-robust",
+          "score": 0.9921875,
+          "quality": 0.9921875,
+          "measurement_id": "train-lin-robust-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 7,
+          "candidate_id": "variant-svc",
+          "score": 0.9921875,
+          "quality": 0.9921875,
+          "measurement_id": "train-svc-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 8,
+          "candidate_id": "variant-cat-tuned",
+          "score": 0.984251968503937,
+          "quality": 0.9921875,
+          "measurement_id": "train-cat-tuned-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 9,
+          "candidate_id": "variant-cat-feat",
+          "score": 0.9882352941176471,
+          "quality": 0.9921875,
+          "measurement_id": "train-cat-feat-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 10,
+          "candidate_id": "variant-ens-lc",
+          "score": 0.9921875,
+          "quality": 0.9921875,
+          "measurement_id": "train-ens-lc-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 11,
+          "candidate_id": "variant-trans-192",
+          "score": 0.952755905511811,
+          "quality": 0.9921875,
+          "measurement_id": "train-trans-192-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 12,
+          "candidate_id": "variant-trans-wide",
+          "score": 0.9921259842519685,
+          "quality": 0.9921875,
+          "measurement_id": "train-trans-wide-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 13,
+          "candidate_id": "variant-ens-ct",
+          "score": 0.996078431372549,
+          "quality": 0.996078431372549,
+          "measurement_id": "train-ens-ct-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 14,
+          "candidate_id": "variant-ens-lct",
+          "score": 0.996078431372549,
+          "quality": 0.996078431372549,
+          "measurement_id": "train-ens-lct-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 15,
+          "candidate_id": "variant-ens-all4",
+          "score": 0.996078431372549,
+          "quality": 0.996078431372549,
+          "measurement_id": "train-ens-all4-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 16,
+          "candidate_id": "variant-ens-rct",
+          "score": 0.996078431372549,
+          "quality": 0.996078431372549,
+          "measurement_id": "train-ens-rct-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 17,
+          "candidate_id": "variant-trans-wide-full",
+          "score": 0.9961089494163424,
+          "quality": 0.9961089494163424,
+          "measurement_id": "train-trans-wide-full-1",
+          "source": "measurement"
+        },
+        {
+          "proposals": 18,
+          "candidate_id": "variant-ens-lct-full",
+          "score": 0.9961089494163424,
+          "quality": 0.9961089494163424,
+          "measurement_id": "train-ens-lct-full-1",
+          "source": "measurement"
+        }
+      ],
+      "final_quality": 0.9961089494163424,
+      "auc": 16.69940499756533,
+      "mean_quality": 0.9277447220869628,
+      "observed_auc": 16.69940499756533,
+      "observed_from": 0,
+      "covered_proposals": 18,
+      "svg": "score-train.svg",
+      "metric_version": "ar12-f1-v1",
+      "baseline_assumption": "До первого оценённого предложения принято F1=0; это допущение, а не измеренный score."
+    }
+  ]
+}

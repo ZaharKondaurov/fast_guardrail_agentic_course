@@ -41,6 +41,11 @@ def gateway_request(request: dict[str, Any], model: str) -> dict[str, Any]:
     }
     if "messages" in result:
         result["messages"] = [gateway_message(message) for message in result["messages"]]
+    # Передаём явный бюджет Hermes; отсутствие лимита не заменяем своим значением.
+    for key in ("max_tokens", "max_completion_tokens"):
+        value = request.get(key)
+        if type(value) is int and value > 0:
+            result[key] = value
     result.update(model=model, stream=False, reasoning_effort="max")
     return result
 

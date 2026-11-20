@@ -1,0 +1,9 @@
+{
+  "case/dataset/ar12-deduplicated-v2/ar12.train.jsonl": "fadf84959eaa63ae1621c15020f06b94c492b714438095dd982448fdefb7d7b6",
+  "case/dataset/ar12-deduplicated-v2/ar12.public.jsonl": "747545c83ed8b138c0c28f4f5c82572db9aa9ba0d1d122c222349145eb405bdb",
+  "case/dataset/ar12-deduplicated-v2/ar12.private.jsonl": "cce04d449483e15311b4514699c7780636c2f2923f8e95423c6c7afa1af195fb",
+  "case/campaign/ar-12-first/evaluation-ids.txt": "661899a3096c6d5f809b1c7b028adffda3ab0c8de025689ed33d18731bcd1792",
+  "case/campaign/ar-12-first/.run/data/train.jsonl": "76f8ea2a125b10c95e35c0b80405e906418903b7b6e6916a4ab080310e91d582",
+  "case/campaign/ar-12-first/.run/data/evaluation.jsonl": "5e56c48e3f3de758caa01c6a692bffd49ab8b6fed6b3a9adb1df4e6aa59153b7",
+  "case/campaign/ar-12-first/.run/data/evaluation.arena.jsonl": "b55ba311d7734f58e0124b56c84442c98ab031e15b0bdc8c1223011a7e1b566d"
+}

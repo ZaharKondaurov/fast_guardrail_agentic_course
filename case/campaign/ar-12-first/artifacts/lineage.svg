@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1489 895" width="1489" height="895" role="img" aria-labelledby="title desc">
+<title id="title">Родословная решений кампании</title>
+<desc id="desc">Стрелки направлены от родителей к потомкам. Синим отмечены финалисты. Поколение вычислено по связям родителей.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="system-ui, sans-serif" fill="#17212b">
+<text x="32" y="37" font-size="24" font-weight="600">Родословная решений</text>
+<text x="32" y="64" font-size="14" fill="#52606d">18 предложений · 24 связей · 3 финалиста</text>
+<rect x="32" y="79" width="12" height="12" fill="#e8f0ff" stroke="#315fc4"/>
+<text x="52" y="90" font-size="13">Финалист · стрелка: родитель → потомок</text>
+<text x="32" y="195" font-size="13" fill="#52606d">Поколение 0</text>
+<text x="417" y="195" font-size="13" fill="#52606d">Поколение 1</text>
+<text x="802" y="195" font-size="13" fill="#52606d">Поколение 2</text>
+<text x="1187" y="195" font-size="13" fill="#52606d">Поколение 3</text>
+<path class="edge" data-parent="variant-lin-wordchar" data-child="variant-lin-char" d="M 302 689.0 C 359.5 689.0, 359.5 581.0, 417 581.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-lin-wordchar → variant-lin-char</title></path>
+<path class="edge" data-parent="variant-lin-wordchar" data-child="variant-lin-robust" d="M 302 689.0 C 359.5 689.0, 359.5 689.0, 417 689.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-lin-wordchar → variant-lin-robust</title></path>
+<path class="edge" data-parent="variant-lin-wordchar" data-child="variant-svc" d="M 302 689.0 C 359.5 689.0, 359.5 797.0, 417 797.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-lin-wordchar → variant-svc</title></path>
+<path class="edge" data-parent="boosting" data-child="variant-cat-tuned" d="M 302 473.0 C 359.5 473.0, 359.5 257.0, 417 257.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>boosting → variant-cat-tuned</title></path>
+<path class="edge" data-parent="variant-cat-tuned" data-child="variant-cat-feat" d="M 687 257.0 C 744.5 257.0, 744.5 257.0, 802 257.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-cat-tuned → variant-cat-feat</title></path>
+<path class="edge" data-parent="variant-lin-wordchar" data-child="variant-ens-lc" d="M 302 689.0 H 325 V 111 H 779 V 473.0 H 802" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-lin-wordchar → variant-ens-lc</title></path>
+<path class="edge" data-parent="variant-cat-tuned" data-child="variant-ens-lc" d="M 687 257.0 C 744.5 257.0, 744.5 473.0, 802 473.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-cat-tuned → variant-ens-lc</title></path>
+<path class="edge" data-parent="transformer" data-child="variant-trans-192" d="M 302 581.0 C 359.5 581.0, 359.5 365.0, 417 365.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>transformer → variant-trans-192</title></path>
+<path class="edge" data-parent="transformer" data-child="variant-trans-wide" d="M 302 581.0 C 359.5 581.0, 359.5 473.0, 417 473.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>transformer → variant-trans-wide</title></path>
+<path class="edge" data-parent="variant-cat-tuned" data-child="variant-ens-ct" d="M 687 257.0 C 744.5 257.0, 744.5 365.0, 802 365.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-cat-tuned → variant-ens-ct</title></path>
+<path class="edge" data-parent="variant-trans-wide" data-child="variant-ens-ct" d="M 687 473.0 C 744.5 473.0, 744.5 365.0, 802 365.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-trans-wide → variant-ens-ct</title></path>
+<path class="edge" data-parent="variant-lin-wordchar" data-child="variant-ens-lct" d="M 302 689.0 H 326 V 123 H 778 V 581.0 H 802" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-lin-wordchar → variant-ens-lct</title></path>
+<path class="edge" data-parent="variant-cat-tuned" data-child="variant-ens-lct" d="M 687 257.0 C 744.5 257.0, 744.5 581.0, 802 581.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-cat-tuned → variant-ens-lct</title></path>
+<path class="edge" data-parent="variant-trans-wide" data-child="variant-ens-lct" d="M 687 473.0 C 744.5 473.0, 744.5 581.0, 802 581.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-trans-wide → variant-ens-lct</title></path>
+<path class="edge" data-parent="variant-cat-tuned" data-child="variant-ens-all4" d="M 687 257.0 H 712 V 135 H 1162 V 473.0 H 1187" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-cat-tuned → variant-ens-all4</title></path>
+<path class="edge" data-parent="variant-cat-feat" data-child="variant-ens-all4" d="M 1072 257.0 C 1129.5 257.0, 1129.5 473.0, 1187 473.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-cat-feat → variant-ens-all4</title></path>
+<path class="edge" data-parent="variant-trans-wide" data-child="variant-ens-all4" d="M 687 473.0 H 713 V 147 H 1161 V 473.0 H 1187" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-trans-wide → variant-ens-all4</title></path>
+<path class="edge" data-parent="variant-lin-robust" data-child="variant-ens-rct" d="M 687 689.0 C 744.5 689.0, 744.5 689.0, 802 689.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-lin-robust → variant-ens-rct</title></path>
+<path class="edge" data-parent="variant-cat-tuned" data-child="variant-ens-rct" d="M 687 257.0 C 744.5 257.0, 744.5 689.0, 802 689.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-cat-tuned → variant-ens-rct</title></path>
+<path class="edge" data-parent="variant-trans-wide" data-child="variant-ens-rct" d="M 687 473.0 C 744.5 473.0, 744.5 689.0, 802 689.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-trans-wide → variant-ens-rct</title></path>
+<path class="edge" data-parent="variant-trans-wide" data-child="variant-trans-wide-full" d="M 687 473.0 C 744.5 473.0, 744.5 797.0, 802 797.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-trans-wide → variant-trans-wide-full</title></path>
+<path class="edge" data-parent="variant-lin-wordchar" data-child="variant-ens-lct-full" d="M 302 689.0 H 329 V 159 H 1160 V 581.0 H 1187" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-lin-wordchar → variant-ens-lct-full</title></path>
+<path class="edge" data-parent="variant-cat-tuned" data-child="variant-ens-lct-full" d="M 687 257.0 H 715 V 171 H 1159 V 581.0 H 1187" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-cat-tuned → variant-ens-lct-full</title></path>
+<path class="edge" data-parent="variant-trans-wide-full" data-child="variant-ens-lct-full" d="M 1072 797.0 C 1129.5 797.0, 1129.5 581.0, 1187 581.0" fill="none" stroke="#8996a5" stroke-width="1.4" marker-end="url(#arrow)"><title>variant-trans-wide-full → variant-ens-lct-full</title></path>
+<g class="candidate" data-id="matching">
+<title>matching
+Родители: нет
+Гипотеза: Базовый словарь частотных n-грамм даёт воспроизводимый нижний ориентир F1 и используется как контроль для сравнения признаковых моделей.
+Изменения: Операторский baseline matching: rules.json из частотных n-грамм train, порог по вхождению; код и артефакты без изменений.
+Снимок: b1ab0ddb7697e94d0386260efccb95fa6d9860072153208b1803642a7e4dc1a3</title>
+<rect x="32" y="325.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="46" y="356.0" font-family="monospace" font-size="13">matching</text>
+<text x="46" y="382.0" font-size="12" fill="#52606d">Предложение 1 · без родителей</text>
+</g>
+<g class="candidate" data-id="boosting">
+<title>boosting
+Родители: нет
+Гипотеза: TF-IDF словесных и символьных n-грамм с CatBoost ловит нелинейные сочетания признаков и должен превзойти словарный baseline по F1.
+Изменения: Операторский baseline boosting: обученный CatBoost на TF-IDF word(1,2)+char(3,4), порог по FPR&lt;=5%; код и артефакты без изменений.
+Снимок: 359974f67aa4bf40001c648ef9785d6ed00bb6f80460f469950e25aee0bd1d5a</title>
+<rect x="32" y="433.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="46" y="464.0" font-family="monospace" font-size="13">boosting</text>
+<text x="46" y="490.0" font-size="12" fill="#52606d">Предложение 2 · без родителей</text>
+</g>
+<g class="candidate" data-id="transformer">
+<title>transformer
+Родители: нет
+Гипотеза: Малый байтовый трансформер, обученный с нуля, даёт независимый от словарей механизм и устойчивость к обфускации.
+Изменения: Операторский baseline transformer: byte-level Transformer INT8 ONNX, порог по FPR&lt;=5%; код и артефакты без изменений.
+Снимок: db33ad911eb1a6b47de530a5d5c3fe94f4ae4d2288f5c74544d62e7b4122bf35</title>
+<rect x="32" y="541.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="46" y="572.0" font-family="monospace" font-size="13">transformer</text>
+<text x="46" y="598.0" font-size="12" fill="#52606d">Предложение 3 · без родителей</text>
+</g>
+<g class="candidate" data-id="variant-lin-wordchar">
+<title>variant-lin-wordchar
+Родители: нет
+Гипотеза: Словесные 1-2-граммы и символьные 3-5-граммы с TF-IDF и логистической регрессией лучше разделяют обфусцированные инъекции и безопасные запросы, чем частотный словарь, за счёт взвешивания редких дискриминативных фрагментов.
+Изменения: Новый решатель: собственные детерминированные признаки word12+char3-5 (NFKC, нижний регистр, схлопывание пробелов), точный словарь 238929 признаков, TF-IDF sublinear + L2, LogisticRegression C=4, порог 0.56 по 5-fold OOF train.
+Снимок: 0671fc3d9e59ec5902a55eae6f5047dd87a57ae0163c456e91a05aae55981169</title>
+<rect x="32" y="649.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="46" y="680.0" font-family="monospace" font-size="13">variant-lin-wordchar</text>
+<text x="46" y="706.0" font-size="12" fill="#52606d">Предложение 4 · без родителей</text>
+</g>
+<g class="candidate" data-id="variant-lin-char">
+<title>variant-lin-char
+Родители: variant-lin-wordchar
+Гипотеза: Character-only 2-6 gram TF-IDF should capture obfuscated and truncated attack strings better than word features while keeping high precision on benign text; a feature ablation of the word+char model.
+Изменения: Char-only n-gram vocabulary (2-6), TF-IDF sublinear + L2, LogisticRegression C=128, score threshold 1.1021 chosen by class-balanced 5-fold OOF F1 on train.
+Снимок: 4f4e39ef5b51f347b1e02a017a23bb45066b25352eae510e3a5c7e6bbe23ff3c</title>
+<rect x="417" y="541.0" width="270" height="80" rx="8" fill="#e8f0ff" stroke="#315fc4" stroke-width="2"/>
+<text x="431" y="572.0" font-family="monospace" font-size="13">variant-lin-char</text>
+<text x="431" y="598.0" font-size="12" fill="#52606d">Предложение 5 · финалист</text>
+</g>
+<g class="candidate" data-id="variant-lin-robust">
+<title>variant-lin-robust
+Родители: variant-lin-wordchar
+Гипотеза: Adding a deterministic deobfuscation view (homoglyph/leet folding, format-char removal, repeated-char collapse) alongside the original text should reduce misses on encoding and token-smuggling attacks without hurting benign precision.
+Изменения: Two-view word1-2+char2-6 TF-IDF (normal + deobfuscated), 679147 features, LogisticRegression C=32, score threshold 0.6505 by class-balanced 5-fold OOF F1.
+Снимок: 864501509daab2403138e0399ba509313ba20d71840531af1ccd5a5e50ef56c3</title>
+<rect x="417" y="649.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="431" y="680.0" font-family="monospace" font-size="13">variant-lin-robust</text>
+<text x="431" y="706.0" font-size="12" fill="#52606d">Предложение 6 · родителей: 1</text>
+</g>
+<g class="candidate" data-id="variant-svc">
+<title>variant-svc
+Родители: variant-lin-wordchar
+Гипотеза: A max-margin linear SVM on the same word+char TF-IDF space makes different errors than logistic loss (margin-focused, no probability calibration) and may improve F1 or ensemble diversity.
+Изменения: LinearSVC C=4 on word1-2+char2-6 TF-IDF, 387364 features, decision margin threshold 0.1477 chosen by class-balanced 5-fold OOF F1.
+Снимок: 1a42fb8710bf2164487a6b368d422ec61f1bf7148ca2a93c66723fb8245b732d</title>
+<rect x="417" y="757.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="431" y="788.0" font-family="monospace" font-size="13">variant-svc</text>
+<text x="431" y="814.0" font-size="12" fill="#52606d">Предложение 7 · родителей: 1</text>
+</g>
+<g class="candidate" data-id="variant-cat-tuned">
+<title>variant-cat-tuned
+Родители: boosting
+Гипотеза: A larger CatBoost on richer word1-3/char3-5 TF-IDF with an F1-tuned (not FPR-gated) threshold should beat the baseline boosting F1; its non-linear interactions add diversity to linear models.
+Изменения: CatBoost 250 iters depth 6 lr 0.1 rsm 0.5 on word1-3+char3-5 TF-IDF (60k+60k caps), thread_count=1 inference, OOF-F1 threshold 0.46444.
+Снимок: 4a59599cebbe27ec8ef3c8c1d3c5f56cc17dbd83d265e564450494b5320b8053</title>
+<rect x="417" y="217.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="431" y="248.0" font-family="monospace" font-size="13">variant-cat-tuned</text>
+<text x="431" y="274.0" font-size="12" fill="#52606d">Предложение 8 · родителей: 1</text>
+</g>
+<g class="candidate" data-id="variant-cat-feat">
+<title>variant-cat-feat
+Родители: variant-cat-tuned
+Гипотеза: Explicit numeric text features (length, token/digit/uppercase/punctuation ratios, suspicious-word counts, control chars, repetition, encoding indicators) should help CatBoost separate short benign chat from terse toxic/adversarial prompts.
+Изменения: CatBoost with the same TF-IDF plus 36 deterministic numeric features, imported by both training and solve; OOF-F1 threshold 0.46207.
+Снимок: 77a8437d8c0e218f1e8e985df2c8ed517e15dab1b426db4eb29758ab46e7fa1f</title>
+<rect x="802" y="217.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="816" y="248.0" font-family="monospace" font-size="13">variant-cat-feat</text>
+<text x="816" y="274.0" font-size="12" fill="#52606d">Предложение 9 · родителей: 1</text>
+</g>
+<g class="candidate" data-id="variant-ens-lc">
+<title>variant-ens-lc
+Родители: variant-lin-wordchar, variant-cat-tuned
+Гипотеза: A 50/50 probability blend of the linear TF-IDF model and CatBoost should combine their decorrelated errors and raise F1 above either component; ensemble diversity is the main expected gain.
+Изменения: Frozen ensemble: copied variant-lin-wordchar linear model + variant-cat-tuned CatBoost, average probabilities, threshold 0.53936 from 5-fold OOF F1.
+Снимок: 3e11dd770dab7f6f661c8825db5493f121ac765de345d8dc8762b440573d5dc7</title>
+<rect x="802" y="433.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="816" y="464.0" font-family="monospace" font-size="13">variant-ens-lc</text>
+<text x="816" y="490.0" font-size="12" fill="#52606d">Предложение 10 · родителей: 2</text>
+</g>
+<g class="candidate" data-id="variant-trans-192">
+<title>variant-trans-192
+Родители: transformer
+Гипотеза: A deeper byte-level transformer with longer 192-byte context and F1-tuned cutoff should capture suffix/prefix injection patterns better than the 128-byte 4-epoch baseline while staying fast.
+Изменения: From-scratch byte Transformer seq192 d_model64 2 layers 4 heads, 8 epochs, AdamW 2.5e-3, pos_weight 1.15, INT8 ONNX export, holdout-F1 cutoff 0.305964.
+Снимок: 41f38f2998865fd957cad5250bfbdf6b5e76c94e4c9102690dc6e5a4abb21c2f</title>
+<rect x="417" y="325.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="431" y="356.0" font-family="monospace" font-size="13">variant-trans-192</text>
+<text x="431" y="382.0" font-size="12" fill="#52606d">Предложение 11 · родителей: 1</text>
+</g>
+<g class="candidate" data-id="variant-trans-wide">
+<title>variant-trans-wide
+Родители: transformer
+Гипотеза: Adding hashed word channels (head+tail words) to the byte transformer gives the model lexical evidence beyond the first 192 bytes and should improve F1 and error diversity versus a byte-only model.
+Изменения: Byte+hashed-word Transformer seq192 d_model96 2 layers 8 heads FF256, blake2b word buckets 4096 (40 head + 24 tail words), 8 epochs, INT8 ONNX, holdout-F1 cutoff -0.0016.
+Снимок: dfc36b16cbb1a2b7d501a0ae6b1be2c541bc07d8f3497b296a95ae571e9db46d</title>
+<rect x="417" y="433.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="431" y="464.0" font-family="monospace" font-size="13">variant-trans-wide</text>
+<text x="431" y="490.0" font-size="12" fill="#52606d">Предложение 12 · родителей: 1</text>
+</g>
+<g class="candidate" data-id="variant-ens-ct">
+<title>variant-ens-ct
+Родители: variant-cat-tuned, variant-trans-wide
+Гипотеза: CatBoost and the hashed-word transformer make decorrelated errors (different mechanisms: sparse lexical trees vs byte sequence model); a 50/50 probability blend should beat either component on F1.
+Изменения: Frozen ensemble: variant-cat-tuned CatBoost + variant-trans-wide INT8 ONNX, equal probability average, threshold 0.46255 tuned on the shared 12% train holdout (seed42).
+Снимок: 8a685435c95767d078d400c47a4281ef439a983b19b8687a72583d2550bcc942</title>
+<rect x="802" y="325.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="816" y="356.0" font-family="monospace" font-size="13">variant-ens-ct</text>
+<text x="816" y="382.0" font-size="12" fill="#52606d">Предложение 13 · родителей: 2</text>
+</g>
+<g class="candidate" data-id="variant-ens-lct">
+<title>variant-ens-lct
+Родители: variant-lin-wordchar, variant-cat-tuned, variant-trans-wide
+Гипотеза: A three-family blend (linear TF-IDF, CatBoost, byte transformer) should be more robust to distribution shift than any single family; weights 0.2/0.4/0.4 were selected on train holdout, where the blend reached F1 0.9956 vs 0.9939 for the best component.
+Изменения: Frozen ensemble: linear wordchar + cat-tuned + trans-wide probabilities, weights 0.2/0.4/0.4, threshold 0.4888 selected on the shared 12% train holdout (seed42).
+Снимок: a771c3e48c20ea4ac513363806e45dd838f702491a4ef392a999d788bd518fe7</title>
+<rect x="802" y="541.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="816" y="572.0" font-family="monospace" font-size="13">variant-ens-lct</text>
+<text x="816" y="598.0" font-size="12" fill="#52606d">Предложение 14 · родителей: 3</text>
+</g>
+<g class="candidate" data-id="variant-ens-all4">
+<title>variant-ens-all4
+Родители: variant-cat-tuned, variant-cat-feat, variant-trans-wide
+Гипотеза: Adding the numeric-feature CatBoost variant to the cat+transformer blend may improve separation of short toxic prompts from benign chat; the 4-way holdout grid reached F1 0.9962 with 0.5 cat + 0.1 catfeat + 0.4 trans.
+Изменения: Frozen ensemble: CatBoost tuned + CatBoost numeric-features + trans-wide ONNX, weights 0.5/0.1/0.4, threshold 0.4287 selected on the shared 12% train holdout (seed42).
+Снимок: 14b0f5a2f994b8a3feea49d5de9b0b44253b1154bdff57e020884aafc87de3b5</title>
+<rect x="1187" y="433.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="1201" y="464.0" font-family="monospace" font-size="13">variant-ens-all4</text>
+<text x="1201" y="490.0" font-size="12" fill="#52606d">Предложение 15 · родителей: 3</text>
+</g>
+<g class="candidate" data-id="variant-ens-rct">
+<title>variant-ens-rct
+Родители: variant-lin-robust, variant-cat-tuned, variant-trans-wide
+Гипотеза: Replacing the plain linear component with the deobfuscation-view linear model should make the three-family ensemble more robust to encoding/token-smuggling attacks while keeping the same blend geometry.
+Изменения: Frozen ensemble: variant-lin-robust linear + cat-tuned + trans-wide, weights 0.2/0.4/0.4, threshold 0.4888 from the shared 12% train holdout.
+Снимок: 590e88020757f6de8f6e035ac474abfa4e48fa8fd8c0b502860cc93a4e40659c</title>
+<rect x="802" y="649.0" width="270" height="80" rx="8" fill="#f7f9fb" stroke="#b6c0cb" stroke-width="1"/>
+<text x="816" y="680.0" font-family="monospace" font-size="13">variant-ens-rct</text>
+<text x="816" y="706.0" font-size="12" fill="#52606d">Предложение 16 · родителей: 3</text>
+</g>
+<g class="candidate" data-id="variant-trans-wide-full">
+<title>variant-trans-wide-full
+Родители: variant-trans-wide
+Гипотеза: Retraining the same byte+hashed-word transformer on all 11420 train rows (instead of 10049) should add signal without changing the mechanism; the fixed cutoff from the 88% model transfers because the score scale is unchanged.
+Изменения: Same architecture/epochs/seed as variant-trans-wide, trained on 11420 rows, final-epoch INT8 ONNX export, fixed cutoff -0.00162439 transferred; 256-set diagnostic F1 0.9961.
+Снимок: 575bf6d04504aa838423f13fcf92becb5d36cfc883ec1125136f9ab9176b0d4b</title>
+<rect x="802" y="757.0" width="270" height="80" rx="8" fill="#e8f0ff" stroke="#315fc4" stroke-width="2"/>
+<text x="816" y="788.0" font-family="monospace" font-size="13">variant-trans-wide-full</text>
+<text x="816" y="814.0" font-size="12" fill="#52606d">Предложение 17 · финалист</text>
+</g>
+<g class="candidate" data-id="variant-ens-lct-full">
+<title>variant-ens-lct-full
+Родители: variant-lin-wordchar, variant-cat-tuned, variant-trans-wide-full
+Гипотеза: The best three-family blend should improve if its transformer component is retrained on the full train set; the fixed cutoff and blend weights transfer because the score scale is unchanged.
+Изменения: Frozen ensemble: linear wordchar + cat-tuned + trans-wide-full probabilities, weights 0.2/0.4/0.4, threshold 0.4888 from the shared 12% train holdout.
+Снимок: d68a3d972b9a20bbe200ee4e43ef5a7ef448424e5822251aff71e3171e14a287</title>
+<rect x="1187" y="541.0" width="270" height="80" rx="8" fill="#e8f0ff" stroke="#315fc4" stroke-width="2"/>
+<text x="1201" y="572.0" font-family="monospace" font-size="13">variant-ens-lct-full</text>
+<text x="1201" y="598.0" font-size="12" fill="#52606d">Предложение 18 · финалист</text>
+</g>
+</g></svg>

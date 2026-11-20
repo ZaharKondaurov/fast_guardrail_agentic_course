@@ -1,12 +1,15 @@
 """Export shareable AR-12 campaign artifacts without copying operator state."""
 
 import argparse
+import json
 import shutil
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from zipfile import ZIP_DEFLATED, ZipFile
 
 from evaluator.search import Journal
+from case.deploy.lineage import write_lineage
+from case.deploy.score_curves import write_score_curves
 
 
 def copy_artifact(source: Path, destination: Path) -> None:
@@ -64,6 +67,15 @@ def export_campaign(campaign: Path, output: Path) -> None:
                 raise ValueError(f"Missing campaign artifact directory: {directory}")
             copy_directory(agent_campaign / directory, staged / directory)
         copy_artifact(agent_campaign / "finalists.json", staged / "finalists.json")
+        # Общий журнал сохраняет родителей, гипотезы и снимки всех предложений.
+        exported = journal.export()
+        (staged / "results/journal-export.json").write_text(
+            json.dumps(exported, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        write_lineage(exported, json.loads((staged / "finalists.json").read_text()), staged)
+        metric = json.loads((campaign / "metric/metric.json").read_text())
+        write_score_curves(journal, metric, staged)
 
         # Skip the copied Arena and case sources in the agent workspace.
         for file in sorted(run.rglob("*.md")):

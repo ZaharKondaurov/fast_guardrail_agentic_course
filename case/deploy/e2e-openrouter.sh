@@ -20,13 +20,13 @@ umask 077
 access=$(mktemp "${TMPDIR:-/tmp}/ar12-model-access.XXXXXX.json")
 trap 'rm -f -- "$access"' EXIT
 
-.venv/bin/python - "$access" <<'PY'
+.venv/bin/python - "$access" "${AR12_CAMPAIGN:-case/campaign/ar-12-e2e}/runtime.json" <<'PY'
 import json
 import os
 import sys
 from pathlib import Path
 
-config = json.loads(Path("case/campaign/ar-12-e2e/runtime.json").read_text())
+config = json.loads(Path(sys.argv[2]).read_text())
 Path(sys.argv[1]).write_text(json.dumps({
     "model": config["research_model"],
     "model_base_url": "https://openrouter.ai/api/v1",
